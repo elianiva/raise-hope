@@ -1,4 +1,5 @@
 import 'package:adaptive_sizer/adaptive_sizer.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:expandable_page_view/expandable_page_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -11,6 +12,7 @@ import 'package:next_starter/presentation/pages/register/volunteer/steps/registe
 
 import 'cubit/register_volunteer_cubit.dart';
 
+@RoutePage()
 class RegisterVolunteerPage extends StatefulWidget {
   final bool isUsingCurrentUser;
 
@@ -100,8 +102,7 @@ class _RegisterVolunteerPageState extends State<RegisterVolunteerPage> {
                       textAlign: TextAlign.center,
                     ),
                     32.verticalSpace,
-                    BlocBuilder<RegisterVolunteerCubit, RegisterVolunteerState>(
-                        builder: (context, state) {
+                    BlocBuilder<RegisterVolunteerCubit, RegisterVolunteerState>(builder: (context, state) {
                       return CustomStepper(
                         steps: const [
                           CustomStepperStep(
@@ -127,8 +128,7 @@ class _RegisterVolunteerPageState extends State<RegisterVolunteerPage> {
             ),
             SliverFillRemaining(
               hasScrollBody: false,
-              child:
-                  BlocListener<RegisterVolunteerCubit, RegisterVolunteerState>(
+              child: BlocListener<RegisterVolunteerCubit, RegisterVolunteerState>(
                 listener: _onRegisterStateChanges,
                 child: ExpandablePageView.builder(
                   controller: _pageController,
@@ -153,8 +153,7 @@ class _RegisterVolunteerPageState extends State<RegisterVolunteerPage> {
   }
 
   void _onRegisterStateChanges(context, RegisterVolunteerState state) {
-    if (_previousState != null &&
-        _mapStateToIndex(_previousState!) == _mapStateToIndex(state)) {
+    if (_previousState != null && _mapStateToIndex(_previousState!) == _mapStateToIndex(state)) {
       return;
     }
 

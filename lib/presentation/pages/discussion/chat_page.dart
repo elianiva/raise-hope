@@ -1,9 +1,11 @@
 import 'dart:math';
 
 import 'package:adaptive_sizer/adaptive_sizer.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:next_starter/common/extensions/extensions.dart';
 
+@RoutePage()
 class ChatPage extends StatefulWidget {
   const ChatPage({super.key});
 
@@ -111,8 +113,7 @@ class _ChatPageState extends State<ChatPage> {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       child: Row(
-        mainAxisAlignment:
-            isMe ? MainAxisAlignment.end : MainAxisAlignment.start,
+        mainAxisAlignment: isMe ? MainAxisAlignment.end : MainAxisAlignment.start,
         children: [
           Container(
             constraints: BoxConstraints(
@@ -120,9 +121,7 @@ class _ChatPageState extends State<ChatPage> {
             ),
             padding: const EdgeInsets.all(10),
             decoration: BoxDecoration(
-              color: isMe
-                  ? context.colorScheme.primary
-                  : context.colorScheme.surface,
+              color: isMe ? context.colorScheme.primary : context.colorScheme.surface,
               borderRadius: isMe
                   ? BorderRadius.only(
                       topLeft: 16.circular,
@@ -136,8 +135,7 @@ class _ChatPageState extends State<ChatPage> {
                     ),
             ),
             child: Column(
-              crossAxisAlignment:
-                  isMe ? CrossAxisAlignment.end : CrossAxisAlignment.start,
+              crossAxisAlignment: isMe ? CrossAxisAlignment.end : CrossAxisAlignment.start,
               children: [
                 if (isReplying) ...[
                   _chatReply(isMe),
@@ -146,9 +144,7 @@ class _ChatPageState extends State<ChatPage> {
                 Text(
                   'Okay, As Soon As Possible!',
                   style: TextStyle(
-                    color: isMe
-                        ? context.colorScheme.onPrimary
-                        : context.colorScheme.onBackground,
+                    color: isMe ? context.colorScheme.onPrimary : context.colorScheme.onBackground,
                     fontSize: 14,
                   ),
                 ),
@@ -158,9 +154,7 @@ class _ChatPageState extends State<ChatPage> {
                     Text(
                       '12:30 PM',
                       style: TextStyle(
-                        color: isMe
-                            ? context.colorScheme.onPrimary
-                            : context.colorScheme.onBackground.withOpacity(0.5),
+                        color: isMe ? context.colorScheme.onPrimary : context.colorScheme.onBackground.withOpacity(0.5),
                         fontSize: 12,
                       ),
                     ),
@@ -169,18 +163,14 @@ class _ChatPageState extends State<ChatPage> {
                       Icon(
                         Icons.circle,
                         size: 2,
-                        color: isMe
-                            ? context.colorScheme.onPrimary
-                            : context.colorScheme.onBackground.withOpacity(0.5),
+                        color: isMe ? context.colorScheme.onPrimary : context.colorScheme.onBackground.withOpacity(0.5),
                       ),
                       4.horizontalSpace,
                       Text(
                         "Read",
                         style: TextStyle(
-                          color: isMe
-                              ? context.colorScheme.onPrimary
-                              : context.colorScheme.onBackground
-                                  .withOpacity(0.5),
+                          color:
+                              isMe ? context.colorScheme.onPrimary : context.colorScheme.onBackground.withOpacity(0.5),
                           fontSize: 12,
                         ),
                       ),
@@ -208,9 +198,7 @@ class _ChatPageState extends State<ChatPage> {
               Container(
                 width: 4,
                 height: double.infinity,
-                color: isMe
-                    ? context.colorScheme.onPrimary
-                    : context.colorScheme.primary,
+                color: isMe ? context.colorScheme.onPrimary : context.colorScheme.primary,
               ),
               Expanded(
                 child: Padding(
@@ -221,9 +209,7 @@ class _ChatPageState extends State<ChatPage> {
                       Text(
                         'You',
                         style: TextStyle(
-                          color: isMe
-                              ? context.colorScheme.onPrimary
-                              : context.colorScheme.primary,
+                          color: isMe ? context.colorScheme.onPrimary : context.colorScheme.primary,
                           fontSize: 12,
                         ),
                         maxLines: 1,
@@ -233,9 +219,8 @@ class _ChatPageState extends State<ChatPage> {
                       Text(
                         'Okay, As Soon As Possible!',
                         style: TextStyle(
-                          color: isMe
-                              ? context.colorScheme.onPrimary.withOpacity(0.75)
-                              : context.colorScheme.onBackground,
+                          color:
+                              isMe ? context.colorScheme.onPrimary.withOpacity(0.75) : context.colorScheme.onBackground,
                           fontSize: 14,
                         ),
                         maxLines: 2,

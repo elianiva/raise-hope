@@ -8,6 +8,7 @@ import 'package:next_starter/presentation/components/buttons/box_icon_button.dar
 import 'package:next_starter/presentation/pages/mission/components/image_carousel.dart';
 import 'package:next_starter/presentation/pages/mission/components/mission_detail_information.dart';
 
+@RoutePage()
 class MissionDetailPage extends StatefulWidget {
   final String? heroTag;
 
@@ -35,8 +36,7 @@ class _MissionDetailPageState extends State<MissionDetailPage> {
             pinned: true,
             surfaceTintColor: Colors.transparent,
             title: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 22) +
-                  const EdgeInsets.only(bottom: 22),
+              padding: const EdgeInsets.symmetric(horizontal: 22) + const EdgeInsets.only(bottom: 22),
               child: SafeArea(
                 child: Entry.opacity(
                   delay: 300.milliseconds,
@@ -164,8 +164,7 @@ class _MissionDetailPageState extends State<MissionDetailPage> {
       children: [
         const CircleAvatar(
           radius: 20,
-          backgroundImage:
-              CachedNetworkImageProvider('https://picsum.photos/300/300'),
+          backgroundImage: CachedNetworkImageProvider('https://picsum.photos/300/300'),
         ),
         8.horizontalSpace,
         Column(

@@ -1,4 +1,5 @@
 import 'package:adaptive_sizer/adaptive_sizer.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:community_material_icon/community_material_icon.dart';
 import 'package:expandable_page_view/expandable_page_view.dart';
 import 'package:flutter/material.dart';
@@ -12,6 +13,7 @@ import 'package:next_starter/presentation/pages/register/institution/steps/regis
 import 'package:next_starter/presentation/pages/register/institution/steps/register_institution_personal_data_step%20copy.dart';
 import 'package:next_starter/presentation/theme/color_schemes.dart';
 
+@RoutePage()
 class RegisterInstitutionPage extends StatefulWidget {
   final bool isUsingCurrentUser;
 
@@ -21,8 +23,7 @@ class RegisterInstitutionPage extends StatefulWidget {
   });
 
   @override
-  State<RegisterInstitutionPage> createState() =>
-      _RegisterInstitutionPageState();
+  State<RegisterInstitutionPage> createState() => _RegisterInstitutionPageState();
 }
 
 class _RegisterInstitutionPageState extends State<RegisterInstitutionPage> {
@@ -110,8 +111,7 @@ class _RegisterInstitutionPageState extends State<RegisterInstitutionPage> {
                         textAlign: TextAlign.center,
                       ),
                       32.verticalSpace,
-                      BlocBuilder<RegisterInstitutionCubit,
-                          RegisterInstitutionState>(builder: (context, state) {
+                      BlocBuilder<RegisterInstitutionCubit, RegisterInstitutionState>(builder: (context, state) {
                         return CustomStepper(
                           steps: const [
                             CustomStepperStep(
@@ -137,8 +137,7 @@ class _RegisterInstitutionPageState extends State<RegisterInstitutionPage> {
               ),
               SliverFillRemaining(
                 hasScrollBody: false,
-                child: BlocListener<RegisterInstitutionCubit,
-                    RegisterInstitutionState>(
+                child: BlocListener<RegisterInstitutionCubit, RegisterInstitutionState>(
                   listener: _onRegisterStateChanges,
                   child: ExpandablePageView.builder(
                     controller: _pageController,
@@ -162,8 +161,7 @@ class _RegisterInstitutionPageState extends State<RegisterInstitutionPage> {
   }
 
   void _onRegisterStateChanges(context, RegisterInstitutionState state) {
-    if (_previousState != null &&
-        _mapStateToIndex(_previousState!) == _mapStateToIndex(state)) {
+    if (_previousState != null && _mapStateToIndex(_previousState!) == _mapStateToIndex(state)) {
       return;
     }
 

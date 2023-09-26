@@ -1,10 +1,13 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:next_starter/common/extensions/extensions.dart';
 import 'package:next_starter/injection.dart';
 import 'package:next_starter/presentation/routes/app_router.dart';
+import 'package:next_starter/presentation/routes/app_router.gr.dart';
 
 import 'components/chat_tile.dart';
 
+@RoutePage()
 class ChatListPage extends StatefulWidget {
   const ChatListPage({super.key});
 

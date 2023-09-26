@@ -8,6 +8,7 @@ import 'package:next_starter/common/extensions/extensions.dart';
 import 'package:next_starter/injection.dart';
 import 'package:next_starter/presentation/components/app_bar/simple_app_bar.dart';
 import 'package:next_starter/presentation/routes/app_router.dart';
+import 'package:next_starter/presentation/routes/app_router.gr.dart';
 
 import 'drawer_list_item.dart';
 
@@ -53,9 +54,9 @@ class AppDrawer extends StatelessWidget {
                                 ),
                               ),
                             )
-                          else 
-                          CircleAvatar(
-                            radius: 24,
+                          else
+                            CircleAvatar(
+                              radius: 24,
                               backgroundColor: context.colorScheme.background,
                               child: const Icon(Icons.person),
                             ),
@@ -73,8 +74,7 @@ class AppDrawer extends StatelessWidget {
                                 Text(
                                   snapshot.data?.email ?? "",
                                   style: context.textTheme.bodySmall!.copyWith(
-                                    color: context.colorScheme.onSurface
-                                        .withOpacity(
+                                    color: context.colorScheme.onSurface.withOpacity(
                                       0.75,
                                     ),
                                   ),
@@ -98,8 +98,7 @@ class AppDrawer extends StatelessWidget {
                   DrawerListItem(
                     label: 'Account',
                     icon: Icons.person_outline_rounded,
-                    onTap: () =>
-                        locator<AppRouter>().push(const ProfileRoute()),
+                    onTap: () => locator<AppRouter>().push(const ProfileRoute()),
                   ),
                   const DrawerListItem(
                     label: 'Request Help',

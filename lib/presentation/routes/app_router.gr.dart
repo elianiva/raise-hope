@@ -1,383 +1,305 @@
-// **************************************************************************
-// AutoRouteGenerator
-// **************************************************************************
-
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 // **************************************************************************
-// AutoRouteGenerator
+// AutoRouterGenerator
 // **************************************************************************
-//
+
 // ignore_for_file: type=lint
+// coverage:ignore-file
 
-part of 'app_router.dart';
+// ignore_for_file: no_leading_underscores_for_library_prefixes
+import 'package:auto_route/auto_route.dart' as _i17;
+import 'package:flutter/material.dart' as _i18;
+import 'package:next_starter/presentation/layouts/home/home_discussion_page.dart'
+    as _i5;
+import 'package:next_starter/presentation/layouts/home/home_main_page.dart'
+    as _i4;
+import 'package:next_starter/presentation/layouts/home/home_mission_page.dart'
+    as _i6;
+import 'package:next_starter/presentation/pages/discussion/chat_list_page.dart'
+    as _i1;
+import 'package:next_starter/presentation/pages/discussion/chat_page.dart'
+    as _i2;
+import 'package:next_starter/presentation/pages/hero_empty_router_page.dart'
+    as _i3;
+import 'package:next_starter/presentation/pages/home/home_page.dart' as _i7;
+import 'package:next_starter/presentation/pages/karma/main/karma_main_page.dart'
+    as _i8;
+import 'package:next_starter/presentation/pages/login/login_page.dart' as _i9;
+import 'package:next_starter/presentation/pages/mission/mission_detail_page.dart'
+    as _i10;
+import 'package:next_starter/presentation/pages/onboarding_page.dart' as _i11;
+import 'package:next_starter/presentation/pages/profile/profile_page.dart'
+    as _i12;
+import 'package:next_starter/presentation/pages/register/institution/register_institution_page.dart'
+    as _i14;
+import 'package:next_starter/presentation/pages/register/register_congratulation_page.dart'
+    as _i13;
+import 'package:next_starter/presentation/pages/register/volunteer/register_volunteer_page.dart'
+    as _i15;
+import 'package:next_starter/presentation/pages/splash_page.dart' as _i16;
 
-class _$AppRouter extends RootStackRouter {
-  _$AppRouter([GlobalKey<NavigatorState>? navigatorKey]) : super(navigatorKey);
+abstract class $AppRouter extends _i17.RootStackRouter {
+  $AppRouter({super.navigatorKey});
 
   @override
-  final Map<String, PageFactory> pagesMap = {
-    SplashRoute.name: (routeData) {
-      return MaterialPageX<dynamic>(
+  final Map<String, _i17.PageFactory> pagesMap = {
+    ChatListRoute.name: (routeData) {
+      return _i17.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const SplashPage(),
+        child: const _i1.ChatListPage(),
+      );
+    },
+    ChatRoute.name: (routeData) {
+      return _i17.AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const _i2.ChatPage(),
+      );
+    },
+    HeroEmptyRouterRoute.name: (routeData) {
+      return _i17.AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const _i3.HeroEmptyRouterPage(),
+      );
+    },
+    HomeDashboardRoute.name: (routeData) {
+      return _i17.AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const _i4.HomeDashboardPage(),
+      );
+    },
+    HomeDiscussionRoute.name: (routeData) {
+      return _i17.AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const _i5.HomeDiscussionPage(),
+      );
+    },
+    HomeMissionRoute.name: (routeData) {
+      return _i17.AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const _i6.HomeMissionPage(),
+      );
+    },
+    HomeRoute.name: (routeData) {
+      return _i17.AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const _i7.HomePage(),
+      );
+    },
+    KarmaMainRoute.name: (routeData) {
+      return _i17.AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const _i8.KarmaMainPage(),
+      );
+    },
+    LoginRoute.name: (routeData) {
+      final args = routeData.argsAs<LoginRouteArgs>(
+          orElse: () => const LoginRouteArgs());
+      return _i17.AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: _i9.LoginPage(
+          key: args.key,
+          isInstitution: args.isInstitution,
+        ),
+      );
+    },
+    MissionDetailRoute.name: (routeData) {
+      final args = routeData.argsAs<MissionDetailRouteArgs>(
+          orElse: () => const MissionDetailRouteArgs());
+      return _i17.AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: _i10.MissionDetailPage(
+          key: args.key,
+          heroTag: args.heroTag,
+        ),
       );
     },
     OnboardingRoute.name: (routeData) {
-      return MaterialPageX<dynamic>(
+      return _i17.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const OnboardingPage(),
+        child: const _i11.OnboardingPage(),
       );
     },
-    RegisterVolunteerRoute.name: (routeData) {
-      final args = routeData.argsAs<RegisterVolunteerRouteArgs>(
-          orElse: () => const RegisterVolunteerRouteArgs());
-      return MaterialPageX<dynamic>(
+    ProfileRoute.name: (routeData) {
+      return _i17.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: RegisterVolunteerPage(
+        child: const _i12.ProfilePage(),
+      );
+    },
+    RegisterCongratulationRoute.name: (routeData) {
+      final args = routeData.argsAs<RegisterCongratulationRouteArgs>(
+          orElse: () => const RegisterCongratulationRouteArgs());
+      return _i17.AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: _i13.RegisterCongratulationPage(
           key: args.key,
-          isUsingCurrentUser: args.isUsingCurrentUser,
+          isInstitution: args.isInstitution,
         ),
       );
     },
     RegisterInstitutionRoute.name: (routeData) {
       final args = routeData.argsAs<RegisterInstitutionRouteArgs>(
           orElse: () => const RegisterInstitutionRouteArgs());
-      return MaterialPageX<dynamic>(
+      return _i17.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: RegisterInstitutionPage(
+        child: _i14.RegisterInstitutionPage(
           key: args.key,
           isUsingCurrentUser: args.isUsingCurrentUser,
         ),
       );
     },
-    RegisterCongratulationRoute.name: (routeData) {
-      final args = routeData.argsAs<RegisterCongratulationRouteArgs>(
-          orElse: () => const RegisterCongratulationRouteArgs());
-      return MaterialPageX<dynamic>(
+    RegisterVolunteerRoute.name: (routeData) {
+      final args = routeData.argsAs<RegisterVolunteerRouteArgs>(
+          orElse: () => const RegisterVolunteerRouteArgs());
+      return _i17.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: RegisterCongratulationPage(
+        child: _i15.RegisterVolunteerPage(
           key: args.key,
-          isInstitution: args.isInstitution,
+          isUsingCurrentUser: args.isUsingCurrentUser,
         ),
       );
     },
-    HomeRoute.name: (routeData) {
-      return MaterialPageX<dynamic>(
+    SplashRoute.name: (routeData) {
+      return _i17.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const HomePage(),
-      );
-    },
-    LoginRoute.name: (routeData) {
-      final args = routeData.argsAs<LoginRouteArgs>(
-          orElse: () => const LoginRouteArgs());
-      return MaterialPageX<dynamic>(
-        routeData: routeData,
-        child: LoginPage(
-          key: args.key,
-          isInstitution: args.isInstitution,
-        ),
-      );
-    },
-    KarmaMainRoute.name: (routeData) {
-      return MaterialPageX<dynamic>(
-        routeData: routeData,
-        child: const KarmaMainPage(),
-      );
-    },
-    ProfileRoute.name: (routeData) {
-      return MaterialPageX<dynamic>(
-        routeData: routeData,
-        child: const ProfilePage(),
-      );
-    },
-    ChatRoute.name: (routeData) {
-      return MaterialPageX<dynamic>(
-        routeData: routeData,
-        child: const ChatPage(),
-      );
-    },
-    HomeMainRoute.name: (routeData) {
-      return MaterialPageX<dynamic>(
-        routeData: routeData,
-        child: const HeroEmptyRouterPage(),
-      );
-    },
-    HomeMissionRoute.name: (routeData) {
-      return MaterialPageX<dynamic>(
-        routeData: routeData,
-        child: const HomeMissionPage(),
-      );
-    },
-    HomeDiscussionRoute.name: (routeData) {
-      return MaterialPageX<dynamic>(
-        routeData: routeData,
-        child: const HeroEmptyRouterPage(),
-      );
-    },
-    HomeDashboardRoute.name: (routeData) {
-      return MaterialPageX<dynamic>(
-        routeData: routeData,
-        child: const HomeDashboardPage(),
-      );
-    },
-    MissionDetailRoute.name: (routeData) {
-      final args = routeData.argsAs<MissionDetailRouteArgs>(
-          orElse: () => const MissionDetailRouteArgs());
-      return MaterialPageX<dynamic>(
-        routeData: routeData,
-        child: MissionDetailPage(
-          key: args.key,
-          heroTag: args.heroTag,
-        ),
-      );
-    },
-    ChatListRoute.name: (routeData) {
-      return MaterialPageX<dynamic>(
-        routeData: routeData,
-        child: const ChatListPage(),
+        child: const _i16.SplashPage(),
       );
     },
   };
+}
 
-  @override
-  List<RouteConfig> get routes => [
-        RouteConfig(
-          SplashRoute.name,
-          path: '/',
-        ),
-        RouteConfig(
-          OnboardingRoute.name,
-          path: '/onboarding-page',
-        ),
-        RouteConfig(
-          RegisterVolunteerRoute.name,
-          path: '/register-volunteer-page',
-        ),
-        RouteConfig(
-          RegisterInstitutionRoute.name,
-          path: '/register-institution-page',
-        ),
-        RouteConfig(
-          RegisterCongratulationRoute.name,
-          path: '/register-congratulation-page',
-        ),
-        RouteConfig(
-          HomeRoute.name,
-          path: '/home-page',
-          children: [
-            RouteConfig(
-              HomeMainRoute.name,
-              path: '',
-              parent: HomeRoute.name,
-              children: [
-                RouteConfig(
-                  HomeDashboardRoute.name,
-                  path: '',
-                  parent: HomeMainRoute.name,
-                ),
-                RouteConfig(
-                  MissionDetailRoute.name,
-                  path: 'mission-detail-page',
-                  parent: HomeMainRoute.name,
-                ),
-              ],
-            ),
-            RouteConfig(
-              HomeMissionRoute.name,
-              path: 'home-mission-page',
-              parent: HomeRoute.name,
-            ),
-            RouteConfig(
-              HomeDiscussionRoute.name,
-              path: 'hero-empty-router-page',
-              parent: HomeRoute.name,
-              children: [
-                RouteConfig(
-                  ChatListRoute.name,
-                  path: '',
-                  parent: HomeDiscussionRoute.name,
-                )
-              ],
-            ),
-          ],
-        ),
-        RouteConfig(
-          LoginRoute.name,
-          path: '/login-page',
-        ),
-        RouteConfig(
-          KarmaMainRoute.name,
-          path: '/karma-main-page',
-        ),
-        RouteConfig(
-          ProfileRoute.name,
-          path: '/profile-page',
-        ),
-        RouteConfig(
+/// generated route for
+/// [_i1.ChatListPage]
+class ChatListRoute extends _i17.PageRouteInfo<void> {
+  const ChatListRoute({List<_i17.PageRouteInfo>? children})
+      : super(
+          ChatListRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'ChatListRoute';
+
+  static const _i17.PageInfo<void> page = _i17.PageInfo<void>(name);
+}
+
+/// generated route for
+/// [_i2.ChatPage]
+class ChatRoute extends _i17.PageRouteInfo<void> {
+  const ChatRoute({List<_i17.PageRouteInfo>? children})
+      : super(
           ChatRoute.name,
-          path: '/chat-page',
-        ),
-      ];
+          initialChildren: children,
+        );
+
+  static const String name = 'ChatRoute';
+
+  static const _i17.PageInfo<void> page = _i17.PageInfo<void>(name);
 }
 
 /// generated route for
-/// [SplashPage]
-class SplashRoute extends PageRouteInfo<void> {
-  const SplashRoute()
+/// [_i3.HeroEmptyRouterPage]
+class HeroEmptyRouterRoute extends _i17.PageRouteInfo<void> {
+  const HeroEmptyRouterRoute({List<_i17.PageRouteInfo>? children})
       : super(
-          SplashRoute.name,
-          path: '/',
+          HeroEmptyRouterRoute.name,
+          initialChildren: children,
         );
 
-  static const String name = 'SplashRoute';
+  static const String name = 'HeroEmptyRouterRoute';
+
+  static const _i17.PageInfo<void> page = _i17.PageInfo<void>(name);
 }
 
 /// generated route for
-/// [OnboardingPage]
-class OnboardingRoute extends PageRouteInfo<void> {
-  const OnboardingRoute()
+/// [_i4.HomeDashboardPage]
+class HomeDashboardRoute extends _i17.PageRouteInfo<void> {
+  const HomeDashboardRoute({List<_i17.PageRouteInfo>? children})
       : super(
-          OnboardingRoute.name,
-          path: '/onboarding-page',
+          HomeDashboardRoute.name,
+          initialChildren: children,
         );
 
-  static const String name = 'OnboardingRoute';
+  static const String name = 'HomeDashboardRoute';
+
+  static const _i17.PageInfo<void> page = _i17.PageInfo<void>(name);
 }
 
 /// generated route for
-/// [RegisterVolunteerPage]
-class RegisterVolunteerRoute extends PageRouteInfo<RegisterVolunteerRouteArgs> {
-  RegisterVolunteerRoute({
-    Key? key,
-    bool isUsingCurrentUser = false,
-  }) : super(
-          RegisterVolunteerRoute.name,
-          path: '/register-volunteer-page',
-          args: RegisterVolunteerRouteArgs(
-            key: key,
-            isUsingCurrentUser: isUsingCurrentUser,
-          ),
+/// [_i5.HomeDiscussionPage]
+class HomeDiscussionRoute extends _i17.PageRouteInfo<void> {
+  const HomeDiscussionRoute({List<_i17.PageRouteInfo>? children})
+      : super(
+          HomeDiscussionRoute.name,
+          initialChildren: children,
         );
 
-  static const String name = 'RegisterVolunteerRoute';
-}
+  static const String name = 'HomeDiscussionRoute';
 
-class RegisterVolunteerRouteArgs {
-  const RegisterVolunteerRouteArgs({
-    this.key,
-    this.isUsingCurrentUser = false,
-  });
-
-  final Key? key;
-
-  final bool isUsingCurrentUser;
-
-  @override
-  String toString() {
-    return 'RegisterVolunteerRouteArgs{key: $key, isUsingCurrentUser: $isUsingCurrentUser}';
-  }
+  static const _i17.PageInfo<void> page = _i17.PageInfo<void>(name);
 }
 
 /// generated route for
-/// [RegisterInstitutionPage]
-class RegisterInstitutionRoute
-    extends PageRouteInfo<RegisterInstitutionRouteArgs> {
-  RegisterInstitutionRoute({
-    Key? key,
-    bool isUsingCurrentUser = false,
-  }) : super(
-          RegisterInstitutionRoute.name,
-          path: '/register-institution-page',
-          args: RegisterInstitutionRouteArgs(
-            key: key,
-            isUsingCurrentUser: isUsingCurrentUser,
-          ),
+/// [_i6.HomeMissionPage]
+class HomeMissionRoute extends _i17.PageRouteInfo<void> {
+  const HomeMissionRoute({List<_i17.PageRouteInfo>? children})
+      : super(
+          HomeMissionRoute.name,
+          initialChildren: children,
         );
 
-  static const String name = 'RegisterInstitutionRoute';
-}
+  static const String name = 'HomeMissionRoute';
 
-class RegisterInstitutionRouteArgs {
-  const RegisterInstitutionRouteArgs({
-    this.key,
-    this.isUsingCurrentUser = false,
-  });
-
-  final Key? key;
-
-  final bool isUsingCurrentUser;
-
-  @override
-  String toString() {
-    return 'RegisterInstitutionRouteArgs{key: $key, isUsingCurrentUser: $isUsingCurrentUser}';
-  }
+  static const _i17.PageInfo<void> page = _i17.PageInfo<void>(name);
 }
 
 /// generated route for
-/// [RegisterCongratulationPage]
-class RegisterCongratulationRoute
-    extends PageRouteInfo<RegisterCongratulationRouteArgs> {
-  RegisterCongratulationRoute({
-    Key? key,
-    bool isInstitution = false,
-  }) : super(
-          RegisterCongratulationRoute.name,
-          path: '/register-congratulation-page',
-          args: RegisterCongratulationRouteArgs(
-            key: key,
-            isInstitution: isInstitution,
-          ),
-        );
-
-  static const String name = 'RegisterCongratulationRoute';
-}
-
-class RegisterCongratulationRouteArgs {
-  const RegisterCongratulationRouteArgs({
-    this.key,
-    this.isInstitution = false,
-  });
-
-  final Key? key;
-
-  final bool isInstitution;
-
-  @override
-  String toString() {
-    return 'RegisterCongratulationRouteArgs{key: $key, isInstitution: $isInstitution}';
-  }
-}
-
-/// generated route for
-/// [HomePage]
-class HomeRoute extends PageRouteInfo<void> {
-  const HomeRoute({List<PageRouteInfo>? children})
+/// [_i7.HomePage]
+class HomeRoute extends _i17.PageRouteInfo<void> {
+  const HomeRoute({List<_i17.PageRouteInfo>? children})
       : super(
           HomeRoute.name,
-          path: '/home-page',
           initialChildren: children,
         );
 
   static const String name = 'HomeRoute';
+
+  static const _i17.PageInfo<void> page = _i17.PageInfo<void>(name);
 }
 
 /// generated route for
-/// [LoginPage]
-class LoginRoute extends PageRouteInfo<LoginRouteArgs> {
+/// [_i8.KarmaMainPage]
+class KarmaMainRoute extends _i17.PageRouteInfo<void> {
+  const KarmaMainRoute({List<_i17.PageRouteInfo>? children})
+      : super(
+          KarmaMainRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'KarmaMainRoute';
+
+  static const _i17.PageInfo<void> page = _i17.PageInfo<void>(name);
+}
+
+/// generated route for
+/// [_i9.LoginPage]
+class LoginRoute extends _i17.PageRouteInfo<LoginRouteArgs> {
   LoginRoute({
-    Key? key,
+    _i18.Key? key,
     bool isInstitution = false,
+    List<_i17.PageRouteInfo>? children,
   }) : super(
           LoginRoute.name,
-          path: '/login-page',
           args: LoginRouteArgs(
             key: key,
             isInstitution: isInstitution,
           ),
+          initialChildren: children,
         );
 
   static const String name = 'LoginRoute';
+
+  static const _i17.PageInfo<LoginRouteArgs> page =
+      _i17.PageInfo<LoginRouteArgs>(name);
 }
 
 class LoginRouteArgs {
@@ -386,7 +308,7 @@ class LoginRouteArgs {
     this.isInstitution = false,
   });
 
-  final Key? key;
+  final _i18.Key? key;
 
   final bool isInstitution;
 
@@ -397,107 +319,25 @@ class LoginRouteArgs {
 }
 
 /// generated route for
-/// [KarmaMainPage]
-class KarmaMainRoute extends PageRouteInfo<void> {
-  const KarmaMainRoute()
-      : super(
-          KarmaMainRoute.name,
-          path: '/karma-main-page',
-        );
-
-  static const String name = 'KarmaMainRoute';
-}
-
-/// generated route for
-/// [ProfilePage]
-class ProfileRoute extends PageRouteInfo<void> {
-  const ProfileRoute()
-      : super(
-          ProfileRoute.name,
-          path: '/profile-page',
-        );
-
-  static const String name = 'ProfileRoute';
-}
-
-/// generated route for
-/// [ChatPage]
-class ChatRoute extends PageRouteInfo<void> {
-  const ChatRoute()
-      : super(
-          ChatRoute.name,
-          path: '/chat-page',
-        );
-
-  static const String name = 'ChatRoute';
-}
-
-/// generated route for
-/// [HeroEmptyRouterPage]
-class HomeMainRoute extends PageRouteInfo<void> {
-  const HomeMainRoute({List<PageRouteInfo>? children})
-      : super(
-          HomeMainRoute.name,
-          path: '',
-          initialChildren: children,
-        );
-
-  static const String name = 'HomeMainRoute';
-}
-
-/// generated route for
-/// [HomeMissionPage]
-class HomeMissionRoute extends PageRouteInfo<void> {
-  const HomeMissionRoute()
-      : super(
-          HomeMissionRoute.name,
-          path: 'home-mission-page',
-        );
-
-  static const String name = 'HomeMissionRoute';
-}
-
-/// generated route for
-/// [HeroEmptyRouterPage]
-class HomeDiscussionRoute extends PageRouteInfo<void> {
-  const HomeDiscussionRoute({List<PageRouteInfo>? children})
-      : super(
-          HomeDiscussionRoute.name,
-          path: 'hero-empty-router-page',
-          initialChildren: children,
-        );
-
-  static const String name = 'HomeDiscussionRoute';
-}
-
-/// generated route for
-/// [HomeDashboardPage]
-class HomeDashboardRoute extends PageRouteInfo<void> {
-  const HomeDashboardRoute()
-      : super(
-          HomeDashboardRoute.name,
-          path: '',
-        );
-
-  static const String name = 'HomeDashboardRoute';
-}
-
-/// generated route for
-/// [MissionDetailPage]
-class MissionDetailRoute extends PageRouteInfo<MissionDetailRouteArgs> {
+/// [_i10.MissionDetailPage]
+class MissionDetailRoute extends _i17.PageRouteInfo<MissionDetailRouteArgs> {
   MissionDetailRoute({
-    Key? key,
+    _i18.Key? key,
     String? heroTag,
+    List<_i17.PageRouteInfo>? children,
   }) : super(
           MissionDetailRoute.name,
-          path: 'mission-detail-page',
           args: MissionDetailRouteArgs(
             key: key,
             heroTag: heroTag,
           ),
+          initialChildren: children,
         );
 
   static const String name = 'MissionDetailRoute';
+
+  static const _i17.PageInfo<MissionDetailRouteArgs> page =
+      _i17.PageInfo<MissionDetailRouteArgs>(name);
 }
 
 class MissionDetailRouteArgs {
@@ -506,7 +346,7 @@ class MissionDetailRouteArgs {
     this.heroTag,
   });
 
-  final Key? key;
+  final _i18.Key? key;
 
   final String? heroTag;
 
@@ -517,13 +357,160 @@ class MissionDetailRouteArgs {
 }
 
 /// generated route for
-/// [ChatListPage]
-class ChatListRoute extends PageRouteInfo<void> {
-  const ChatListRoute()
+/// [_i11.OnboardingPage]
+class OnboardingRoute extends _i17.PageRouteInfo<void> {
+  const OnboardingRoute({List<_i17.PageRouteInfo>? children})
       : super(
-          ChatListRoute.name,
-          path: '',
+          OnboardingRoute.name,
+          initialChildren: children,
         );
 
-  static const String name = 'ChatListRoute';
+  static const String name = 'OnboardingRoute';
+
+  static const _i17.PageInfo<void> page = _i17.PageInfo<void>(name);
+}
+
+/// generated route for
+/// [_i12.ProfilePage]
+class ProfileRoute extends _i17.PageRouteInfo<void> {
+  const ProfileRoute({List<_i17.PageRouteInfo>? children})
+      : super(
+          ProfileRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'ProfileRoute';
+
+  static const _i17.PageInfo<void> page = _i17.PageInfo<void>(name);
+}
+
+/// generated route for
+/// [_i13.RegisterCongratulationPage]
+class RegisterCongratulationRoute
+    extends _i17.PageRouteInfo<RegisterCongratulationRouteArgs> {
+  RegisterCongratulationRoute({
+    _i18.Key? key,
+    bool isInstitution = false,
+    List<_i17.PageRouteInfo>? children,
+  }) : super(
+          RegisterCongratulationRoute.name,
+          args: RegisterCongratulationRouteArgs(
+            key: key,
+            isInstitution: isInstitution,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'RegisterCongratulationRoute';
+
+  static const _i17.PageInfo<RegisterCongratulationRouteArgs> page =
+      _i17.PageInfo<RegisterCongratulationRouteArgs>(name);
+}
+
+class RegisterCongratulationRouteArgs {
+  const RegisterCongratulationRouteArgs({
+    this.key,
+    this.isInstitution = false,
+  });
+
+  final _i18.Key? key;
+
+  final bool isInstitution;
+
+  @override
+  String toString() {
+    return 'RegisterCongratulationRouteArgs{key: $key, isInstitution: $isInstitution}';
+  }
+}
+
+/// generated route for
+/// [_i14.RegisterInstitutionPage]
+class RegisterInstitutionRoute
+    extends _i17.PageRouteInfo<RegisterInstitutionRouteArgs> {
+  RegisterInstitutionRoute({
+    _i18.Key? key,
+    bool isUsingCurrentUser = false,
+    List<_i17.PageRouteInfo>? children,
+  }) : super(
+          RegisterInstitutionRoute.name,
+          args: RegisterInstitutionRouteArgs(
+            key: key,
+            isUsingCurrentUser: isUsingCurrentUser,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'RegisterInstitutionRoute';
+
+  static const _i17.PageInfo<RegisterInstitutionRouteArgs> page =
+      _i17.PageInfo<RegisterInstitutionRouteArgs>(name);
+}
+
+class RegisterInstitutionRouteArgs {
+  const RegisterInstitutionRouteArgs({
+    this.key,
+    this.isUsingCurrentUser = false,
+  });
+
+  final _i18.Key? key;
+
+  final bool isUsingCurrentUser;
+
+  @override
+  String toString() {
+    return 'RegisterInstitutionRouteArgs{key: $key, isUsingCurrentUser: $isUsingCurrentUser}';
+  }
+}
+
+/// generated route for
+/// [_i15.RegisterVolunteerPage]
+class RegisterVolunteerRoute
+    extends _i17.PageRouteInfo<RegisterVolunteerRouteArgs> {
+  RegisterVolunteerRoute({
+    _i18.Key? key,
+    bool isUsingCurrentUser = false,
+    List<_i17.PageRouteInfo>? children,
+  }) : super(
+          RegisterVolunteerRoute.name,
+          args: RegisterVolunteerRouteArgs(
+            key: key,
+            isUsingCurrentUser: isUsingCurrentUser,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'RegisterVolunteerRoute';
+
+  static const _i17.PageInfo<RegisterVolunteerRouteArgs> page =
+      _i17.PageInfo<RegisterVolunteerRouteArgs>(name);
+}
+
+class RegisterVolunteerRouteArgs {
+  const RegisterVolunteerRouteArgs({
+    this.key,
+    this.isUsingCurrentUser = false,
+  });
+
+  final _i18.Key? key;
+
+  final bool isUsingCurrentUser;
+
+  @override
+  String toString() {
+    return 'RegisterVolunteerRouteArgs{key: $key, isUsingCurrentUser: $isUsingCurrentUser}';
+  }
+}
+
+/// generated route for
+/// [_i16.SplashPage]
+class SplashRoute extends _i17.PageRouteInfo<void> {
+  const SplashRoute({List<_i17.PageRouteInfo>? children})
+      : super(
+          SplashRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'SplashRoute';
+
+  static const _i17.PageInfo<void> page = _i17.PageInfo<void>(name);
 }

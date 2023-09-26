@@ -1,9 +1,10 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:next_starter/presentation/routes/app_router.dart';
+import 'package:next_starter/presentation/routes/app_router.gr.dart';
 
 import 'components/app_drawer.dart';
 
+@RoutePage()
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -20,7 +21,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return AutoTabsRouter.builder(
       routes: const [
-        HomeMainRoute(),
+        HomeDashboardRoute(),
         HomeMissionRoute(),
         HomeDiscussionRoute(),
       ],
@@ -36,8 +37,7 @@ class _HomePageState extends State<HomePage> {
             items: const [
               BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
               BottomNavigationBarItem(icon: Icon(Icons.book), label: "Mission"),
-              BottomNavigationBarItem(
-                  icon: Icon(Icons.people), label: "Discussion"),
+              BottomNavigationBarItem(icon: Icon(Icons.people), label: "Discussion"),
             ],
           ),
         );

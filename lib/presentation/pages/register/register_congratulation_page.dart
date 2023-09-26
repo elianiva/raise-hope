@@ -1,11 +1,14 @@
 import 'package:adaptive_sizer/adaptive_sizer.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:next_starter/common/extensions/extensions.dart';
 import 'package:next_starter/injection.dart';
 import 'package:next_starter/presentation/routes/app_router.dart';
+import 'package:next_starter/presentation/routes/app_router.gr.dart';
 import 'package:next_starter/presentation/theme/color_schemes.dart';
 
+@RoutePage()
 class RegisterCongratulationPage extends StatelessWidget {
   final bool isInstitution;
 
@@ -19,12 +22,8 @@ class RegisterCongratulationPage extends StatelessWidget {
     return Theme(
       data: context.theme.copyWith(
         colorScheme: context.colorScheme.copyWith(
-          primary: isInstitution
-              ? ColorSchemes.rawSecondaryColor
-              : context.colorScheme.primary,
-          secondary: isInstitution
-              ? context.colorScheme.primary
-              : context.colorScheme.secondary,
+          primary: isInstitution ? ColorSchemes.rawSecondaryColor : context.colorScheme.primary,
+          secondary: isInstitution ? context.colorScheme.primary : context.colorScheme.secondary,
         ),
       ),
       child: Builder(builder: _buildPage),
@@ -106,9 +105,7 @@ class RegisterCongratulationPage extends StatelessWidget {
               width: double.infinity,
               child: FilledButton(
                 child: Text(
-                  isInstitution
-                      ? 'Search for Volunteer!'
-                      : 'Start Your Mission!',
+                  isInstitution ? 'Search for Volunteer!' : 'Start Your Mission!',
                 ),
                 onPressed: () => locator<AppRouter>().pushAndPopUntil(
                   const HomeRoute(),

@@ -6,10 +6,12 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'package:next_starter/common/extensions/extensions.dart';
 import 'package:next_starter/injection.dart';
 import 'package:next_starter/presentation/routes/app_router.dart';
+import 'package:next_starter/presentation/routes/app_router.gr.dart';
 import 'package:next_starter/presentation/theme/color_schemes.dart';
 import 'package:next_starter/presentation/theme/theme.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 
+@RoutePage()
 class LoginPage extends StatefulWidget {
   final bool isInstitution;
 
@@ -85,8 +87,7 @@ class _LoginPageState extends State<LoginPage> {
                     ReactiveTextField(
                       formControlName: "email",
                       decoration: FormTheme.outlinedInput.copyWith(
-                        labelText:
-                            "${widget.isInstitution ? 'Institution ' : ''}Email",
+                        labelText: "${widget.isInstitution ? 'Institution ' : ''}Email",
                         hintText: 'example@gmail.com',
                       ),
                       keyboardType: TextInputType.emailAddress,
@@ -103,9 +104,7 @@ class _LoginPageState extends State<LoginPage> {
                             _isPasswordVisible = !_isPasswordVisible;
                           }),
                           child: Icon(
-                            _isPasswordVisible
-                                ? Icons.visibility
-                                : Icons.visibility_off,
+                            _isPasswordVisible ? Icons.visibility : Icons.visibility_off,
                           ),
                         ),
                       ),
@@ -113,9 +112,7 @@ class _LoginPageState extends State<LoginPage> {
                       autocorrect: false,
                       enableSuggestions: false,
                       textInputAction: TextInputAction.done,
-                      keyboardType: _isPasswordVisible
-                          ? TextInputType.visiblePassword
-                          : TextInputType.text,
+                      keyboardType: _isPasswordVisible ? TextInputType.visiblePassword : TextInputType.text,
                     ),
                   ],
                 ),
@@ -203,9 +200,7 @@ class _LoginPageState extends State<LoginPage> {
                   TextButton(
                     child: const Text("Register Now"),
                     onPressed: () {
-                      final destination = widget.isInstitution
-                          ? RegisterInstitutionRoute()
-                          : RegisterVolunteerRoute();
+                      final destination = widget.isInstitution ? RegisterInstitutionRoute() : RegisterVolunteerRoute();
 
                       locator<AppRouter>().push(destination as PageRouteInfo);
                     },

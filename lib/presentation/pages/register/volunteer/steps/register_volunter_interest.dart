@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:next_starter/common/extensions/context_extension.dart';
 import 'package:next_starter/injection.dart';
 import 'package:next_starter/presentation/routes/app_router.dart';
+import 'package:next_starter/presentation/routes/app_router.gr.dart';
 
 import '../cubit/register_volunteer_cubit.dart';
 
@@ -28,9 +29,7 @@ class RegisterVolunteerInterest extends StatefulWidget {
     InterestData(icon: CommunityMaterialIcons.human_child, title: 'Children'),
     InterestData(icon: CommunityMaterialIcons.heart_pulse, title: 'Medical'),
     InterestData(icon: CommunityMaterialIcons.home_flood, title: 'Disaster'),
-    InterestData(
-        icon: CommunityMaterialIcons.wheelchair_accessibility,
-        title: 'Disability'),
+    InterestData(icon: CommunityMaterialIcons.wheelchair_accessibility, title: 'Disability'),
     InterestData(icon: CommunityMaterialIcons.hand_heart, title: 'Humanity'),
     InterestData(icon: CommunityMaterialIcons.account_group, title: 'Orphange'),
     InterestData(icon: CommunityMaterialIcons.dog, title: 'Animal'),
@@ -38,8 +37,7 @@ class RegisterVolunteerInterest extends StatefulWidget {
   ];
 
   @override
-  State<RegisterVolunteerInterest> createState() =>
-      _RegisterVolunteerInterestState();
+  State<RegisterVolunteerInterest> createState() => _RegisterVolunteerInterestState();
 }
 
 class _RegisterVolunteerInterestState extends State<RegisterVolunteerInterest> {
@@ -55,8 +53,7 @@ class _RegisterVolunteerInterestState extends State<RegisterVolunteerInterest> {
 
     if (currentData.interest != null) {
       final interestsIndexes = currentData.interest!
-          .map((e) => RegisterVolunteerInterest.interests
-              .indexWhere((element) => element.title == e))
+          .map((e) => RegisterVolunteerInterest.interests.indexWhere((element) => element.title == e))
           .toList();
 
       _selectedInterest.addAll(interestsIndexes);
@@ -122,9 +119,7 @@ class _RegisterVolunteerInterestState extends State<RegisterVolunteerInterest> {
 
   Material _buildItem(int index) {
     return Material(
-      color: _selectedInterest.contains(index)
-          ? context.colorScheme.primary
-          : context.colorScheme.surface,
+      color: _selectedInterest.contains(index) ? context.colorScheme.primary : context.colorScheme.surface,
       borderRadius: BorderRadius.circular(8),
       child: InkWell(
         onTap: () => _onInterestTap(index),
@@ -176,9 +171,7 @@ class _RegisterVolunteerInterestState extends State<RegisterVolunteerInterest> {
   RegisterVolunteerCubit _save() {
     return context.read<RegisterVolunteerCubit>()
       ..updateInterest(
-        interest: _selectedInterest
-            .map((e) => RegisterVolunteerInterest.interests[e].title)
-            .toList(),
+        interest: _selectedInterest.map((e) => RegisterVolunteerInterest.interests[e].title).toList(),
       );
   }
 

@@ -11,18 +11,17 @@ import 'package:next_starter/common/extensions/extensions.dart';
 import 'package:next_starter/injection.dart';
 import 'package:next_starter/presentation/pages/register/institution/cubit/register_institution_cubit.dart';
 import 'package:next_starter/presentation/routes/app_router.dart';
+import 'package:next_starter/presentation/routes/app_router.gr.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 
 class RegisterInstitutionBackgroundStep extends StatefulWidget {
   const RegisterInstitutionBackgroundStep({super.key});
 
   @override
-  State<RegisterInstitutionBackgroundStep> createState() =>
-      _RegisterVolunterPersonalDataStepState();
+  State<RegisterInstitutionBackgroundStep> createState() => _RegisterVolunterPersonalDataStepState();
 }
 
-class _RegisterVolunterPersonalDataStepState
-    extends State<RegisterInstitutionBackgroundStep> {
+class _RegisterVolunterPersonalDataStepState extends State<RegisterInstitutionBackgroundStep> {
   late final _form = FormGroup({
     'organizationType': FormControl<OrganizationType>(validators: [
       Validators.required,
@@ -31,11 +30,10 @@ class _RegisterVolunterPersonalDataStepState
       Validators.required,
     ]),
     'typeOfHelp': FormGroup({
-      for (final typeOfHelp in TypeOfHelp.values)
-        typeOfHelp.name: FormControl<bool>(value: false),
+      for (final typeOfHelp in TypeOfHelp.values) typeOfHelp.name: FormControl<bool>(value: false),
     }, validators: [
       // required at least one type of help
-      _mustSelectAtleastOne,
+      const MustSelectAtLeastOneValidator(),
     ]),
   });
 
@@ -56,8 +54,7 @@ class _RegisterVolunterPersonalDataStepState
       _form.control('typeOfHelp.${typeOfHelp.name}').value = true;
     }
 
-    _formValueChangesSubscription =
-        _form.valueChanges.listen((value) => _save());
+    _formValueChangesSubscription = _form.valueChanges.listen((value) => _save());
   }
 
   @override
@@ -208,19 +205,6 @@ class _RegisterVolunterPersonalDataStepState
     );
   }
 
-  Map<String, dynamic>? _mustSelectAtleastOne(control) {
-    final form = control as FormGroup;
-
-    final selectedTypeOfHelp = TypeOfHelp.values
-        .map((e) => form.control(e.name))
-        .where((control) => control.value == true)
-        .toList();
-
-    return {
-      if (selectedTypeOfHelp.isEmpty) 'requiredTrue': true,
-    };
-  }
-
   void _submit() async {
     _save();
 
@@ -254,5 +238,14 @@ class _RegisterVolunterPersonalDataStepState
         organizationSize: _form.control('organizationSize').value,
         typeOfHelp: typeOfHelps,
       );
+  }
+}
+
+class MustSelectAtLeastOneValidator extends Validator<dynamic> {
+  const MustSelectAtLeastOneValidator() : super();
+
+  @override
+  Map<String, dynamic>? validate(AbstractControl<dynamic> control) {
+    return control.isNotNull && control.value is bool && control.value == true ? null : {'requiredTrue': true};
   }
 }

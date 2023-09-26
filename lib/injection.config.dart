@@ -4,6 +4,10 @@
 // InjectableConfigGenerator
 // **************************************************************************
 
+// ignore_for_file: unnecessary_lambdas
+// ignore_for_file: lines_longer_than_80_chars
+// coverage:ignore-file
+
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:cloud_firestore/cloud_firestore.dart' as _i8;
 import 'package:cloud_functions/cloud_functions.dart' as _i9;
@@ -18,21 +22,18 @@ import 'package:image_picker/image_picker.dart' as _i12;
 import 'package:injectable/injectable.dart' as _i2;
 import 'package:internet_connection_checker/internet_connection_checker.dart'
     as _i14;
-import 'package:next_starter/common/network/network_info.dart' as _i15;
-import 'package:next_starter/common/utils/image_resize.dart' as _i13;
-import 'package:next_starter/data/datasources/session/session_source.dart'
-    as _i16;
-import 'package:next_starter/data/repositories/auth_repository.dart' as _i17;
-import 'package:next_starter/presentation/pages/register/institution/cubit/register_institution_cubit.dart'
-    as _i18;
-import 'package:next_starter/presentation/pages/register/volunteer/cubit/register_volunteer_cubit.dart'
-    as _i19;
-import 'package:next_starter/presentation/routes/app_router.dart' as _i3;
 
+import 'common/network/network_info.dart' as _i15;
+import 'common/utils/image_resize.dart' as _i13;
 import 'data/datasources/network/network_source.dart' as _i20;
+import 'data/datasources/session/session_source.dart' as _i16;
+import 'data/repositories/auth_repository.dart' as _i17;
+import 'presentation/pages/register/institution/cubit/register_institution_cubit.dart'
+    as _i18;
+import 'presentation/pages/register/volunteer/cubit/register_volunteer_cubit.dart'
+    as _i19;
+import 'presentation/routes/app_router.dart' as _i3;
 
-// ignore_for_file: unnecessary_lambdas
-// ignore_for_file: lines_longer_than_80_chars
 // initializes the registration of main-scope dependencies inside of GetIt
 _i1.GetIt $initGetIt(
   _i1.GetIt getIt, {

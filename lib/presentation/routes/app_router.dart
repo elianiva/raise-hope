@@ -1,59 +1,40 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:flutter/material.dart';
 import 'package:injectable/injectable.dart';
-import 'package:next_starter/presentation/layouts/home/home_main_page.dart';
-import 'package:next_starter/presentation/layouts/home/home_mission_page.dart';
-import 'package:next_starter/presentation/pages/discussion/chat_list_page.dart';
-import 'package:next_starter/presentation/pages/discussion/chat_page.dart';
-import 'package:next_starter/presentation/pages/hero_empty_router_page.dart';
-import 'package:next_starter/presentation/pages/home/home_page.dart';
-import 'package:next_starter/presentation/pages/karma/main/karma_main_page.dart';
-import 'package:next_starter/presentation/pages/login/login_page.dart';
-import 'package:next_starter/presentation/pages/mission/mission_detail_page.dart';
-import 'package:next_starter/presentation/pages/onboarding_page.dart';
-import 'package:next_starter/presentation/pages/profile/profile_page.dart';
-import 'package:next_starter/presentation/pages/register/institution/register_institution_page.dart';
-import 'package:next_starter/presentation/pages/register/register_congratulation_page.dart';
-import 'package:next_starter/presentation/pages/register/volunteer/register_volunteer_page.dart';
-import 'package:next_starter/presentation/pages/splash_page.dart';
-
-part 'app_router.gr.dart';
+import 'package:next_starter/presentation/routes/app_router.gr.dart';
 
 @LazySingleton()
-@MaterialAutoRouter(
-  replaceInRouteName: 'Page|Screen,Route',
-  routes: [
-    AutoRoute(page: SplashPage, initial: true),
-    AutoRoute(page: OnboardingPage),
-    AutoRoute(page: RegisterVolunteerPage),
-    AutoRoute(page: RegisterInstitutionPage),
-    AutoRoute(page: RegisterCongratulationPage),
-    AutoRoute(
-      page: HomePage,
-      children: [
+@AutoRouterConfig()
+class AppRouter extends $AppRouter {
+  @override
+  List<AutoRoute> get routes => [
+        AutoRoute(page: SplashRoute.page, initial: true),
+        AutoRoute(page: OnboardingRoute.page),
+        AutoRoute(page: RegisterVolunteerRoute.page),
+        AutoRoute(page: RegisterInstitutionRoute.page),
+        AutoRoute(page: RegisterCongratulationRoute.page),
         AutoRoute(
-          page: HeroEmptyRouterPage,
-          name: 'HomeMainRoute',
-          initial: true,
+          page: HomeRoute.page,
           children: [
-            AutoRoute(page: HomeDashboardPage, initial: true),
-            AutoRoute(page: MissionDetailPage),
+            AutoRoute(
+              page: HeroEmptyRouterRoute.page,
+              initial: true,
+              children: [
+                AutoRoute(page: HomeDashboardRoute.page, initial: true),
+                AutoRoute(page: MissionDetailRoute.page),
+              ],
+            ),
+            AutoRoute(page: HomeMissionRoute.page),
+            AutoRoute(
+              page: HeroEmptyRouterRoute.page,
+              children: [
+                AutoRoute(page: ChatListRoute.page, initial: true),
+              ],
+            ),
           ],
         ),
-        AutoRoute(page: HomeMissionPage),
-        AutoRoute(
-          page: HeroEmptyRouterPage,
-          name: 'HomeDiscussionRoute',
-          children: [
-            AutoRoute(page: ChatListPage, initial: true),
-          ],
-        ),
-      ],
-    ),
-    AutoRoute(page: LoginPage),
-    AutoRoute(page: KarmaMainPage),
-    AutoRoute(page: ProfilePage),
-    AutoRoute(page: ChatPage),
-  ],
-)
-class AppRouter extends _$AppRouter {}
+        AutoRoute(page: LoginRoute.page),
+        AutoRoute(page: KarmaMainRoute.page),
+        AutoRoute(page: ProfileRoute.page),
+        AutoRoute(page: ChatRoute.page),
+      ];
+}

@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:adaptive_sizer/adaptive_sizer.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:next_starter/common/enums/type_of_help.dart';
 import 'package:next_starter/common/extensions/extensions.dart';
@@ -8,9 +9,11 @@ import 'package:next_starter/injection.dart';
 import 'package:next_starter/presentation/components/card/custom_card.dart';
 import 'package:next_starter/presentation/components/card/karma_card.dart';
 import 'package:next_starter/presentation/components/card/mission_card.dart';
+import 'package:next_starter/presentation/routes/app_router.gr.dart';
 
 import '../../routes/app_router.dart';
 
+@RoutePage()
 class HomeDashboardPage extends StatefulWidget {
   const HomeDashboardPage({super.key});
 
@@ -55,9 +58,7 @@ class _HomeDashboardPageState extends State<HomeDashboardPage> {
               heroTag: 'mission_${index}_${Random().nextInt(10000)}',
               onTap: (tag) {
                 locator<AppRouter>().push(
-                  MissionDetailRoute(
-                    heroTag: tag,
-                  ),
+                  MissionDetailRoute(heroTag: tag),
                 );
               },
             ),
@@ -87,17 +88,11 @@ class _HomeDashboardPageState extends State<HomeDashboardPage> {
               ),
 
               side: BorderSide(
-                color: isSelected
-                    ? context.colorScheme.primary
-                    : context.colorScheme.onBackground.withOpacity(0.2),
+                color: isSelected ? context.colorScheme.primary : context.colorScheme.onBackground.withOpacity(0.2),
               ),
-              backgroundColor: isSelected
-                  ? context.colorScheme.primary
-                  : context.colorScheme.background,
+              backgroundColor: isSelected ? context.colorScheme.primary : context.colorScheme.background,
               labelStyle: context.textTheme.bodySmall!.copyWith(
-                color: isSelected
-                    ? context.colorScheme.onPrimary
-                    : context.colorScheme.primary,
+                color: isSelected ? context.colorScheme.onPrimary : context.colorScheme.primary,
                 fontWeight: FontWeight.w700,
               ),
             );
@@ -215,18 +210,17 @@ class _HomeDashboardPageState extends State<HomeDashboardPage> {
       actions: [
         IconButton(
           onPressed: () {},
-          icon: Icon(Icons.notifications_rounded,
-              color: context.colorScheme.onPrimary),
+          icon: Icon(Icons.notifications_rounded, color: context.colorScheme.onPrimary),
         )
       ],
       pinned: true,
-      flexibleSpace: FlexibleSpaceBar(
+      flexibleSpace: const FlexibleSpaceBar(
         collapseMode: CollapseMode.parallax,
         centerTitle: true,
         expandedTitleScale: 1,
-        titlePadding: const EdgeInsets.only(left: 16, right: 16, bottom: 48),
+        titlePadding: EdgeInsets.only(left: 16, right: 16, bottom: 48),
         background: Stack(
-          children: const [
+          children: [
             Positioned.fill(
               child: Image(
                 image: AssetImage('assets/images/home_app_bar_bg.jpg'),
