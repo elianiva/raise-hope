@@ -5,18 +5,17 @@ import 'package:dropdown_search/dropdown_search.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:next_starter/application/country_state_city/city_provider.dart';
-import 'package:next_starter/application/country_state_city/country_provider.dart';
-import 'package:next_starter/application/country_state_city/province_provider.dart';
-import 'package:next_starter/data/models/countrystatecity/city.dart';
-import 'package:next_starter/data/models/countrystatecity/country.dart';
-import 'package:next_starter/data/models/countrystatecity/province.dart';
-import 'package:next_starter/presentation/pages/register/institution/cubit/register_institution_cubit.dart';
-import 'package:next_starter/presentation/pages/register/institution/provider/selected_location_provider.dart';
+import 'package:raise_hope/application/country_state_city/city_provider.dart';
+import 'package:raise_hope/application/country_state_city/country_provider.dart';
+import 'package:raise_hope/application/country_state_city/province_provider.dart';
+import 'package:raise_hope/data/models/countrystatecity/city.dart';
+import 'package:raise_hope/data/models/countrystatecity/country.dart';
+import 'package:raise_hope/data/models/countrystatecity/province.dart';
+import 'package:raise_hope/presentation/pages/register/institution/cubit/register_institution_cubit.dart';
+import 'package:raise_hope/presentation/pages/register/institution/provider/selected_location_provider.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 
-class RegisterInstitutiondAddressInformationStep
-    extends ConsumerStatefulWidget {
+class RegisterInstitutiondAddressInformationStep extends ConsumerStatefulWidget {
   const RegisterInstitutiondAddressInformationStep({super.key});
 
   @override
@@ -24,8 +23,7 @@ class RegisterInstitutiondAddressInformationStep
       _RegisterVolunterdAddressInformationStepState();
 }
 
-class _RegisterVolunterdAddressInformationStepState
-    extends ConsumerState<RegisterInstitutiondAddressInformationStep> {
+class _RegisterVolunterdAddressInformationStepState extends ConsumerState<RegisterInstitutiondAddressInformationStep> {
   final _form = FormGroup({
     'country': FormControl<Country>(validators: [Validators.required]),
     'province': FormControl<Province>(
@@ -65,20 +63,11 @@ class _RegisterVolunterdAddressInformationStepState
   void _listenValueChangees() {
     final notifier = ref.read(selectedLocationProvider.notifier);
 
-    _countrySubscription = _form
-        .control('country')
-        .valueChanges
-        .listen((country) => notifier.setCountry(country));
+    _countrySubscription = _form.control('country').valueChanges.listen((country) => notifier.setCountry(country));
 
-    _provinceSubscription = _form
-        .control('province')
-        .valueChanges
-        .listen((province) => notifier.setProvince(province));
+    _provinceSubscription = _form.control('province').valueChanges.listen((province) => notifier.setProvince(province));
 
-    _citySubscription = _form
-        .control('city')
-        .valueChanges
-        .listen((city) => notifier.setCity(city));
+    _citySubscription = _form.control('city').valueChanges.listen((city) => notifier.setCity(city));
   }
 
   @override
@@ -116,11 +105,8 @@ class _RegisterVolunterdAddressInformationStepState
 
               return DropdownSearch<Country>(
                 selectedItem: _form.control('country').value,
-                asyncItems: (String filter) async => countries
-                    .where((country) => country.name
-                        .toLowerCase()
-                        .contains(filter.toLowerCase()))
-                    .toList(),
+                asyncItems: (String filter) async =>
+                    countries.where((country) => country.name.toLowerCase().contains(filter.toLowerCase())).toList(),
                 itemAsString: (Country? u) => u?.name ?? '-',
                 onChanged: (value) => _form.control('country').value = value,
                 popupProps: const PopupProps.menu(
@@ -162,11 +148,8 @@ class _RegisterVolunterdAddressInformationStepState
               return DropdownSearch<Province>(
                 enabled: country != null,
                 selectedItem: _form.control('province').value,
-                asyncItems: (String filter) async => provinces
-                    .where((province) => province.name
-                        .toLowerCase()
-                        .contains(filter.toLowerCase()))
-                    .toList(),
+                asyncItems: (String filter) async =>
+                    provinces.where((province) => province.name.toLowerCase().contains(filter.toLowerCase())).toList(),
                 itemAsString: (Province? u) => u?.name ?? '-',
                 onChanged: (value) => _form.control('province').value = value,
                 popupProps: const PopupProps.menu(
@@ -215,10 +198,8 @@ class _RegisterVolunterdAddressInformationStepState
               return DropdownSearch<City>(
                 enabled: country != null && province != null,
                 selectedItem: _form.control('city').value,
-                asyncItems: (String filter) async => cities
-                    .where((city) =>
-                        city.name.toLowerCase().contains(filter.toLowerCase()))
-                    .toList(),
+                asyncItems: (String filter) async =>
+                    cities.where((city) => city.name.toLowerCase().contains(filter.toLowerCase())).toList(),
                 itemAsString: (City? u) => u?.name ?? '-',
                 onChanged: (value) => _form.control('city').value = value,
                 popupProps: const PopupProps.menu(

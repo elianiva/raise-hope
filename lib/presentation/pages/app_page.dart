@@ -3,9 +3,9 @@ import 'package:auto_route/auto_route.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:next_starter/injection.dart';
-import 'package:next_starter/presentation/routes/app_router.dart';
-import 'package:next_starter/presentation/theme/theme.dart';
+import 'package:raise_hope/injection.dart';
+import 'package:raise_hope/presentation/routes/app_router.dart';
+import 'package:raise_hope/presentation/theme/theme.dart';
 
 class AppPage extends StatefulWidget {
   const AppPage({super.key});
@@ -36,8 +36,7 @@ class _AppPageState extends State<AppPage> {
           routerDelegate: _appRouter.delegate(
             navigatorObservers: () => [
               MyObserver(),
-              FirebaseAnalyticsObserver(
-                  analytics: locator<FirebaseAnalytics>()),
+              FirebaseAnalyticsObserver(analytics: locator<FirebaseAnalytics>()),
             ],
           ),
         ),

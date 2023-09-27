@@ -1,6 +1,6 @@
 import 'package:adaptive_sizer/adaptive_sizer.dart';
 import 'package:flutter/material.dart';
-import 'package:next_starter/common/extensions/extensions.dart';
+import 'package:raise_hope/common/extensions/extensions.dart';
 
 class CustomStepperStep {
   final IconData icon;
@@ -61,8 +61,7 @@ class _CustomStepperState extends State<CustomStepper> {
                       width: double.infinity,
                       height: 6,
                       decoration: BoxDecoration(
-                        color:
-                            context.colorScheme.onBackground.withOpacity(0.2),
+                        color: context.colorScheme.onBackground.withOpacity(0.2),
                         borderRadius: BorderRadius.circular(3),
                       ),
                     ),
@@ -78,8 +77,7 @@ class _CustomStepperState extends State<CustomStepper> {
                           width: constraint.maxWidth * value,
                           height: 6,
                           decoration: BoxDecoration(
-                            color: widget.activeColor ??
-                                context.colorScheme.primary,
+                            color: widget.activeColor ?? context.colorScheme.primary,
                             borderRadius: BorderRadius.circular(3),
                           ),
                         ),
@@ -99,8 +97,7 @@ class _CustomStepperState extends State<CustomStepper> {
     final isCurrentStep = index == widget.currentStep;
     final isCompleted = index < widget.currentStep;
 
-    final totalAnimationDuration =
-        widget.animationDuration + widget.iconAnimationDuration;
+    final totalAnimationDuration = widget.animationDuration + widget.iconAnimationDuration;
 
     final intervalDelay = widget.animationDuration / totalAnimationDuration;
 

@@ -2,7 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:entry/entry.dart';
 import 'package:flutter/material.dart';
 import 'package:loop_page_view/loop_page_view.dart';
-import 'package:next_starter/common/extensions/extensions.dart';
+import 'package:raise_hope/common/extensions/extensions.dart';
 
 class ImageCarousel extends StatefulWidget {
   final String? heroTag;
@@ -83,9 +83,7 @@ class _ImageCarouselState extends State<ImageCarousel> {
                   height: 8,
                   width: 8,
                   decoration: BoxDecoration(
-                    color: _currentPage == index
-                        ? context.colorScheme.primary
-                        : context.colorScheme.background,
+                    color: _currentPage == index ? context.colorScheme.primary : context.colorScheme.background,
                     borderRadius: BorderRadius.circular(4),
                   ),
                 ),

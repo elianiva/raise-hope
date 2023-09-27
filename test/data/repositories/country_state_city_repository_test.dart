@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:next_starter/data/repositories/country_state_city_repository.dart';
+import 'package:raise_hope/data/repositories/country_state_city_repository.dart';
 
 void main() {
   setUpAll(() async {

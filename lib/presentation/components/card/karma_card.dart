@@ -1,8 +1,8 @@
 import 'package:adaptive_sizer/adaptive_sizer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:next_starter/common/extensions/extensions.dart';
-import 'package:next_starter/presentation/components/progress_bar/rounded_progress_bar.dart';
+import 'package:raise_hope/common/extensions/extensions.dart';
+import 'package:raise_hope/presentation/components/progress_bar/rounded_progress_bar.dart';
 
 import 'custom_card.dart';
 

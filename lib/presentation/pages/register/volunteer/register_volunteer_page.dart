@@ -3,12 +3,12 @@ import 'package:auto_route/auto_route.dart';
 import 'package:expandable_page_view/expandable_page_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:next_starter/common/extensions/extensions.dart';
-import 'package:next_starter/injection.dart';
-import 'package:next_starter/presentation/pages/register/components/custom_stepper.dart';
-import 'package:next_starter/presentation/pages/register/volunteer/steps/register_volunter_availability.dart';
-import 'package:next_starter/presentation/pages/register/volunteer/steps/register_volunter_interest.dart';
-import 'package:next_starter/presentation/pages/register/volunteer/steps/register_volunter_personal_data_step.dart';
+import 'package:raise_hope/common/extensions/extensions.dart';
+import 'package:raise_hope/injection.dart';
+import 'package:raise_hope/presentation/pages/register/components/custom_stepper.dart';
+import 'package:raise_hope/presentation/pages/register/volunteer/steps/register_volunter_availability.dart';
+import 'package:raise_hope/presentation/pages/register/volunteer/steps/register_volunter_interest.dart';
+import 'package:raise_hope/presentation/pages/register/volunteer/steps/register_volunter_personal_data_step.dart';
 
 import 'cubit/register_volunteer_cubit.dart';
 

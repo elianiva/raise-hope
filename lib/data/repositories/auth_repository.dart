@@ -2,10 +2,10 @@ import 'package:cloud_functions/cloud_functions.dart';
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:injectable/injectable.dart';
-import 'package:next_starter/common/enums/organization_types.dart';
-import 'package:next_starter/common/errors/api_exception.dart';
-import 'package:next_starter/presentation/pages/register/institution/cubit/register_institution_cubit.dart';
-import 'package:next_starter/presentation/pages/register/volunteer/cubit/register_volunteer_cubit.dart';
+import 'package:raise_hope/common/enums/organization_types.dart';
+import 'package:raise_hope/common/errors/api_exception.dart';
+import 'package:raise_hope/presentation/pages/register/institution/cubit/register_institution_cubit.dart';
+import 'package:raise_hope/presentation/pages/register/volunteer/cubit/register_volunteer_cubit.dart';
 
 @injectable
 class AuthRepository {
@@ -95,8 +95,7 @@ class AuthRepository {
     RegisterVolunteerData data,
   ) async {
     try {
-      final callable =
-          _functions.httpsCallable('registerVolunteerWithCurrentUser');
+      final callable = _functions.httpsCallable('registerVolunteerWithCurrentUser');
 
       final payload = {
         'name': data.fullName,
@@ -127,8 +126,7 @@ class AuthRepository {
     RegisterInstitutionData data,
   ) async {
     try {
-      final callable =
-          _functions.httpsCallable('registerInstitutionWithCurrentUser');
+      final callable = _functions.httpsCallable('registerInstitutionWithCurrentUser');
 
       final payload = {
         'name': data.name,

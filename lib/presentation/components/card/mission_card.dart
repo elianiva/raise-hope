@@ -2,7 +2,7 @@ import 'package:adaptive_sizer/adaptive_sizer.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:next_starter/common/extensions/extensions.dart';
+import 'package:raise_hope/common/extensions/extensions.dart';
 
 import 'custom_card.dart';
 
@@ -89,8 +89,7 @@ class MissionCard extends StatelessWidget {
                     Text(
                       '250+ Karma',
                       style: context.textTheme.bodySmall!.copyWith(
-                        color:
-                            context.colorScheme.onBackground.withOpacity(0.6),
+                        color: context.colorScheme.onBackground.withOpacity(0.6),
                       ),
                     ),
                   ],

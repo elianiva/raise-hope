@@ -2,7 +2,7 @@ import 'package:adaptive_sizer/adaptive_sizer.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:next_starter/presentation/theme/theme.dart';
+import 'package:raise_hope/presentation/theme/theme.dart';
 
 class KarmaPointsCard extends StatefulWidget {
   const KarmaPointsCard({super.key, required this.title, required this.level});

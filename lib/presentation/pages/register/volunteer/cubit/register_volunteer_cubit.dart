@@ -2,9 +2,9 @@ import 'package:bloc/bloc.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
-import 'package:next_starter/common/enums/name_of_time_day.dart';
-import 'package:next_starter/common/errors/api_exception.dart';
-import 'package:next_starter/data/repositories/auth_repository.dart';
+import 'package:raise_hope/common/enums/name_of_time_day.dart';
+import 'package:raise_hope/common/errors/api_exception.dart';
+import 'package:raise_hope/data/repositories/auth_repository.dart';
 
 part 'register_volunteer_cubit.freezed.dart';
 part 'register_volunteer_state.dart';

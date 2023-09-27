@@ -1,8 +1,8 @@
 import 'package:adaptive_sizer/adaptive_sizer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:next_starter/common/enums/name_of_time_day.dart';
-import 'package:next_starter/common/extensions/extensions.dart';
+import 'package:raise_hope/common/enums/name_of_time_day.dart';
+import 'package:raise_hope/common/extensions/extensions.dart';
 
 import '../cubit/register_volunteer_cubit.dart';
 
@@ -20,12 +20,10 @@ class RegisterVolunteerAvailability extends StatefulWidget {
   ];
 
   @override
-  State<RegisterVolunteerAvailability> createState() =>
-      _RegisterVolunteerAvailabilityState();
+  State<RegisterVolunteerAvailability> createState() => _RegisterVolunteerAvailabilityState();
 }
 
-class _RegisterVolunteerAvailabilityState
-    extends State<RegisterVolunteerAvailability> {
+class _RegisterVolunteerAvailabilityState extends State<RegisterVolunteerAvailability> {
   final List<int> _selectedDays = [];
   final List<NameOfTimeDay> _selectedTime = [];
 
@@ -40,10 +38,8 @@ class _RegisterVolunteerAvailabilityState
     }
 
     if (currentData.preferedTime != null) {
-      final timeIndexes = currentData.preferedTime!
-          .map(
-              (e) => NameOfTimeDay.values.indexWhere((element) => element == e))
-          .toList();
+      final timeIndexes =
+          currentData.preferedTime!.map((e) => NameOfTimeDay.values.indexWhere((element) => element == e)).toList();
 
       _selectedTime.addAll(timeIndexes.map((e) => NameOfTimeDay.values[e]));
     }
@@ -119,9 +115,7 @@ class _RegisterVolunteerAvailabilityState
               16.horizontalSpace,
               Expanded(
                 child: FilledButton(
-                  onPressed: _selectedDays.isEmpty || _selectedTime.isEmpty
-                      ? null
-                      : () => _save().nextStep(),
+                  onPressed: _selectedDays.isEmpty || _selectedTime.isEmpty ? null : () => _save().nextStep(),
                   child: const Text("Next"),
                 ),
               ),
@@ -145,17 +139,11 @@ class _RegisterVolunteerAvailabilityState
         borderRadius: BorderRadius.circular(999),
       ),
       side: BorderSide(
-        color: isSelected
-            ? context.colorScheme.primary
-            : context.colorScheme.onBackground.withOpacity(0.2),
+        color: isSelected ? context.colorScheme.primary : context.colorScheme.onBackground.withOpacity(0.2),
       ),
-      backgroundColor: isSelected
-          ? context.colorScheme.primary
-          : context.colorScheme.background,
+      backgroundColor: isSelected ? context.colorScheme.primary : context.colorScheme.background,
       labelStyle: context.textTheme.bodySmall!.copyWith(
-        color: isSelected
-            ? context.colorScheme.onPrimary
-            : context.colorScheme.primary,
+        color: isSelected ? context.colorScheme.onPrimary : context.colorScheme.primary,
         fontWeight: FontWeight.w700,
       ),
     );

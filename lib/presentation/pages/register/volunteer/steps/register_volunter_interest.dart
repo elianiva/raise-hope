@@ -2,10 +2,10 @@ import 'package:adaptive_sizer/adaptive_sizer.dart';
 import 'package:community_material_icon/community_material_icon.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:next_starter/common/extensions/context_extension.dart';
-import 'package:next_starter/injection.dart';
-import 'package:next_starter/presentation/routes/app_router.dart';
-import 'package:next_starter/presentation/routes/app_router.gr.dart';
+import 'package:raise_hope/common/extensions/context_extension.dart';
+import 'package:raise_hope/injection.dart';
+import 'package:raise_hope/presentation/routes/app_router.dart';
+import 'package:raise_hope/presentation/routes/app_router.gr.dart';
 
 import '../cubit/register_volunteer_cubit.dart';
 

@@ -1,6 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:next_starter/presentation/components/card/karma_points_card.dart';
+import 'package:raise_hope/presentation/components/card/karma_points_card.dart';
 
 @RoutePage()
 class KarmaMainPage extends StatefulWidget {

@@ -3,7 +3,7 @@ import 'dart:math';
 import 'package:adaptive_sizer/adaptive_sizer.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:next_starter/common/extensions/extensions.dart';
+import 'package:raise_hope/common/extensions/extensions.dart';
 
 @RoutePage()
 class ChatPage extends StatefulWidget {

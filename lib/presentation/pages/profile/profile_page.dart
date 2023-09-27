@@ -3,10 +3,10 @@ import 'package:auto_route/auto_route.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:next_starter/common/extensions/extensions.dart';
-import 'package:next_starter/injection.dart';
-import 'package:next_starter/presentation/components/app_bar/simple_app_bar.dart';
-import 'package:next_starter/presentation/components/card/karma_card.dart';
+import 'package:raise_hope/common/extensions/extensions.dart';
+import 'package:raise_hope/injection.dart';
+import 'package:raise_hope/presentation/components/app_bar/simple_app_bar.dart';
+import 'package:raise_hope/presentation/components/card/karma_card.dart';
 
 @RoutePage()
 class ProfilePage extends StatelessWidget {

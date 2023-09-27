@@ -4,14 +4,14 @@ import 'package:community_material_icon/community_material_icon.dart';
 import 'package:expandable_page_view/expandable_page_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:next_starter/common/extensions/extensions.dart';
-import 'package:next_starter/injection.dart';
-import 'package:next_starter/presentation/pages/register/components/custom_stepper.dart';
-import 'package:next_starter/presentation/pages/register/institution/cubit/register_institution_cubit.dart';
-import 'package:next_starter/presentation/pages/register/institution/steps/register_institution_address_information_step.dart';
-import 'package:next_starter/presentation/pages/register/institution/steps/register_institution_background_step.dart';
-import 'package:next_starter/presentation/pages/register/institution/steps/register_institution_personal_data_step%20copy.dart';
-import 'package:next_starter/presentation/theme/color_schemes.dart';
+import 'package:raise_hope/common/extensions/extensions.dart';
+import 'package:raise_hope/injection.dart';
+import 'package:raise_hope/presentation/pages/register/components/custom_stepper.dart';
+import 'package:raise_hope/presentation/pages/register/institution/cubit/register_institution_cubit.dart';
+import 'package:raise_hope/presentation/pages/register/institution/steps/register_institution_address_information_step.dart';
+import 'package:raise_hope/presentation/pages/register/institution/steps/register_institution_background_step.dart';
+import 'package:raise_hope/presentation/pages/register/institution/steps/register_institution_personal_data_step%20copy.dart';
+import 'package:raise_hope/presentation/theme/color_schemes.dart';
 
 @RoutePage()
 class RegisterInstitutionPage extends StatefulWidget {

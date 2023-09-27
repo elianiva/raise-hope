@@ -1,8 +1,8 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:next_starter/data/models/countrystatecity/city.dart';
-import 'package:next_starter/data/models/countrystatecity/country.dart';
-import 'package:next_starter/data/models/countrystatecity/province.dart';
+import 'package:raise_hope/data/models/countrystatecity/city.dart';
+import 'package:raise_hope/data/models/countrystatecity/country.dart';
+import 'package:raise_hope/data/models/countrystatecity/province.dart';
 
 part 'selected_location_provider.freezed.dart';
 
@@ -15,8 +15,7 @@ class SelectedLocation with _$SelectedLocation {
   }) = _SelectedLocation;
 }
 
-final selectedLocationProvider =
-    StateNotifierProvider<SelectedLocationProvider, SelectedLocation>((ref) {
+final selectedLocationProvider = StateNotifierProvider<SelectedLocationProvider, SelectedLocation>((ref) {
   return SelectedLocationProvider();
 });
 

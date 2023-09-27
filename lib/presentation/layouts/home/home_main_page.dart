@@ -3,13 +3,13 @@ import 'dart:math';
 import 'package:adaptive_sizer/adaptive_sizer.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:next_starter/common/enums/type_of_help.dart';
-import 'package:next_starter/common/extensions/extensions.dart';
-import 'package:next_starter/injection.dart';
-import 'package:next_starter/presentation/components/card/custom_card.dart';
-import 'package:next_starter/presentation/components/card/karma_card.dart';
-import 'package:next_starter/presentation/components/card/mission_card.dart';
-import 'package:next_starter/presentation/routes/app_router.gr.dart';
+import 'package:raise_hope/common/enums/type_of_help.dart';
+import 'package:raise_hope/common/extensions/extensions.dart';
+import 'package:raise_hope/injection.dart';
+import 'package:raise_hope/presentation/components/card/custom_card.dart';
+import 'package:raise_hope/presentation/components/card/karma_card.dart';
+import 'package:raise_hope/presentation/components/card/mission_card.dart';
+import 'package:raise_hope/presentation/routes/app_router.gr.dart';
 
 import '../../routes/app_router.dart';
 

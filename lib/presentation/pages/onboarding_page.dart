@@ -5,11 +5,11 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:loop_page_view/loop_page_view.dart';
-import 'package:next_starter/common/extensions/extensions.dart';
-import 'package:next_starter/injection.dart';
-import 'package:next_starter/presentation/hooks/loop_page_controller.dart';
-import 'package:next_starter/presentation/routes/app_router.dart';
-import 'package:next_starter/presentation/routes/app_router.gr.dart';
+import 'package:raise_hope/common/extensions/extensions.dart';
+import 'package:raise_hope/injection.dart';
+import 'package:raise_hope/presentation/hooks/loop_page_controller.dart';
+import 'package:raise_hope/presentation/routes/app_router.dart';
+import 'package:raise_hope/presentation/routes/app_router.gr.dart';
 
 class OnboardingData {
   final String title;

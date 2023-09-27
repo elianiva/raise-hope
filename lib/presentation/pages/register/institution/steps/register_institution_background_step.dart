@@ -4,14 +4,14 @@ import 'package:adaptive_sizer/adaptive_sizer.dart';
 import 'package:dropdown_search/dropdown_search.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:next_starter/common/enums/organization_size.dart';
-import 'package:next_starter/common/enums/organization_types.dart';
-import 'package:next_starter/common/enums/type_of_help.dart';
-import 'package:next_starter/common/extensions/extensions.dart';
-import 'package:next_starter/injection.dart';
-import 'package:next_starter/presentation/pages/register/institution/cubit/register_institution_cubit.dart';
-import 'package:next_starter/presentation/routes/app_router.dart';
-import 'package:next_starter/presentation/routes/app_router.gr.dart';
+import 'package:raise_hope/common/enums/organization_size.dart';
+import 'package:raise_hope/common/enums/organization_types.dart';
+import 'package:raise_hope/common/enums/type_of_help.dart';
+import 'package:raise_hope/common/extensions/extensions.dart';
+import 'package:raise_hope/injection.dart';
+import 'package:raise_hope/presentation/pages/register/institution/cubit/register_institution_cubit.dart';
+import 'package:raise_hope/presentation/routes/app_router.dart';
+import 'package:raise_hope/presentation/routes/app_router.gr.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 
 class RegisterInstitutionBackgroundStep extends StatefulWidget {

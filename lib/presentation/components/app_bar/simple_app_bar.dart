@@ -1,8 +1,8 @@
 import 'package:adaptive_sizer/adaptive_sizer.dart';
 import 'package:flutter/material.dart';
-import 'package:next_starter/common/extensions/extensions.dart';
-import 'package:next_starter/injection.dart';
-import 'package:next_starter/presentation/routes/app_router.dart';
+import 'package:raise_hope/common/extensions/extensions.dart';
+import 'package:raise_hope/injection.dart';
+import 'package:raise_hope/presentation/routes/app_router.dart';
 
 class SimpleAppBar extends StatelessWidget {
   final String title;

@@ -2,10 +2,10 @@ import 'dart:convert';
 
 import 'package:dartz/dartz.dart';
 import 'package:flutter/services.dart';
-import 'package:next_starter/common/errors/api_exception.dart';
-import 'package:next_starter/data/models/countrystatecity/city.dart';
-import 'package:next_starter/data/models/countrystatecity/country.dart';
-import 'package:next_starter/data/models/countrystatecity/province.dart';
+import 'package:raise_hope/common/errors/api_exception.dart';
+import 'package:raise_hope/data/models/countrystatecity/city.dart';
+import 'package:raise_hope/data/models/countrystatecity/country.dart';
+import 'package:raise_hope/data/models/countrystatecity/province.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 final countryStateCityRepositoryProvider = Provider<CountryStateCityRepository>(
@@ -48,10 +48,8 @@ class CountryStateCityLocalImpl implements CountryStateCityRepository {
     Country country,
   ) async {
     await _loadData();
-    final data = _data
-        .firstWhere((e) => e['id'] == country.id)['state']
-        .map<Province>((e) => Province.fromJson(e))
-        .toList();
+    final data =
+        _data.firstWhere((e) => e['id'] == country.id)['state'].map<Province>((e) => Province.fromJson(e)).toList();
 
     return Right(data);
   }

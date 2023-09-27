@@ -1,19 +1,17 @@
 import 'package:adaptive_sizer/adaptive_sizer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:next_starter/presentation/pages/register/institution/cubit/register_institution_cubit.dart';
+import 'package:raise_hope/presentation/pages/register/institution/cubit/register_institution_cubit.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 
 class RegisterInstitutionPersonalDataStep extends StatefulWidget {
   const RegisterInstitutionPersonalDataStep({super.key});
 
   @override
-  State<RegisterInstitutionPersonalDataStep> createState() =>
-      _RegisterVolunterPersonalDataStepState();
+  State<RegisterInstitutionPersonalDataStep> createState() => _RegisterVolunterPersonalDataStepState();
 }
 
-class _RegisterVolunterPersonalDataStepState
-    extends State<RegisterInstitutionPersonalDataStep> {
+class _RegisterVolunterPersonalDataStepState extends State<RegisterInstitutionPersonalDataStep> {
   final _form = FormGroup({
     'name': FormControl<String>(validators: [
       Validators.required,

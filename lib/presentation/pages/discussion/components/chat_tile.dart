@@ -3,7 +3,7 @@ import 'dart:math';
 import 'package:adaptive_sizer/adaptive_sizer.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:next_starter/common/extensions/extensions.dart';
+import 'package:raise_hope/common/extensions/extensions.dart';
 
 class ChatTile extends StatelessWidget {
   final bool hasUnread;
@@ -35,8 +35,7 @@ class ChatTile extends StatelessWidget {
                     ClipRRect(
                       borderRadius: BorderRadius.circular(16),
                       child: CachedNetworkImage(
-                        imageUrl:
-                            'https://picsum.photos/seed/${Random().nextInt(100)}/48',
+                        imageUrl: 'https://picsum.photos/seed/${Random().nextInt(100)}/48',
                         width: 48,
                         height: 48,
                         fit: BoxFit.cover,

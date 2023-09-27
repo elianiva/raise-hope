@@ -3,10 +3,10 @@ import 'package:auto_route/auto_route.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:entry/entry.dart';
 import 'package:flutter/material.dart';
-import 'package:next_starter/common/extensions/extensions.dart';
-import 'package:next_starter/presentation/components/buttons/box_icon_button.dart';
-import 'package:next_starter/presentation/pages/mission/components/image_carousel.dart';
-import 'package:next_starter/presentation/pages/mission/components/mission_detail_information.dart';
+import 'package:raise_hope/common/extensions/extensions.dart';
+import 'package:raise_hope/presentation/components/buttons/box_icon_button.dart';
+import 'package:raise_hope/presentation/pages/mission/components/image_carousel.dart';
+import 'package:raise_hope/presentation/pages/mission/components/mission_detail_information.dart';
 
 @RoutePage()
 class MissionDetailPage extends StatefulWidget {

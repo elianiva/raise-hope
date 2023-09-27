@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:834108486797:android:dedb9eb7a2a14453d29ec4",
         "android_client_info": {
-          "package_name": "com.example.next_starter"
+          "package_name": "org.raise_hope"
         }
       },
       "oauth_client": [
@@ -17,7 +17,7 @@
           "client_id": "834108486797-4k3dvbo0b49f5ot8njatnu01uv2mc6hi.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.next_starter",
+            "package_name": "org.raise_hope",
             "certificate_hash": "883e8fb656a92d2bb5022f1e6cb2b4ddd2e591b7"
           }
         },
@@ -25,7 +25,7 @@
           "client_id": "834108486797-9pu50l6rsbgp9hhfn9qcqptku4thbncf.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.next_starter",
+            "package_name": "org.raise_hope",
             "certificate_hash": "3db2469d58ef3b480d3bb0a3cb42ab30fca74457"
           }
         },
@@ -33,7 +33,7 @@
           "client_id": "834108486797-hbi02hdsuunbi6ck4o7j7c5b1gapgtlg.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.next_starter",
+            "package_name": "org.raise_hope",
             "certificate_hash": "c5f8ebf66b95e7e9eadfc1e806b770b470749598"
           }
         },
@@ -58,7 +58,7 @@
               "client_id": "834108486797-n3jq32r2lrooddlmm1rqnq9elb3tf0be.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.example.examApp"
+                "bundle_id": "org.examApp"
               }
             }
           ]

@@ -3,12 +3,12 @@ import 'package:auto_route/auto_route.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:next_starter/common/extensions/extensions.dart';
-import 'package:next_starter/injection.dart';
-import 'package:next_starter/presentation/routes/app_router.dart';
-import 'package:next_starter/presentation/routes/app_router.gr.dart';
-import 'package:next_starter/presentation/theme/color_schemes.dart';
-import 'package:next_starter/presentation/theme/theme.dart';
+import 'package:raise_hope/common/extensions/extensions.dart';
+import 'package:raise_hope/injection.dart';
+import 'package:raise_hope/presentation/routes/app_router.dart';
+import 'package:raise_hope/presentation/routes/app_router.gr.dart';
+import 'package:raise_hope/presentation/theme/color_schemes.dart';
+import 'package:raise_hope/presentation/theme/theme.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 
 @RoutePage()
