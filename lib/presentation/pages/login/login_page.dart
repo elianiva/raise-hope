@@ -92,6 +92,9 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                       keyboardType: TextInputType.emailAddress,
                       textInputAction: TextInputAction.next,
+                      validationMessages: {
+                        ValidationMessage.required: (error) => "Email is required.",
+                      },
                     ),
                     24.verticalSpace,
                     ReactiveTextField(
@@ -113,6 +116,10 @@ class _LoginPageState extends State<LoginPage> {
                       enableSuggestions: false,
                       textInputAction: TextInputAction.done,
                       keyboardType: _isPasswordVisible ? TextInputType.visiblePassword : TextInputType.text,
+                      validationMessages: {
+                        ValidationMessage.required: (error) => "Password is required.",
+                        ValidationMessage.minLength: (error) => "Password must be at least 8 characters.",
+                      },
                     ),
                   ],
                 ),

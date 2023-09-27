@@ -10,21 +10,32 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:auto_route/auto_route.dart' as _i17;
 import 'package:flutter/material.dart' as _i18;
-import 'package:raise_hope/presentation/layouts/home/home_discussion_page.dart' as _i5;
-import 'package:raise_hope/presentation/layouts/home/home_main_page.dart' as _i4;
-import 'package:raise_hope/presentation/layouts/home/home_mission_page.dart' as _i6;
-import 'package:raise_hope/presentation/pages/discussion/chat_list_page.dart' as _i1;
+import 'package:raise_hope/presentation/layouts/home/home_discussion_page.dart'
+    as _i5;
+import 'package:raise_hope/presentation/layouts/home/home_main_page.dart'
+    as _i4;
+import 'package:raise_hope/presentation/layouts/home/home_mission_page.dart'
+    as _i6;
+import 'package:raise_hope/presentation/pages/discussion/chat_list_page.dart'
+    as _i1;
 import 'package:raise_hope/presentation/pages/discussion/chat_page.dart' as _i2;
-import 'package:raise_hope/presentation/pages/hero_empty_router_page.dart' as _i3;
+import 'package:raise_hope/presentation/pages/hero_empty_router_page.dart'
+    as _i3;
 import 'package:raise_hope/presentation/pages/home/home_page.dart' as _i7;
-import 'package:raise_hope/presentation/pages/karma/main/karma_main_page.dart' as _i8;
+import 'package:raise_hope/presentation/pages/karma/main/karma_main_page.dart'
+    as _i8;
 import 'package:raise_hope/presentation/pages/login/login_page.dart' as _i9;
-import 'package:raise_hope/presentation/pages/mission/mission_detail_page.dart' as _i10;
+import 'package:raise_hope/presentation/pages/mission/mission_detail_page.dart'
+    as _i10;
 import 'package:raise_hope/presentation/pages/onboarding_page.dart' as _i11;
-import 'package:raise_hope/presentation/pages/profile/profile_page.dart' as _i12;
-import 'package:raise_hope/presentation/pages/register/institution/register_institution_page.dart' as _i14;
-import 'package:raise_hope/presentation/pages/register/register_congratulation_page.dart' as _i13;
-import 'package:raise_hope/presentation/pages/register/volunteer/register_volunteer_page.dart' as _i15;
+import 'package:raise_hope/presentation/pages/profile/profile_page.dart'
+    as _i12;
+import 'package:raise_hope/presentation/pages/register/institution/register_institution_page.dart'
+    as _i14;
+import 'package:raise_hope/presentation/pages/register/register_congratulation_page.dart'
+    as _i13;
+import 'package:raise_hope/presentation/pages/register/volunteer/register_volunteer_page.dart'
+    as _i15;
 import 'package:raise_hope/presentation/pages/splash_page.dart' as _i16;
 
 abstract class $AppRouter extends _i17.RootStackRouter {
@@ -81,7 +92,8 @@ abstract class $AppRouter extends _i17.RootStackRouter {
       );
     },
     LoginRoute.name: (routeData) {
-      final args = routeData.argsAs<LoginRouteArgs>(orElse: () => const LoginRouteArgs());
+      final args = routeData.argsAs<LoginRouteArgs>(
+          orElse: () => const LoginRouteArgs());
       return _i17.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: _i9.LoginPage(
@@ -91,7 +103,8 @@ abstract class $AppRouter extends _i17.RootStackRouter {
       );
     },
     MissionDetailRoute.name: (routeData) {
-      final args = routeData.argsAs<MissionDetailRouteArgs>(orElse: () => const MissionDetailRouteArgs());
+      final args = routeData.argsAs<MissionDetailRouteArgs>(
+          orElse: () => const MissionDetailRouteArgs());
       return _i17.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: _i10.MissionDetailPage(
@@ -113,8 +126,8 @@ abstract class $AppRouter extends _i17.RootStackRouter {
       );
     },
     RegisterCongratulationRoute.name: (routeData) {
-      final args =
-          routeData.argsAs<RegisterCongratulationRouteArgs>(orElse: () => const RegisterCongratulationRouteArgs());
+      final args = routeData.argsAs<RegisterCongratulationRouteArgs>(
+          orElse: () => const RegisterCongratulationRouteArgs());
       return _i17.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: _i13.RegisterCongratulationPage(
@@ -124,7 +137,8 @@ abstract class $AppRouter extends _i17.RootStackRouter {
       );
     },
     RegisterInstitutionRoute.name: (routeData) {
-      final args = routeData.argsAs<RegisterInstitutionRouteArgs>(orElse: () => const RegisterInstitutionRouteArgs());
+      final args = routeData.argsAs<RegisterInstitutionRouteArgs>(
+          orElse: () => const RegisterInstitutionRouteArgs());
       return _i17.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: _i14.RegisterInstitutionPage(
@@ -134,7 +148,8 @@ abstract class $AppRouter extends _i17.RootStackRouter {
       );
     },
     RegisterVolunteerRoute.name: (routeData) {
-      final args = routeData.argsAs<RegisterVolunteerRouteArgs>(orElse: () => const RegisterVolunteerRouteArgs());
+      final args = routeData.argsAs<RegisterVolunteerRouteArgs>(
+          orElse: () => const RegisterVolunteerRouteArgs());
       return _i17.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: _i15.RegisterVolunteerPage(
@@ -282,7 +297,8 @@ class LoginRoute extends _i17.PageRouteInfo<LoginRouteArgs> {
 
   static const String name = 'LoginRoute';
 
-  static const _i17.PageInfo<LoginRouteArgs> page = _i17.PageInfo<LoginRouteArgs>(name);
+  static const _i17.PageInfo<LoginRouteArgs> page =
+      _i17.PageInfo<LoginRouteArgs>(name);
 }
 
 class LoginRouteArgs {
@@ -319,7 +335,8 @@ class MissionDetailRoute extends _i17.PageRouteInfo<MissionDetailRouteArgs> {
 
   static const String name = 'MissionDetailRoute';
 
-  static const _i17.PageInfo<MissionDetailRouteArgs> page = _i17.PageInfo<MissionDetailRouteArgs>(name);
+  static const _i17.PageInfo<MissionDetailRouteArgs> page =
+      _i17.PageInfo<MissionDetailRouteArgs>(name);
 }
 
 class MissionDetailRouteArgs {
@@ -368,7 +385,8 @@ class ProfileRoute extends _i17.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i13.RegisterCongratulationPage]
-class RegisterCongratulationRoute extends _i17.PageRouteInfo<RegisterCongratulationRouteArgs> {
+class RegisterCongratulationRoute
+    extends _i17.PageRouteInfo<RegisterCongratulationRouteArgs> {
   RegisterCongratulationRoute({
     _i18.Key? key,
     bool isInstitution = false,
@@ -406,7 +424,8 @@ class RegisterCongratulationRouteArgs {
 
 /// generated route for
 /// [_i14.RegisterInstitutionPage]
-class RegisterInstitutionRoute extends _i17.PageRouteInfo<RegisterInstitutionRouteArgs> {
+class RegisterInstitutionRoute
+    extends _i17.PageRouteInfo<RegisterInstitutionRouteArgs> {
   RegisterInstitutionRoute({
     _i18.Key? key,
     bool isUsingCurrentUser = false,
@@ -422,7 +441,8 @@ class RegisterInstitutionRoute extends _i17.PageRouteInfo<RegisterInstitutionRou
 
   static const String name = 'RegisterInstitutionRoute';
 
-  static const _i17.PageInfo<RegisterInstitutionRouteArgs> page = _i17.PageInfo<RegisterInstitutionRouteArgs>(name);
+  static const _i17.PageInfo<RegisterInstitutionRouteArgs> page =
+      _i17.PageInfo<RegisterInstitutionRouteArgs>(name);
 }
 
 class RegisterInstitutionRouteArgs {
@@ -443,7 +463,8 @@ class RegisterInstitutionRouteArgs {
 
 /// generated route for
 /// [_i15.RegisterVolunteerPage]
-class RegisterVolunteerRoute extends _i17.PageRouteInfo<RegisterVolunteerRouteArgs> {
+class RegisterVolunteerRoute
+    extends _i17.PageRouteInfo<RegisterVolunteerRouteArgs> {
   RegisterVolunteerRoute({
     _i18.Key? key,
     bool isUsingCurrentUser = false,
@@ -459,7 +480,8 @@ class RegisterVolunteerRoute extends _i17.PageRouteInfo<RegisterVolunteerRouteAr
 
   static const String name = 'RegisterVolunteerRoute';
 
-  static const _i17.PageInfo<RegisterVolunteerRouteArgs> page = _i17.PageInfo<RegisterVolunteerRouteArgs>(name);
+  static const _i17.PageInfo<RegisterVolunteerRouteArgs> page =
+      _i17.PageInfo<RegisterVolunteerRouteArgs>(name);
 }
 
 class RegisterVolunteerRouteArgs {

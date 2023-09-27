@@ -74,6 +74,10 @@ class _RegisterVolunterPersonalDataStepState extends State<RegisterInstitutionPe
               labelText: 'Name',
               hintText: 'Institution Name',
             ),
+            validationMessages: {
+              ValidationMessage.required: (error) => 'Please enter your name.',
+              ValidationMessage.minLength: (error) => 'Name must be at least 3 characters.',
+            },
           ),
           33.verticalSpace,
           ReactiveTextField(
@@ -84,6 +88,10 @@ class _RegisterVolunterPersonalDataStepState extends State<RegisterInstitutionPe
               labelText: 'Email',
               hintText: 'example@gmail.com',
             ),
+            validationMessages: {
+              ValidationMessage.required: (error) => 'Please enter your email.',
+              ValidationMessage.email: (error) => 'Please enter a valid email.',
+            },
           ),
           33.verticalSpace,
           ReactiveTextField(
@@ -94,6 +102,10 @@ class _RegisterVolunterPersonalDataStepState extends State<RegisterInstitutionPe
               labelText: 'Phone Number',
               hintText: 'Institution Phone Number',
             ),
+            validationMessages: {
+              ValidationMessage.required: (error) => 'Please enter your phone number.',
+              ValidationMessage.minLength: (error) => 'Phone number must be at least 10 characters.',
+            },
           ),
           33.verticalSpace,
           ReactiveTextField(
@@ -104,6 +116,9 @@ class _RegisterVolunterPersonalDataStepState extends State<RegisterInstitutionPe
               labelText: 'Website',
               hintText: 'Institution Website',
             ),
+            validationMessages: {
+              ValidationMessage.required: (error) => 'Please enter your institution website.',
+            },
           ),
           33.verticalSpace,
           BlocBuilder<RegisterInstitutionCubit, RegisterInstitutionState>(
@@ -118,6 +133,10 @@ class _RegisterVolunterPersonalDataStepState extends State<RegisterInstitutionPe
                   labelText: 'Password',
                   hintText: 'Password',
                 ),
+                validationMessages: {
+                  ValidationMessage.required: (error) => 'Please enter your password',
+                  ValidationMessage.minLength: (error) => 'Password should be at least 8 characters',
+                },
               ),
             ),
           ),

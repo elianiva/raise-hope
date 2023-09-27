@@ -222,6 +222,10 @@ class _RegisterVolunterdAddressInformationStepState extends ConsumerState<Regist
                 labelText: 'Address',
                 hintText: 'Address',
               ),
+              validationMessages: {
+                ValidationMessage.required: (error) => 'The address must not be empty',
+                ValidationMessage.minLength: (error) => 'The address must be at least 5 characters',
+              },
             ),
             33.verticalSpace,
             ReactiveTextField(

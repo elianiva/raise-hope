@@ -37,8 +37,6 @@ abstract class ApiService {
 
   @lazySingleton
   GoogleSignIn get googleSignIn => GoogleSignIn(
-        clientId:
-            // using web client id to get idToken
-            '834108486797-c0neuq5467sfb604cfoanrkhe1d8p15c.apps.googleusercontent.com',
+        serverClientId: '675704566308-he2no4hov699qdf2ctnmri6ut3ptrudv.apps.googleusercontent.com',
       );
 }

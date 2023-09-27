@@ -1,61 +1,45 @@
 {
   "project_info": {
-    "project_number": "834108486797",
-    "project_id": "raise-hope",
-    "storage_bucket": "raise-hope.appspot.com"
+    "project_number": "675704566308",
+    "project_id": "raise-hope-new",
+    "storage_bucket": "raise-hope-new.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:834108486797:android:dedb9eb7a2a14453d29ec4",
+        "mobilesdk_app_id": "1:675704566308:android:1a2b278aa6d95c548fdeb1",
         "android_client_info": {
           "package_name": "org.raise_hope"
         }
       },
       "oauth_client": [
         {
-          "client_id": "834108486797-4k3dvbo0b49f5ot8njatnu01uv2mc6hi.apps.googleusercontent.com",
+          "client_id": "675704566308-7peg6l5jgtvabgrlpfrsksrkqv9rnjia.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "org.raise_hope",
-            "certificate_hash": "883e8fb656a92d2bb5022f1e6cb2b4ddd2e591b7"
+            "certificate_hash": "ab435d8ab18513d2177cd9f7f70ed1b42eb94ae5"
           }
         },
         {
-          "client_id": "834108486797-9pu50l6rsbgp9hhfn9qcqptku4thbncf.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "org.raise_hope",
-            "certificate_hash": "3db2469d58ef3b480d3bb0a3cb42ab30fca74457"
-          }
-        },
-        {
-          "client_id": "834108486797-hbi02hdsuunbi6ck4o7j7c5b1gapgtlg.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "org.raise_hope",
-            "certificate_hash": "c5f8ebf66b95e7e9eadfc1e806b770b470749598"
-          }
-        },
-        {
-          "client_id": "834108486797-c0neuq5467sfb604cfoanrkhe1d8p15c.apps.googleusercontent.com",
+          "client_id": "675704566308-he2no4hov699qdf2ctnmri6ut3ptrudv.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyA-caWXay-kA_vkYhqcUPVto4FzEvbKIps"
+          "current_key": "AIzaSyAIyoclqow8b2XFI6wSclIMWeeZNl-qLLw"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "834108486797-c0neuq5467sfb604cfoanrkhe1d8p15c.apps.googleusercontent.com",
+              "client_id": "675704566308-he2no4hov699qdf2ctnmri6ut3ptrudv.apps.googleusercontent.com",
               "client_type": 3
             },
             {
-              "client_id": "834108486797-n3jq32r2lrooddlmm1rqnq9elb3tf0be.apps.googleusercontent.com",
+              "client_id": "675704566308-8nfc0gr8pv7qd4kvm5i0s2kek8pe5gat.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
                 "bundle_id": "org.examApp"
