@@ -9,36 +9,34 @@ import 'package:raise_hope/injection.dart';
 import 'package:raise_hope/presentation/components/card/custom_card.dart';
 import 'package:raise_hope/presentation/components/card/karma_card.dart';
 import 'package:raise_hope/presentation/components/card/mission_card.dart';
-import 'package:raise_hope/presentation/routes/app_router.gr.dart';
-
-import '../../routes/app_router.dart';
+import 'package:raise_hope/presentation/routes/app_router.dart';
 
 @RoutePage()
-class HomeDashboardPage extends StatefulWidget {
-  const HomeDashboardPage({super.key});
+class HomeMainPage extends StatefulWidget {
+  const HomeMainPage({super.key});
 
   @override
-  State<HomeDashboardPage> createState() => _HomeDashboardPageState();
+  State<HomeMainPage> createState() => _HomeMainPageState();
 }
 
-class _HomeDashboardPageState extends State<HomeDashboardPage> {
+class _HomeMainPageState extends State<HomeMainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: CustomScrollView(
         slivers: [
           _buildAppBar(),
-          _buildKarmaProgress(),
-          _buildMissionStats(),
-          _buildSectionTitle(title: 'For You'),
-          _buildFilter(),
-          _buildVerticalSpacer(),
-          _buildMissionList(),
-          _buildSectionTitle(title: 'Popular Mission'),
-          _buildFilter(),
-          _buildVerticalSpacer(),
-          _buildMissionList(),
-          _buildVerticalSpacer(),
+          // _buildKarmaProgress(),
+          // _buildMissionStats(),
+          // _buildSectionTitle(title: 'For You'),
+          // _buildFilter(),
+          // _buildVerticalSpacer(),
+          // _buildMissionList(),
+          // _buildSectionTitle(title: 'Popular Mission'),
+          // _buildFilter(),
+          // _buildVerticalSpacer(),
+          // _buildMissionList(),
+          // _buildVerticalSpacer(),
         ],
       ),
     );

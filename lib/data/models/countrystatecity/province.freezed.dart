@@ -77,21 +77,22 @@ class _$ProvinceCopyWithImpl<$Res, $Val extends Province>
 }
 
 /// @nodoc
-abstract class _$$_ProvinceCopyWith<$Res> implements $ProvinceCopyWith<$Res> {
-  factory _$$_ProvinceCopyWith(
-          _$_Province value, $Res Function(_$_Province) then) =
-      __$$_ProvinceCopyWithImpl<$Res>;
+abstract class _$$ProvinceImplCopyWith<$Res>
+    implements $ProvinceCopyWith<$Res> {
+  factory _$$ProvinceImplCopyWith(
+          _$ProvinceImpl value, $Res Function(_$ProvinceImpl) then) =
+      __$$ProvinceImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({int id, @JsonKey(name: 'country_id') int countryId, String name});
 }
 
 /// @nodoc
-class __$$_ProvinceCopyWithImpl<$Res>
-    extends _$ProvinceCopyWithImpl<$Res, _$_Province>
-    implements _$$_ProvinceCopyWith<$Res> {
-  __$$_ProvinceCopyWithImpl(
-      _$_Province _value, $Res Function(_$_Province) _then)
+class __$$ProvinceImplCopyWithImpl<$Res>
+    extends _$ProvinceCopyWithImpl<$Res, _$ProvinceImpl>
+    implements _$$ProvinceImplCopyWith<$Res> {
+  __$$ProvinceImplCopyWithImpl(
+      _$ProvinceImpl _value, $Res Function(_$ProvinceImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -101,7 +102,7 @@ class __$$_ProvinceCopyWithImpl<$Res>
     Object? countryId = null,
     Object? name = null,
   }) {
-    return _then(_$_Province(
+    return _then(_$ProvinceImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -120,14 +121,14 @@ class __$$_ProvinceCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Province implements _Province {
-  const _$_Province(
+class _$ProvinceImpl implements _Province {
+  const _$ProvinceImpl(
       {required this.id,
       @JsonKey(name: 'country_id') required this.countryId,
       required this.name});
 
-  factory _$_Province.fromJson(Map<String, dynamic> json) =>
-      _$$_ProvinceFromJson(json);
+  factory _$ProvinceImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ProvinceImplFromJson(json);
 
   @override
   final int id;
@@ -149,7 +150,7 @@ class _$_Province implements _Province {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Province &&
+            other is _$ProvinceImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.countryId, countryId) ||
                 other.countryId == countryId) &&
@@ -163,12 +164,12 @@ class _$_Province implements _Province {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ProvinceCopyWith<_$_Province> get copyWith =>
-      __$$_ProvinceCopyWithImpl<_$_Province>(this, _$identity);
+  _$$ProvinceImplCopyWith<_$ProvinceImpl> get copyWith =>
+      __$$ProvinceImplCopyWithImpl<_$ProvinceImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ProvinceToJson(
+    return _$$ProvinceImplToJson(
       this,
     );
   }
@@ -178,9 +179,10 @@ abstract class _Province implements Province {
   const factory _Province(
       {required final int id,
       @JsonKey(name: 'country_id') required final int countryId,
-      required final String name}) = _$_Province;
+      required final String name}) = _$ProvinceImpl;
 
-  factory _Province.fromJson(Map<String, dynamic> json) = _$_Province.fromJson;
+  factory _Province.fromJson(Map<String, dynamic> json) =
+      _$ProvinceImpl.fromJson;
 
   @override
   int get id;
@@ -192,6 +194,6 @@ abstract class _Province implements Province {
   String get name;
   @override
   @JsonKey(ignore: true)
-  _$$_ProvinceCopyWith<_$_Province> get copyWith =>
+  _$$ProvinceImplCopyWith<_$ProvinceImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

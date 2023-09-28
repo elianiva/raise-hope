@@ -71,11 +71,11 @@ class _$ProvinceFamilyCopyWithImpl<$Res, $Val extends ProvinceFamily>
 }
 
 /// @nodoc
-abstract class _$$_ProvinceFamilyCopyWith<$Res>
+abstract class _$$ProvinceFamilyImplCopyWith<$Res>
     implements $ProvinceFamilyCopyWith<$Res> {
-  factory _$$_ProvinceFamilyCopyWith(
-          _$_ProvinceFamily value, $Res Function(_$_ProvinceFamily) then) =
-      __$$_ProvinceFamilyCopyWithImpl<$Res>;
+  factory _$$ProvinceFamilyImplCopyWith(_$ProvinceFamilyImpl value,
+          $Res Function(_$ProvinceFamilyImpl) then) =
+      __$$ProvinceFamilyImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({Country? country});
@@ -85,11 +85,11 @@ abstract class _$$_ProvinceFamilyCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_ProvinceFamilyCopyWithImpl<$Res>
-    extends _$ProvinceFamilyCopyWithImpl<$Res, _$_ProvinceFamily>
-    implements _$$_ProvinceFamilyCopyWith<$Res> {
-  __$$_ProvinceFamilyCopyWithImpl(
-      _$_ProvinceFamily _value, $Res Function(_$_ProvinceFamily) _then)
+class __$$ProvinceFamilyImplCopyWithImpl<$Res>
+    extends _$ProvinceFamilyCopyWithImpl<$Res, _$ProvinceFamilyImpl>
+    implements _$$ProvinceFamilyImplCopyWith<$Res> {
+  __$$ProvinceFamilyImplCopyWithImpl(
+      _$ProvinceFamilyImpl _value, $Res Function(_$ProvinceFamilyImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -97,7 +97,7 @@ class __$$_ProvinceFamilyCopyWithImpl<$Res>
   $Res call({
     Object? country = freezed,
   }) {
-    return _then(_$_ProvinceFamily(
+    return _then(_$ProvinceFamilyImpl(
       country: freezed == country
           ? _value.country
           : country // ignore: cast_nullable_to_non_nullable
@@ -108,8 +108,8 @@ class __$$_ProvinceFamilyCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_ProvinceFamily implements _ProvinceFamily {
-  const _$_ProvinceFamily({required this.country});
+class _$ProvinceFamilyImpl implements _ProvinceFamily {
+  const _$ProvinceFamilyImpl({required this.country});
 
   @override
   final Country? country;
@@ -123,7 +123,7 @@ class _$_ProvinceFamily implements _ProvinceFamily {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ProvinceFamily &&
+            other is _$ProvinceFamilyImpl &&
             (identical(other.country, country) || other.country == country));
   }
 
@@ -133,18 +133,19 @@ class _$_ProvinceFamily implements _ProvinceFamily {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ProvinceFamilyCopyWith<_$_ProvinceFamily> get copyWith =>
-      __$$_ProvinceFamilyCopyWithImpl<_$_ProvinceFamily>(this, _$identity);
+  _$$ProvinceFamilyImplCopyWith<_$ProvinceFamilyImpl> get copyWith =>
+      __$$ProvinceFamilyImplCopyWithImpl<_$ProvinceFamilyImpl>(
+          this, _$identity);
 }
 
 abstract class _ProvinceFamily implements ProvinceFamily {
   const factory _ProvinceFamily({required final Country? country}) =
-      _$_ProvinceFamily;
+      _$ProvinceFamilyImpl;
 
   @override
   Country? get country;
   @override
   @JsonKey(ignore: true)
-  _$$_ProvinceFamilyCopyWith<_$_ProvinceFamily> get copyWith =>
+  _$$ProvinceFamilyImplCopyWith<_$ProvinceFamilyImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -116,22 +116,22 @@ class _$ApiExceptionCopyWithImpl<$Res, $Val extends ApiException>
 }
 
 /// @nodoc
-abstract class _$$_ServerExceptionCopyWith<$Res>
+abstract class _$$ServerExceptionImplCopyWith<$Res>
     implements $ApiExceptionCopyWith<$Res> {
-  factory _$$_ServerExceptionCopyWith(
-          _$_ServerException value, $Res Function(_$_ServerException) then) =
-      __$$_ServerExceptionCopyWithImpl<$Res>;
+  factory _$$ServerExceptionImplCopyWith(_$ServerExceptionImpl value,
+          $Res Function(_$ServerExceptionImpl) then) =
+      __$$ServerExceptionImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String message});
 }
 
 /// @nodoc
-class __$$_ServerExceptionCopyWithImpl<$Res>
-    extends _$ApiExceptionCopyWithImpl<$Res, _$_ServerException>
-    implements _$$_ServerExceptionCopyWith<$Res> {
-  __$$_ServerExceptionCopyWithImpl(
-      _$_ServerException _value, $Res Function(_$_ServerException) _then)
+class __$$ServerExceptionImplCopyWithImpl<$Res>
+    extends _$ApiExceptionCopyWithImpl<$Res, _$ServerExceptionImpl>
+    implements _$$ServerExceptionImplCopyWith<$Res> {
+  __$$ServerExceptionImplCopyWithImpl(
+      _$ServerExceptionImpl _value, $Res Function(_$ServerExceptionImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -139,7 +139,7 @@ class __$$_ServerExceptionCopyWithImpl<$Res>
   $Res call({
     Object? message = null,
   }) {
-    return _then(_$_ServerException(
+    return _then(_$ServerExceptionImpl(
       message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
@@ -150,8 +150,8 @@ class __$$_ServerExceptionCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_ServerException implements _ServerException {
-  const _$_ServerException({required this.message});
+class _$ServerExceptionImpl implements _ServerException {
+  const _$ServerExceptionImpl({required this.message});
 
   @override
   final String message;
@@ -165,7 +165,7 @@ class _$_ServerException implements _ServerException {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ServerException &&
+            other is _$ServerExceptionImpl &&
             (identical(other.message, message) || other.message == message));
   }
 
@@ -175,8 +175,9 @@ class _$_ServerException implements _ServerException {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ServerExceptionCopyWith<_$_ServerException> get copyWith =>
-      __$$_ServerExceptionCopyWithImpl<_$_ServerException>(this, _$identity);
+  _$$ServerExceptionImplCopyWith<_$ServerExceptionImpl> get copyWith =>
+      __$$ServerExceptionImplCopyWithImpl<_$ServerExceptionImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -264,33 +265,33 @@ class _$_ServerException implements _ServerException {
 
 abstract class _ServerException implements ApiException {
   const factory _ServerException({required final String message}) =
-      _$_ServerException;
+      _$ServerExceptionImpl;
 
   @override
   String get message;
   @override
   @JsonKey(ignore: true)
-  _$$_ServerExceptionCopyWith<_$_ServerException> get copyWith =>
+  _$$ServerExceptionImplCopyWith<_$ServerExceptionImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_UnprocessableEntityCopyWith<$Res>
+abstract class _$$UnprocessableEntityImplCopyWith<$Res>
     implements $ApiExceptionCopyWith<$Res> {
-  factory _$$_UnprocessableEntityCopyWith(_$_UnprocessableEntity value,
-          $Res Function(_$_UnprocessableEntity) then) =
-      __$$_UnprocessableEntityCopyWithImpl<$Res>;
+  factory _$$UnprocessableEntityImplCopyWith(_$UnprocessableEntityImpl value,
+          $Res Function(_$UnprocessableEntityImpl) then) =
+      __$$UnprocessableEntityImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String message, Map<String, dynamic> errors});
 }
 
 /// @nodoc
-class __$$_UnprocessableEntityCopyWithImpl<$Res>
-    extends _$ApiExceptionCopyWithImpl<$Res, _$_UnprocessableEntity>
-    implements _$$_UnprocessableEntityCopyWith<$Res> {
-  __$$_UnprocessableEntityCopyWithImpl(_$_UnprocessableEntity _value,
-      $Res Function(_$_UnprocessableEntity) _then)
+class __$$UnprocessableEntityImplCopyWithImpl<$Res>
+    extends _$ApiExceptionCopyWithImpl<$Res, _$UnprocessableEntityImpl>
+    implements _$$UnprocessableEntityImplCopyWith<$Res> {
+  __$$UnprocessableEntityImplCopyWithImpl(_$UnprocessableEntityImpl _value,
+      $Res Function(_$UnprocessableEntityImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -299,7 +300,7 @@ class __$$_UnprocessableEntityCopyWithImpl<$Res>
     Object? message = null,
     Object? errors = null,
   }) {
-    return _then(_$_UnprocessableEntity(
+    return _then(_$UnprocessableEntityImpl(
       message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
@@ -314,8 +315,8 @@ class __$$_UnprocessableEntityCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_UnprocessableEntity implements _UnprocessableEntity {
-  const _$_UnprocessableEntity(
+class _$UnprocessableEntityImpl implements _UnprocessableEntity {
+  const _$UnprocessableEntityImpl(
       {required this.message, required final Map<String, dynamic> errors})
       : _errors = errors;
 
@@ -338,7 +339,7 @@ class _$_UnprocessableEntity implements _UnprocessableEntity {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_UnprocessableEntity &&
+            other is _$UnprocessableEntityImpl &&
             (identical(other.message, message) || other.message == message) &&
             const DeepCollectionEquality().equals(other._errors, _errors));
   }
@@ -350,8 +351,8 @@ class _$_UnprocessableEntity implements _UnprocessableEntity {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_UnprocessableEntityCopyWith<_$_UnprocessableEntity> get copyWith =>
-      __$$_UnprocessableEntityCopyWithImpl<_$_UnprocessableEntity>(
+  _$$UnprocessableEntityImplCopyWith<_$UnprocessableEntityImpl> get copyWith =>
+      __$$UnprocessableEntityImplCopyWithImpl<_$UnprocessableEntityImpl>(
           this, _$identity);
 
   @override
@@ -441,34 +442,34 @@ class _$_UnprocessableEntity implements _UnprocessableEntity {
 abstract class _UnprocessableEntity implements ApiException {
   const factory _UnprocessableEntity(
       {required final String message,
-      required final Map<String, dynamic> errors}) = _$_UnprocessableEntity;
+      required final Map<String, dynamic> errors}) = _$UnprocessableEntityImpl;
 
   @override
   String get message;
   Map<String, dynamic> get errors;
   @override
   @JsonKey(ignore: true)
-  _$$_UnprocessableEntityCopyWith<_$_UnprocessableEntity> get copyWith =>
+  _$$UnprocessableEntityImplCopyWith<_$UnprocessableEntityImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_UnAuthorizedCopyWith<$Res>
+abstract class _$$UnAuthorizedImplCopyWith<$Res>
     implements $ApiExceptionCopyWith<$Res> {
-  factory _$$_UnAuthorizedCopyWith(
-          _$_UnAuthorized value, $Res Function(_$_UnAuthorized) then) =
-      __$$_UnAuthorizedCopyWithImpl<$Res>;
+  factory _$$UnAuthorizedImplCopyWith(
+          _$UnAuthorizedImpl value, $Res Function(_$UnAuthorizedImpl) then) =
+      __$$UnAuthorizedImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String message});
 }
 
 /// @nodoc
-class __$$_UnAuthorizedCopyWithImpl<$Res>
-    extends _$ApiExceptionCopyWithImpl<$Res, _$_UnAuthorized>
-    implements _$$_UnAuthorizedCopyWith<$Res> {
-  __$$_UnAuthorizedCopyWithImpl(
-      _$_UnAuthorized _value, $Res Function(_$_UnAuthorized) _then)
+class __$$UnAuthorizedImplCopyWithImpl<$Res>
+    extends _$ApiExceptionCopyWithImpl<$Res, _$UnAuthorizedImpl>
+    implements _$$UnAuthorizedImplCopyWith<$Res> {
+  __$$UnAuthorizedImplCopyWithImpl(
+      _$UnAuthorizedImpl _value, $Res Function(_$UnAuthorizedImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -476,7 +477,7 @@ class __$$_UnAuthorizedCopyWithImpl<$Res>
   $Res call({
     Object? message = null,
   }) {
-    return _then(_$_UnAuthorized(
+    return _then(_$UnAuthorizedImpl(
       null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
@@ -487,8 +488,8 @@ class __$$_UnAuthorizedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_UnAuthorized implements _UnAuthorized {
-  const _$_UnAuthorized(this.message);
+class _$UnAuthorizedImpl implements _UnAuthorized {
+  const _$UnAuthorizedImpl(this.message);
 
   @override
   final String message;
@@ -502,7 +503,7 @@ class _$_UnAuthorized implements _UnAuthorized {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_UnAuthorized &&
+            other is _$UnAuthorizedImpl &&
             (identical(other.message, message) || other.message == message));
   }
 
@@ -512,8 +513,8 @@ class _$_UnAuthorized implements _UnAuthorized {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_UnAuthorizedCopyWith<_$_UnAuthorized> get copyWith =>
-      __$$_UnAuthorizedCopyWithImpl<_$_UnAuthorized>(this, _$identity);
+  _$$UnAuthorizedImplCopyWith<_$UnAuthorizedImpl> get copyWith =>
+      __$$UnAuthorizedImplCopyWithImpl<_$UnAuthorizedImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -600,32 +601,33 @@ class _$_UnAuthorized implements _UnAuthorized {
 }
 
 abstract class _UnAuthorized implements ApiException {
-  const factory _UnAuthorized(final String message) = _$_UnAuthorized;
+  const factory _UnAuthorized(final String message) = _$UnAuthorizedImpl;
 
   @override
   String get message;
   @override
   @JsonKey(ignore: true)
-  _$$_UnAuthorizedCopyWith<_$_UnAuthorized> get copyWith =>
+  _$$UnAuthorizedImplCopyWith<_$UnAuthorizedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_NetworkCopyWith<$Res>
+abstract class _$$NetworkImplCopyWith<$Res>
     implements $ApiExceptionCopyWith<$Res> {
-  factory _$$_NetworkCopyWith(
-          _$_Network value, $Res Function(_$_Network) then) =
-      __$$_NetworkCopyWithImpl<$Res>;
+  factory _$$NetworkImplCopyWith(
+          _$NetworkImpl value, $Res Function(_$NetworkImpl) then) =
+      __$$NetworkImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String message});
 }
 
 /// @nodoc
-class __$$_NetworkCopyWithImpl<$Res>
-    extends _$ApiExceptionCopyWithImpl<$Res, _$_Network>
-    implements _$$_NetworkCopyWith<$Res> {
-  __$$_NetworkCopyWithImpl(_$_Network _value, $Res Function(_$_Network) _then)
+class __$$NetworkImplCopyWithImpl<$Res>
+    extends _$ApiExceptionCopyWithImpl<$Res, _$NetworkImpl>
+    implements _$$NetworkImplCopyWith<$Res> {
+  __$$NetworkImplCopyWithImpl(
+      _$NetworkImpl _value, $Res Function(_$NetworkImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -633,7 +635,7 @@ class __$$_NetworkCopyWithImpl<$Res>
   $Res call({
     Object? message = null,
   }) {
-    return _then(_$_Network(
+    return _then(_$NetworkImpl(
       null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
@@ -644,8 +646,8 @@ class __$$_NetworkCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Network implements _Network {
-  const _$_Network(this.message);
+class _$NetworkImpl implements _Network {
+  const _$NetworkImpl(this.message);
 
   @override
   final String message;
@@ -659,7 +661,7 @@ class _$_Network implements _Network {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Network &&
+            other is _$NetworkImpl &&
             (identical(other.message, message) || other.message == message));
   }
 
@@ -669,8 +671,8 @@ class _$_Network implements _Network {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_NetworkCopyWith<_$_Network> get copyWith =>
-      __$$_NetworkCopyWithImpl<_$_Network>(this, _$identity);
+  _$$NetworkImplCopyWith<_$NetworkImpl> get copyWith =>
+      __$$NetworkImplCopyWithImpl<_$NetworkImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -757,33 +759,33 @@ class _$_Network implements _Network {
 }
 
 abstract class _Network implements ApiException {
-  const factory _Network(final String message) = _$_Network;
+  const factory _Network(final String message) = _$NetworkImpl;
 
   @override
   String get message;
   @override
   @JsonKey(ignore: true)
-  _$$_NetworkCopyWith<_$_Network> get copyWith =>
+  _$$NetworkImplCopyWith<_$NetworkImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_DatabaseCopyWith<$Res>
+abstract class _$$DatabaseImplCopyWith<$Res>
     implements $ApiExceptionCopyWith<$Res> {
-  factory _$$_DatabaseCopyWith(
-          _$_Database value, $Res Function(_$_Database) then) =
-      __$$_DatabaseCopyWithImpl<$Res>;
+  factory _$$DatabaseImplCopyWith(
+          _$DatabaseImpl value, $Res Function(_$DatabaseImpl) then) =
+      __$$DatabaseImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String message});
 }
 
 /// @nodoc
-class __$$_DatabaseCopyWithImpl<$Res>
-    extends _$ApiExceptionCopyWithImpl<$Res, _$_Database>
-    implements _$$_DatabaseCopyWith<$Res> {
-  __$$_DatabaseCopyWithImpl(
-      _$_Database _value, $Res Function(_$_Database) _then)
+class __$$DatabaseImplCopyWithImpl<$Res>
+    extends _$ApiExceptionCopyWithImpl<$Res, _$DatabaseImpl>
+    implements _$$DatabaseImplCopyWith<$Res> {
+  __$$DatabaseImplCopyWithImpl(
+      _$DatabaseImpl _value, $Res Function(_$DatabaseImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -791,7 +793,7 @@ class __$$_DatabaseCopyWithImpl<$Res>
   $Res call({
     Object? message = null,
   }) {
-    return _then(_$_Database(
+    return _then(_$DatabaseImpl(
       message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
@@ -802,8 +804,8 @@ class __$$_DatabaseCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Database implements _Database {
-  const _$_Database({required this.message});
+class _$DatabaseImpl implements _Database {
+  const _$DatabaseImpl({required this.message});
 
   @override
   final String message;
@@ -817,7 +819,7 @@ class _$_Database implements _Database {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Database &&
+            other is _$DatabaseImpl &&
             (identical(other.message, message) || other.message == message));
   }
 
@@ -827,8 +829,8 @@ class _$_Database implements _Database {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_DatabaseCopyWith<_$_Database> get copyWith =>
-      __$$_DatabaseCopyWithImpl<_$_Database>(this, _$identity);
+  _$$DatabaseImplCopyWith<_$DatabaseImpl> get copyWith =>
+      __$$DatabaseImplCopyWithImpl<_$DatabaseImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -915,12 +917,12 @@ class _$_Database implements _Database {
 }
 
 abstract class _Database implements ApiException {
-  const factory _Database({required final String message}) = _$_Database;
+  const factory _Database({required final String message}) = _$DatabaseImpl;
 
   @override
   String get message;
   @override
   @JsonKey(ignore: true)
-  _$$_DatabaseCopyWith<_$_Database> get copyWith =>
+  _$$DatabaseImplCopyWith<_$DatabaseImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

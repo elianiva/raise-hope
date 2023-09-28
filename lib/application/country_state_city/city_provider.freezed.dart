@@ -90,11 +90,11 @@ class _$CityFamilyCopyWithImpl<$Res, $Val extends CityFamily>
 }
 
 /// @nodoc
-abstract class _$$_CityFamilyCopyWith<$Res>
+abstract class _$$CityFamilyImplCopyWith<$Res>
     implements $CityFamilyCopyWith<$Res> {
-  factory _$$_CityFamilyCopyWith(
-          _$_CityFamily value, $Res Function(_$_CityFamily) then) =
-      __$$_CityFamilyCopyWithImpl<$Res>;
+  factory _$$CityFamilyImplCopyWith(
+          _$CityFamilyImpl value, $Res Function(_$CityFamilyImpl) then) =
+      __$$CityFamilyImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({Country? country, Province? province});
@@ -106,11 +106,11 @@ abstract class _$$_CityFamilyCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_CityFamilyCopyWithImpl<$Res>
-    extends _$CityFamilyCopyWithImpl<$Res, _$_CityFamily>
-    implements _$$_CityFamilyCopyWith<$Res> {
-  __$$_CityFamilyCopyWithImpl(
-      _$_CityFamily _value, $Res Function(_$_CityFamily) _then)
+class __$$CityFamilyImplCopyWithImpl<$Res>
+    extends _$CityFamilyCopyWithImpl<$Res, _$CityFamilyImpl>
+    implements _$$CityFamilyImplCopyWith<$Res> {
+  __$$CityFamilyImplCopyWithImpl(
+      _$CityFamilyImpl _value, $Res Function(_$CityFamilyImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -119,7 +119,7 @@ class __$$_CityFamilyCopyWithImpl<$Res>
     Object? country = freezed,
     Object? province = freezed,
   }) {
-    return _then(_$_CityFamily(
+    return _then(_$CityFamilyImpl(
       country: freezed == country
           ? _value.country
           : country // ignore: cast_nullable_to_non_nullable
@@ -134,8 +134,8 @@ class __$$_CityFamilyCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_CityFamily implements _CityFamily {
-  const _$_CityFamily({required this.country, required this.province});
+class _$CityFamilyImpl implements _CityFamily {
+  const _$CityFamilyImpl({required this.country, required this.province});
 
   @override
   final Country? country;
@@ -151,7 +151,7 @@ class _$_CityFamily implements _CityFamily {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_CityFamily &&
+            other is _$CityFamilyImpl &&
             (identical(other.country, country) || other.country == country) &&
             (identical(other.province, province) ||
                 other.province == province));
@@ -163,14 +163,14 @@ class _$_CityFamily implements _CityFamily {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_CityFamilyCopyWith<_$_CityFamily> get copyWith =>
-      __$$_CityFamilyCopyWithImpl<_$_CityFamily>(this, _$identity);
+  _$$CityFamilyImplCopyWith<_$CityFamilyImpl> get copyWith =>
+      __$$CityFamilyImplCopyWithImpl<_$CityFamilyImpl>(this, _$identity);
 }
 
 abstract class _CityFamily implements CityFamily {
   const factory _CityFamily(
       {required final Country? country,
-      required final Province? province}) = _$_CityFamily;
+      required final Province? province}) = _$CityFamilyImpl;
 
   @override
   Country? get country;
@@ -178,6 +178,6 @@ abstract class _CityFamily implements CityFamily {
   Province? get province;
   @override
   @JsonKey(ignore: true)
-  _$$_CityFamilyCopyWith<_$_CityFamily> get copyWith =>
+  _$$CityFamilyImplCopyWith<_$CityFamilyImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

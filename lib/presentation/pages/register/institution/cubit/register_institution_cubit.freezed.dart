@@ -112,11 +112,11 @@ class _$RegisterInstitutionStateCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_PersonalDataCopyWith<$Res>
+abstract class _$$PersonalDataImplCopyWith<$Res>
     implements $RegisterInstitutionStateCopyWith<$Res> {
-  factory _$$_PersonalDataCopyWith(
-          _$_PersonalData value, $Res Function(_$_PersonalData) then) =
-      __$$_PersonalDataCopyWithImpl<$Res>;
+  factory _$$PersonalDataImplCopyWith(
+          _$PersonalDataImpl value, $Res Function(_$PersonalDataImpl) then) =
+      __$$PersonalDataImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({RegisterInstitutionData data});
@@ -126,11 +126,11 @@ abstract class _$$_PersonalDataCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_PersonalDataCopyWithImpl<$Res>
-    extends _$RegisterInstitutionStateCopyWithImpl<$Res, _$_PersonalData>
-    implements _$$_PersonalDataCopyWith<$Res> {
-  __$$_PersonalDataCopyWithImpl(
-      _$_PersonalData _value, $Res Function(_$_PersonalData) _then)
+class __$$PersonalDataImplCopyWithImpl<$Res>
+    extends _$RegisterInstitutionStateCopyWithImpl<$Res, _$PersonalDataImpl>
+    implements _$$PersonalDataImplCopyWith<$Res> {
+  __$$PersonalDataImplCopyWithImpl(
+      _$PersonalDataImpl _value, $Res Function(_$PersonalDataImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -138,7 +138,7 @@ class __$$_PersonalDataCopyWithImpl<$Res>
   $Res call({
     Object? data = null,
   }) {
-    return _then(_$_PersonalData(
+    return _then(_$PersonalDataImpl(
       null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
@@ -149,8 +149,8 @@ class __$$_PersonalDataCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_PersonalData implements _PersonalData {
-  const _$_PersonalData(this.data);
+class _$PersonalDataImpl implements _PersonalData {
+  const _$PersonalDataImpl(this.data);
 
   @override
   final RegisterInstitutionData data;
@@ -164,7 +164,7 @@ class _$_PersonalData implements _PersonalData {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_PersonalData &&
+            other is _$PersonalDataImpl &&
             (identical(other.data, data) || other.data == data));
   }
 
@@ -174,8 +174,8 @@ class _$_PersonalData implements _PersonalData {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_PersonalDataCopyWith<_$_PersonalData> get copyWith =>
-      __$$_PersonalDataCopyWithImpl<_$_PersonalData>(this, _$identity);
+  _$$PersonalDataImplCopyWith<_$PersonalDataImpl> get copyWith =>
+      __$$PersonalDataImplCopyWithImpl<_$PersonalDataImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -248,22 +248,22 @@ class _$_PersonalData implements _PersonalData {
 
 abstract class _PersonalData implements RegisterInstitutionState {
   const factory _PersonalData(final RegisterInstitutionData data) =
-      _$_PersonalData;
+      _$PersonalDataImpl;
 
   @override
   RegisterInstitutionData get data;
   @override
   @JsonKey(ignore: true)
-  _$$_PersonalDataCopyWith<_$_PersonalData> get copyWith =>
+  _$$PersonalDataImplCopyWith<_$PersonalDataImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_AddressInformationCopyWith<$Res>
+abstract class _$$AddressInformationImplCopyWith<$Res>
     implements $RegisterInstitutionStateCopyWith<$Res> {
-  factory _$$_AddressInformationCopyWith(_$_AddressInformation value,
-          $Res Function(_$_AddressInformation) then) =
-      __$$_AddressInformationCopyWithImpl<$Res>;
+  factory _$$AddressInformationImplCopyWith(_$AddressInformationImpl value,
+          $Res Function(_$AddressInformationImpl) then) =
+      __$$AddressInformationImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({RegisterInstitutionData data});
@@ -273,11 +273,12 @@ abstract class _$$_AddressInformationCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_AddressInformationCopyWithImpl<$Res>
-    extends _$RegisterInstitutionStateCopyWithImpl<$Res, _$_AddressInformation>
-    implements _$$_AddressInformationCopyWith<$Res> {
-  __$$_AddressInformationCopyWithImpl(
-      _$_AddressInformation _value, $Res Function(_$_AddressInformation) _then)
+class __$$AddressInformationImplCopyWithImpl<$Res>
+    extends _$RegisterInstitutionStateCopyWithImpl<$Res,
+        _$AddressInformationImpl>
+    implements _$$AddressInformationImplCopyWith<$Res> {
+  __$$AddressInformationImplCopyWithImpl(_$AddressInformationImpl _value,
+      $Res Function(_$AddressInformationImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -285,7 +286,7 @@ class __$$_AddressInformationCopyWithImpl<$Res>
   $Res call({
     Object? data = null,
   }) {
-    return _then(_$_AddressInformation(
+    return _then(_$AddressInformationImpl(
       null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
@@ -296,8 +297,8 @@ class __$$_AddressInformationCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_AddressInformation implements _AddressInformation {
-  const _$_AddressInformation(this.data);
+class _$AddressInformationImpl implements _AddressInformation {
+  const _$AddressInformationImpl(this.data);
 
   @override
   final RegisterInstitutionData data;
@@ -311,7 +312,7 @@ class _$_AddressInformation implements _AddressInformation {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_AddressInformation &&
+            other is _$AddressInformationImpl &&
             (identical(other.data, data) || other.data == data));
   }
 
@@ -321,8 +322,8 @@ class _$_AddressInformation implements _AddressInformation {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_AddressInformationCopyWith<_$_AddressInformation> get copyWith =>
-      __$$_AddressInformationCopyWithImpl<_$_AddressInformation>(
+  _$$AddressInformationImplCopyWith<_$AddressInformationImpl> get copyWith =>
+      __$$AddressInformationImplCopyWithImpl<_$AddressInformationImpl>(
           this, _$identity);
 
   @override
@@ -396,22 +397,22 @@ class _$_AddressInformation implements _AddressInformation {
 
 abstract class _AddressInformation implements RegisterInstitutionState {
   const factory _AddressInformation(final RegisterInstitutionData data) =
-      _$_AddressInformation;
+      _$AddressInformationImpl;
 
   @override
   RegisterInstitutionData get data;
   @override
   @JsonKey(ignore: true)
-  _$$_AddressInformationCopyWith<_$_AddressInformation> get copyWith =>
+  _$$AddressInformationImplCopyWith<_$AddressInformationImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_BackgroundCopyWith<$Res>
+abstract class _$$BackgroundImplCopyWith<$Res>
     implements $RegisterInstitutionStateCopyWith<$Res> {
-  factory _$$_BackgroundCopyWith(
-          _$_Background value, $Res Function(_$_Background) then) =
-      __$$_BackgroundCopyWithImpl<$Res>;
+  factory _$$BackgroundImplCopyWith(
+          _$BackgroundImpl value, $Res Function(_$BackgroundImpl) then) =
+      __$$BackgroundImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({RegisterInstitutionData data});
@@ -421,11 +422,11 @@ abstract class _$$_BackgroundCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_BackgroundCopyWithImpl<$Res>
-    extends _$RegisterInstitutionStateCopyWithImpl<$Res, _$_Background>
-    implements _$$_BackgroundCopyWith<$Res> {
-  __$$_BackgroundCopyWithImpl(
-      _$_Background _value, $Res Function(_$_Background) _then)
+class __$$BackgroundImplCopyWithImpl<$Res>
+    extends _$RegisterInstitutionStateCopyWithImpl<$Res, _$BackgroundImpl>
+    implements _$$BackgroundImplCopyWith<$Res> {
+  __$$BackgroundImplCopyWithImpl(
+      _$BackgroundImpl _value, $Res Function(_$BackgroundImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -433,7 +434,7 @@ class __$$_BackgroundCopyWithImpl<$Res>
   $Res call({
     Object? data = null,
   }) {
-    return _then(_$_Background(
+    return _then(_$BackgroundImpl(
       null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
@@ -444,8 +445,8 @@ class __$$_BackgroundCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Background implements _Background {
-  const _$_Background(this.data);
+class _$BackgroundImpl implements _Background {
+  const _$BackgroundImpl(this.data);
 
   @override
   final RegisterInstitutionData data;
@@ -459,7 +460,7 @@ class _$_Background implements _Background {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Background &&
+            other is _$BackgroundImpl &&
             (identical(other.data, data) || other.data == data));
   }
 
@@ -469,8 +470,8 @@ class _$_Background implements _Background {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_BackgroundCopyWith<_$_Background> get copyWith =>
-      __$$_BackgroundCopyWithImpl<_$_Background>(this, _$identity);
+  _$$BackgroundImplCopyWith<_$BackgroundImpl> get copyWith =>
+      __$$BackgroundImplCopyWithImpl<_$BackgroundImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -542,13 +543,14 @@ class _$_Background implements _Background {
 }
 
 abstract class _Background implements RegisterInstitutionState {
-  const factory _Background(final RegisterInstitutionData data) = _$_Background;
+  const factory _Background(final RegisterInstitutionData data) =
+      _$BackgroundImpl;
 
   @override
   RegisterInstitutionData get data;
   @override
   @JsonKey(ignore: true)
-  _$$_BackgroundCopyWith<_$_Background> get copyWith =>
+  _$$BackgroundImplCopyWith<_$BackgroundImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -729,11 +731,12 @@ class _$RegisterInstitutionDataCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_RegisterInstitutionDataCopyWith<$Res>
+abstract class _$$RegisterInstitutionDataImplCopyWith<$Res>
     implements $RegisterInstitutionDataCopyWith<$Res> {
-  factory _$$_RegisterInstitutionDataCopyWith(_$_RegisterInstitutionData value,
-          $Res Function(_$_RegisterInstitutionData) then) =
-      __$$_RegisterInstitutionDataCopyWithImpl<$Res>;
+  factory _$$RegisterInstitutionDataImplCopyWith(
+          _$RegisterInstitutionDataImpl value,
+          $Res Function(_$RegisterInstitutionDataImpl) then) =
+      __$$RegisterInstitutionDataImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -761,12 +764,13 @@ abstract class _$$_RegisterInstitutionDataCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_RegisterInstitutionDataCopyWithImpl<$Res>
+class __$$RegisterInstitutionDataImplCopyWithImpl<$Res>
     extends _$RegisterInstitutionDataCopyWithImpl<$Res,
-        _$_RegisterInstitutionData>
-    implements _$$_RegisterInstitutionDataCopyWith<$Res> {
-  __$$_RegisterInstitutionDataCopyWithImpl(_$_RegisterInstitutionData _value,
-      $Res Function(_$_RegisterInstitutionData) _then)
+        _$RegisterInstitutionDataImpl>
+    implements _$$RegisterInstitutionDataImplCopyWith<$Res> {
+  __$$RegisterInstitutionDataImplCopyWithImpl(
+      _$RegisterInstitutionDataImpl _value,
+      $Res Function(_$RegisterInstitutionDataImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -787,7 +791,7 @@ class __$$_RegisterInstitutionDataCopyWithImpl<$Res>
     Object? typeOfHelp = freezed,
     Object? isUsingCurrentUser = null,
   }) {
-    return _then(_$_RegisterInstitutionData(
+    return _then(_$RegisterInstitutionDataImpl(
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -850,8 +854,8 @@ class __$$_RegisterInstitutionDataCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_RegisterInstitutionData implements _RegisterInstitutionData {
-  const _$_RegisterInstitutionData(
+class _$RegisterInstitutionDataImpl implements _RegisterInstitutionData {
+  const _$RegisterInstitutionDataImpl(
       {this.name,
       this.email,
       this.website,
@@ -916,7 +920,7 @@ class _$_RegisterInstitutionData implements _RegisterInstitutionData {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_RegisterInstitutionData &&
+            other is _$RegisterInstitutionDataImpl &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.email, email) || other.email == email) &&
             (identical(other.website, website) || other.website == website) &&
@@ -962,10 +966,9 @@ class _$_RegisterInstitutionData implements _RegisterInstitutionData {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_RegisterInstitutionDataCopyWith<_$_RegisterInstitutionData>
-      get copyWith =>
-          __$$_RegisterInstitutionDataCopyWithImpl<_$_RegisterInstitutionData>(
-              this, _$identity);
+  _$$RegisterInstitutionDataImplCopyWith<_$RegisterInstitutionDataImpl>
+      get copyWith => __$$RegisterInstitutionDataImplCopyWithImpl<
+          _$RegisterInstitutionDataImpl>(this, _$identity);
 }
 
 abstract class _RegisterInstitutionData implements RegisterInstitutionData {
@@ -983,7 +986,7 @@ abstract class _RegisterInstitutionData implements RegisterInstitutionData {
       final OrganizationType? organizationType,
       final OrganizationSize? organizationSize,
       final List<TypeOfHelp>? typeOfHelp,
-      final bool isUsingCurrentUser}) = _$_RegisterInstitutionData;
+      final bool isUsingCurrentUser}) = _$RegisterInstitutionDataImpl;
 
   @override
   String? get name;
@@ -1015,6 +1018,6 @@ abstract class _RegisterInstitutionData implements RegisterInstitutionData {
   bool get isUsingCurrentUser;
   @override
   @JsonKey(ignore: true)
-  _$$_RegisterInstitutionDataCopyWith<_$_RegisterInstitutionData>
+  _$$RegisterInstitutionDataImplCopyWith<_$RegisterInstitutionDataImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

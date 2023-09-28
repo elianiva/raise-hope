@@ -109,11 +109,11 @@ class _$SelectedLocationCopyWithImpl<$Res, $Val extends SelectedLocation>
 }
 
 /// @nodoc
-abstract class _$$_SelectedLocationCopyWith<$Res>
+abstract class _$$SelectedLocationImplCopyWith<$Res>
     implements $SelectedLocationCopyWith<$Res> {
-  factory _$$_SelectedLocationCopyWith(
-          _$_SelectedLocation value, $Res Function(_$_SelectedLocation) then) =
-      __$$_SelectedLocationCopyWithImpl<$Res>;
+  factory _$$SelectedLocationImplCopyWith(_$SelectedLocationImpl value,
+          $Res Function(_$SelectedLocationImpl) then) =
+      __$$SelectedLocationImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({Country? country, Province? province, City? city});
@@ -127,11 +127,11 @@ abstract class _$$_SelectedLocationCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_SelectedLocationCopyWithImpl<$Res>
-    extends _$SelectedLocationCopyWithImpl<$Res, _$_SelectedLocation>
-    implements _$$_SelectedLocationCopyWith<$Res> {
-  __$$_SelectedLocationCopyWithImpl(
-      _$_SelectedLocation _value, $Res Function(_$_SelectedLocation) _then)
+class __$$SelectedLocationImplCopyWithImpl<$Res>
+    extends _$SelectedLocationCopyWithImpl<$Res, _$SelectedLocationImpl>
+    implements _$$SelectedLocationImplCopyWith<$Res> {
+  __$$SelectedLocationImplCopyWithImpl(_$SelectedLocationImpl _value,
+      $Res Function(_$SelectedLocationImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -141,7 +141,7 @@ class __$$_SelectedLocationCopyWithImpl<$Res>
     Object? province = freezed,
     Object? city = freezed,
   }) {
-    return _then(_$_SelectedLocation(
+    return _then(_$SelectedLocationImpl(
       country: freezed == country
           ? _value.country
           : country // ignore: cast_nullable_to_non_nullable
@@ -160,8 +160,8 @@ class __$$_SelectedLocationCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SelectedLocation implements _SelectedLocation {
-  const _$_SelectedLocation({this.country, this.province, this.city});
+class _$SelectedLocationImpl implements _SelectedLocation {
+  const _$SelectedLocationImpl({this.country, this.province, this.city});
 
   @override
   final Country? country;
@@ -179,7 +179,7 @@ class _$_SelectedLocation implements _SelectedLocation {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_SelectedLocation &&
+            other is _$SelectedLocationImpl &&
             (identical(other.country, country) || other.country == country) &&
             (identical(other.province, province) ||
                 other.province == province) &&
@@ -192,15 +192,16 @@ class _$_SelectedLocation implements _SelectedLocation {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_SelectedLocationCopyWith<_$_SelectedLocation> get copyWith =>
-      __$$_SelectedLocationCopyWithImpl<_$_SelectedLocation>(this, _$identity);
+  _$$SelectedLocationImplCopyWith<_$SelectedLocationImpl> get copyWith =>
+      __$$SelectedLocationImplCopyWithImpl<_$SelectedLocationImpl>(
+          this, _$identity);
 }
 
 abstract class _SelectedLocation implements SelectedLocation {
   const factory _SelectedLocation(
       {final Country? country,
       final Province? province,
-      final City? city}) = _$_SelectedLocation;
+      final City? city}) = _$SelectedLocationImpl;
 
   @override
   Country? get country;
@@ -210,6 +211,6 @@ abstract class _SelectedLocation implements SelectedLocation {
   City? get city;
   @override
   @JsonKey(ignore: true)
-  _$$_SelectedLocationCopyWith<_$_SelectedLocation> get copyWith =>
+  _$$SelectedLocationImplCopyWith<_$SelectedLocationImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

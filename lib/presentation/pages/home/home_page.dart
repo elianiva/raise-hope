@@ -1,6 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:raise_hope/presentation/routes/app_router.gr.dart';
+import 'package:raise_hope/presentation/routes/app_router.dart';
 
 import 'components/app_drawer.dart';
 
@@ -15,25 +15,24 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   final GlobalKey<ScaffoldState> _key = GlobalKey();
 
-  final int _currentIndex = 0;
-
   @override
   Widget build(BuildContext context) {
-    return AutoTabsRouter.builder(
+    return AutoTabsRouter(
       routes: const [
-        HomeDashboardRoute(),
+        // HomeMainRoute(),
         HomeMissionRoute(),
         HomeDiscussionRoute(),
       ],
-      builder: (ctx, child, controller) {
+      builder: (ctx, child) {
+        final tabsRouter = AutoTabsRouter.of(context);
         return Scaffold(
           backgroundColor: Colors.white,
           key: _key,
           drawer: const AppDrawer(),
-          body: child[controller.activeIndex],
+          body: child,
           bottomNavigationBar: NavigationBar(
-            selectedIndex: controller.activeIndex,
-            onDestinationSelected: controller.setActiveIndex,
+            selectedIndex: tabsRouter.activeIndex,
+            onDestinationSelected: tabsRouter.setActiveIndex,
             destinations: const [
               NavigationDestination(icon: Icon(Icons.home), label: "Home"),
               NavigationDestination(icon: Icon(Icons.book), label: "Mission"),

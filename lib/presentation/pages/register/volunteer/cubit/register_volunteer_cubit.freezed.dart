@@ -63,12 +63,14 @@ mixin _$RegisterVolunteerState {
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $RegisterVolunteerStateCopyWith<RegisterVolunteerState> get copyWith => throw _privateConstructorUsedError;
+  $RegisterVolunteerStateCopyWith<RegisterVolunteerState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $RegisterVolunteerStateCopyWith<$Res> {
-  factory $RegisterVolunteerStateCopyWith(RegisterVolunteerState value, $Res Function(RegisterVolunteerState) then) =
+  factory $RegisterVolunteerStateCopyWith(RegisterVolunteerState value,
+          $Res Function(RegisterVolunteerState) then) =
       _$RegisterVolunteerStateCopyWithImpl<$Res, RegisterVolunteerState>;
   @useResult
   $Res call({RegisterVolunteerData data});
@@ -77,7 +79,8 @@ abstract class $RegisterVolunteerStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$RegisterVolunteerStateCopyWithImpl<$Res, $Val extends RegisterVolunteerState>
+class _$RegisterVolunteerStateCopyWithImpl<$Res,
+        $Val extends RegisterVolunteerState>
     implements $RegisterVolunteerStateCopyWith<$Res> {
   _$RegisterVolunteerStateCopyWithImpl(this._value, this._then);
 
@@ -109,9 +112,11 @@ class _$RegisterVolunteerStateCopyWithImpl<$Res, $Val extends RegisterVolunteerS
 }
 
 /// @nodoc
-abstract class _$$_PersonalDataCopyWith<$Res> implements $RegisterVolunteerStateCopyWith<$Res> {
-  factory _$$_PersonalDataCopyWith(_$_PersonalData value, $Res Function(_$_PersonalData) then) =
-      __$$_PersonalDataCopyWithImpl<$Res>;
+abstract class _$$PersonalDataImplCopyWith<$Res>
+    implements $RegisterVolunteerStateCopyWith<$Res> {
+  factory _$$PersonalDataImplCopyWith(
+          _$PersonalDataImpl value, $Res Function(_$PersonalDataImpl) then) =
+      __$$PersonalDataImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({RegisterVolunteerData data});
@@ -121,16 +126,19 @@ abstract class _$$_PersonalDataCopyWith<$Res> implements $RegisterVolunteerState
 }
 
 /// @nodoc
-class __$$_PersonalDataCopyWithImpl<$Res> extends _$RegisterVolunteerStateCopyWithImpl<$Res, _$_PersonalData>
-    implements _$$_PersonalDataCopyWith<$Res> {
-  __$$_PersonalDataCopyWithImpl(_$_PersonalData _value, $Res Function(_$_PersonalData) _then) : super(_value, _then);
+class __$$PersonalDataImplCopyWithImpl<$Res>
+    extends _$RegisterVolunteerStateCopyWithImpl<$Res, _$PersonalDataImpl>
+    implements _$$PersonalDataImplCopyWith<$Res> {
+  __$$PersonalDataImplCopyWithImpl(
+      _$PersonalDataImpl _value, $Res Function(_$PersonalDataImpl) _then)
+      : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? data = null,
   }) {
-    return _then(_$_PersonalData(
+    return _then(_$PersonalDataImpl(
       null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
@@ -141,8 +149,8 @@ class __$$_PersonalDataCopyWithImpl<$Res> extends _$RegisterVolunteerStateCopyWi
 
 /// @nodoc
 
-class _$_PersonalData implements _PersonalData {
-  const _$_PersonalData(this.data);
+class _$PersonalDataImpl implements _PersonalData {
+  const _$PersonalDataImpl(this.data);
 
   @override
   final RegisterVolunteerData data;
@@ -156,7 +164,7 @@ class _$_PersonalData implements _PersonalData {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_PersonalData &&
+            other is _$PersonalDataImpl &&
             (identical(other.data, data) || other.data == data));
   }
 
@@ -166,8 +174,8 @@ class _$_PersonalData implements _PersonalData {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_PersonalDataCopyWith<_$_PersonalData> get copyWith =>
-      __$$_PersonalDataCopyWithImpl<_$_PersonalData>(this, _$identity);
+  _$$PersonalDataImplCopyWith<_$PersonalDataImpl> get copyWith =>
+      __$$PersonalDataImplCopyWithImpl<_$PersonalDataImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -239,19 +247,23 @@ class _$_PersonalData implements _PersonalData {
 }
 
 abstract class _PersonalData implements RegisterVolunteerState {
-  const factory _PersonalData(final RegisterVolunteerData data) = _$_PersonalData;
+  const factory _PersonalData(final RegisterVolunteerData data) =
+      _$PersonalDataImpl;
 
   @override
   RegisterVolunteerData get data;
   @override
   @JsonKey(ignore: true)
-  _$$_PersonalDataCopyWith<_$_PersonalData> get copyWith => throw _privateConstructorUsedError;
+  _$$PersonalDataImplCopyWith<_$PersonalDataImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_AvailabilityCopyWith<$Res> implements $RegisterVolunteerStateCopyWith<$Res> {
-  factory _$$_AvailabilityCopyWith(_$_Availability value, $Res Function(_$_Availability) then) =
-      __$$_AvailabilityCopyWithImpl<$Res>;
+abstract class _$$AvailabilityImplCopyWith<$Res>
+    implements $RegisterVolunteerStateCopyWith<$Res> {
+  factory _$$AvailabilityImplCopyWith(
+          _$AvailabilityImpl value, $Res Function(_$AvailabilityImpl) then) =
+      __$$AvailabilityImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({RegisterVolunteerData data});
@@ -261,16 +273,19 @@ abstract class _$$_AvailabilityCopyWith<$Res> implements $RegisterVolunteerState
 }
 
 /// @nodoc
-class __$$_AvailabilityCopyWithImpl<$Res> extends _$RegisterVolunteerStateCopyWithImpl<$Res, _$_Availability>
-    implements _$$_AvailabilityCopyWith<$Res> {
-  __$$_AvailabilityCopyWithImpl(_$_Availability _value, $Res Function(_$_Availability) _then) : super(_value, _then);
+class __$$AvailabilityImplCopyWithImpl<$Res>
+    extends _$RegisterVolunteerStateCopyWithImpl<$Res, _$AvailabilityImpl>
+    implements _$$AvailabilityImplCopyWith<$Res> {
+  __$$AvailabilityImplCopyWithImpl(
+      _$AvailabilityImpl _value, $Res Function(_$AvailabilityImpl) _then)
+      : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? data = null,
   }) {
-    return _then(_$_Availability(
+    return _then(_$AvailabilityImpl(
       null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
@@ -281,8 +296,8 @@ class __$$_AvailabilityCopyWithImpl<$Res> extends _$RegisterVolunteerStateCopyWi
 
 /// @nodoc
 
-class _$_Availability implements _Availability {
-  const _$_Availability(this.data);
+class _$AvailabilityImpl implements _Availability {
+  const _$AvailabilityImpl(this.data);
 
   @override
   final RegisterVolunteerData data;
@@ -296,7 +311,7 @@ class _$_Availability implements _Availability {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Availability &&
+            other is _$AvailabilityImpl &&
             (identical(other.data, data) || other.data == data));
   }
 
@@ -306,8 +321,8 @@ class _$_Availability implements _Availability {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_AvailabilityCopyWith<_$_Availability> get copyWith =>
-      __$$_AvailabilityCopyWithImpl<_$_Availability>(this, _$identity);
+  _$$AvailabilityImplCopyWith<_$AvailabilityImpl> get copyWith =>
+      __$$AvailabilityImplCopyWithImpl<_$AvailabilityImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -379,18 +394,23 @@ class _$_Availability implements _Availability {
 }
 
 abstract class _Availability implements RegisterVolunteerState {
-  const factory _Availability(final RegisterVolunteerData data) = _$_Availability;
+  const factory _Availability(final RegisterVolunteerData data) =
+      _$AvailabilityImpl;
 
   @override
   RegisterVolunteerData get data;
   @override
   @JsonKey(ignore: true)
-  _$$_AvailabilityCopyWith<_$_Availability> get copyWith => throw _privateConstructorUsedError;
+  _$$AvailabilityImplCopyWith<_$AvailabilityImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_InterestCopyWith<$Res> implements $RegisterVolunteerStateCopyWith<$Res> {
-  factory _$$_InterestCopyWith(_$_Interest value, $Res Function(_$_Interest) then) = __$$_InterestCopyWithImpl<$Res>;
+abstract class _$$InterestImplCopyWith<$Res>
+    implements $RegisterVolunteerStateCopyWith<$Res> {
+  factory _$$InterestImplCopyWith(
+          _$InterestImpl value, $Res Function(_$InterestImpl) then) =
+      __$$InterestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({RegisterVolunteerData data});
@@ -400,16 +420,19 @@ abstract class _$$_InterestCopyWith<$Res> implements $RegisterVolunteerStateCopy
 }
 
 /// @nodoc
-class __$$_InterestCopyWithImpl<$Res> extends _$RegisterVolunteerStateCopyWithImpl<$Res, _$_Interest>
-    implements _$$_InterestCopyWith<$Res> {
-  __$$_InterestCopyWithImpl(_$_Interest _value, $Res Function(_$_Interest) _then) : super(_value, _then);
+class __$$InterestImplCopyWithImpl<$Res>
+    extends _$RegisterVolunteerStateCopyWithImpl<$Res, _$InterestImpl>
+    implements _$$InterestImplCopyWith<$Res> {
+  __$$InterestImplCopyWithImpl(
+      _$InterestImpl _value, $Res Function(_$InterestImpl) _then)
+      : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? data = null,
   }) {
-    return _then(_$_Interest(
+    return _then(_$InterestImpl(
       null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
@@ -420,8 +443,8 @@ class __$$_InterestCopyWithImpl<$Res> extends _$RegisterVolunteerStateCopyWithIm
 
 /// @nodoc
 
-class _$_Interest implements _Interest {
-  const _$_Interest(this.data);
+class _$InterestImpl implements _Interest {
+  const _$InterestImpl(this.data);
 
   @override
   final RegisterVolunteerData data;
@@ -435,7 +458,7 @@ class _$_Interest implements _Interest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Interest &&
+            other is _$InterestImpl &&
             (identical(other.data, data) || other.data == data));
   }
 
@@ -445,7 +468,8 @@ class _$_Interest implements _Interest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_InterestCopyWith<_$_Interest> get copyWith => __$$_InterestCopyWithImpl<_$_Interest>(this, _$identity);
+  _$$InterestImplCopyWith<_$InterestImpl> get copyWith =>
+      __$$InterestImplCopyWithImpl<_$InterestImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -517,13 +541,14 @@ class _$_Interest implements _Interest {
 }
 
 abstract class _Interest implements RegisterVolunteerState {
-  const factory _Interest(final RegisterVolunteerData data) = _$_Interest;
+  const factory _Interest(final RegisterVolunteerData data) = _$InterestImpl;
 
   @override
   RegisterVolunteerData get data;
   @override
   @JsonKey(ignore: true)
-  _$$_InterestCopyWith<_$_Interest> get copyWith => throw _privateConstructorUsedError;
+  _$$InterestImplCopyWith<_$InterestImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -535,16 +560,19 @@ mixin _$RegisterVolunteerData {
   String? get password => throw _privateConstructorUsedError;
   List<int>? get daysOfWeekAvailable => throw _privateConstructorUsedError;
   List<NameOfTimeDay>? get preferredTime => throw _privateConstructorUsedError;
-  List<String>? get interest => throw _privateConstructorUsedError; // register with current user (from google, etc)
+  List<String>? get interest =>
+      throw _privateConstructorUsedError; // register with current user (from google, etc)
   bool get isUsingCurrentUser => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $RegisterVolunteerDataCopyWith<RegisterVolunteerData> get copyWith => throw _privateConstructorUsedError;
+  $RegisterVolunteerDataCopyWith<RegisterVolunteerData> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $RegisterVolunteerDataCopyWith<$Res> {
-  factory $RegisterVolunteerDataCopyWith(RegisterVolunteerData value, $Res Function(RegisterVolunteerData) then) =
+  factory $RegisterVolunteerDataCopyWith(RegisterVolunteerData value,
+          $Res Function(RegisterVolunteerData) then) =
       _$RegisterVolunteerDataCopyWithImpl<$Res, RegisterVolunteerData>;
   @useResult
   $Res call(
@@ -560,7 +588,8 @@ abstract class $RegisterVolunteerDataCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$RegisterVolunteerDataCopyWithImpl<$Res, $Val extends RegisterVolunteerData>
+class _$RegisterVolunteerDataCopyWithImpl<$Res,
+        $Val extends RegisterVolunteerData>
     implements $RegisterVolunteerDataCopyWith<$Res> {
   _$RegisterVolunteerDataCopyWithImpl(this._value, this._then);
 
@@ -624,10 +653,12 @@ class _$RegisterVolunteerDataCopyWithImpl<$Res, $Val extends RegisterVolunteerDa
 }
 
 /// @nodoc
-abstract class _$$_RegisterVolunteerDataCopyWith<$Res> implements $RegisterVolunteerDataCopyWith<$Res> {
-  factory _$$_RegisterVolunteerDataCopyWith(
-          _$_RegisterVolunteerData value, $Res Function(_$_RegisterVolunteerData) then) =
-      __$$_RegisterVolunteerDataCopyWithImpl<$Res>;
+abstract class _$$RegisterVolunteerDataImplCopyWith<$Res>
+    implements $RegisterVolunteerDataCopyWith<$Res> {
+  factory _$$RegisterVolunteerDataImplCopyWith(
+          _$RegisterVolunteerDataImpl value,
+          $Res Function(_$RegisterVolunteerDataImpl) then) =
+      __$$RegisterVolunteerDataImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -643,10 +674,12 @@ abstract class _$$_RegisterVolunteerDataCopyWith<$Res> implements $RegisterVolun
 }
 
 /// @nodoc
-class __$$_RegisterVolunteerDataCopyWithImpl<$Res>
-    extends _$RegisterVolunteerDataCopyWithImpl<$Res, _$_RegisterVolunteerData>
-    implements _$$_RegisterVolunteerDataCopyWith<$Res> {
-  __$$_RegisterVolunteerDataCopyWithImpl(_$_RegisterVolunteerData _value, $Res Function(_$_RegisterVolunteerData) _then)
+class __$$RegisterVolunteerDataImplCopyWithImpl<$Res>
+    extends _$RegisterVolunteerDataCopyWithImpl<$Res,
+        _$RegisterVolunteerDataImpl>
+    implements _$$RegisterVolunteerDataImplCopyWith<$Res> {
+  __$$RegisterVolunteerDataImplCopyWithImpl(_$RegisterVolunteerDataImpl _value,
+      $Res Function(_$RegisterVolunteerDataImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -662,7 +695,7 @@ class __$$_RegisterVolunteerDataCopyWithImpl<$Res>
     Object? interest = freezed,
     Object? isUsingCurrentUser = null,
   }) {
-    return _then(_$_RegisterVolunteerData(
+    return _then(_$RegisterVolunteerDataImpl(
       fullName: freezed == fullName
           ? _value.fullName
           : fullName // ignore: cast_nullable_to_non_nullable
@@ -705,8 +738,8 @@ class __$$_RegisterVolunteerDataCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_RegisterVolunteerData implements _RegisterVolunteerData {
-  const _$_RegisterVolunteerData(
+class _$RegisterVolunteerDataImpl implements _RegisterVolunteerData {
+  const _$RegisterVolunteerDataImpl(
       {this.fullName,
       this.email,
       this.phoneNumber,
@@ -735,7 +768,8 @@ class _$_RegisterVolunteerData implements _RegisterVolunteerData {
   List<int>? get daysOfWeekAvailable {
     final value = _daysOfWeekAvailable;
     if (value == null) return null;
-    if (_daysOfWeekAvailable is EqualUnmodifiableListView) return _daysOfWeekAvailable;
+    if (_daysOfWeekAvailable is EqualUnmodifiableListView)
+      return _daysOfWeekAvailable;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -774,14 +808,19 @@ class _$_RegisterVolunteerData implements _RegisterVolunteerData {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_RegisterVolunteerData &&
-            (identical(other.fullName, fullName) || other.fullName == fullName) &&
+            other is _$RegisterVolunteerDataImpl &&
+            (identical(other.fullName, fullName) ||
+                other.fullName == fullName) &&
             (identical(other.email, email) || other.email == email) &&
-            (identical(other.phoneNumber, phoneNumber) || other.phoneNumber == phoneNumber) &&
+            (identical(other.phoneNumber, phoneNumber) ||
+                other.phoneNumber == phoneNumber) &&
             (identical(other.address, address) || other.address == address) &&
-            (identical(other.password, password) || other.password == password) &&
-            const DeepCollectionEquality().equals(other._daysOfWeekAvailable, _daysOfWeekAvailable) &&
-            const DeepCollectionEquality().equals(other._preferredTime, _preferredTime) &&
+            (identical(other.password, password) ||
+                other.password == password) &&
+            const DeepCollectionEquality()
+                .equals(other._daysOfWeekAvailable, _daysOfWeekAvailable) &&
+            const DeepCollectionEquality()
+                .equals(other._preferredTime, _preferredTime) &&
             const DeepCollectionEquality().equals(other._interest, _interest) &&
             (identical(other.isUsingCurrentUser, isUsingCurrentUser) ||
                 other.isUsingCurrentUser == isUsingCurrentUser));
@@ -803,8 +842,9 @@ class _$_RegisterVolunteerData implements _RegisterVolunteerData {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_RegisterVolunteerDataCopyWith<_$_RegisterVolunteerData> get copyWith =>
-      __$$_RegisterVolunteerDataCopyWithImpl<_$_RegisterVolunteerData>(this, _$identity);
+  _$$RegisterVolunteerDataImplCopyWith<_$RegisterVolunteerDataImpl>
+      get copyWith => __$$RegisterVolunteerDataImplCopyWithImpl<
+          _$RegisterVolunteerDataImpl>(this, _$identity);
 }
 
 abstract class _RegisterVolunteerData implements RegisterVolunteerData {
@@ -817,7 +857,7 @@ abstract class _RegisterVolunteerData implements RegisterVolunteerData {
       final List<int>? daysOfWeekAvailable,
       final List<NameOfTimeDay>? preferredTime,
       final List<String>? interest,
-      final bool isUsingCurrentUser}) = _$_RegisterVolunteerData;
+      final bool isUsingCurrentUser}) = _$RegisterVolunteerDataImpl;
 
   @override
   String? get fullName;
@@ -839,5 +879,6 @@ abstract class _RegisterVolunteerData implements RegisterVolunteerData {
   bool get isUsingCurrentUser;
   @override
   @JsonKey(ignore: true)
-  _$$_RegisterVolunteerDataCopyWith<_$_RegisterVolunteerData> get copyWith => throw _privateConstructorUsedError;
+  _$$RegisterVolunteerDataImplCopyWith<_$RegisterVolunteerDataImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

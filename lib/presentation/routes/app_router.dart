@@ -1,10 +1,11 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:injectable/injectable.dart';
-import 'package:raise_hope/presentation/routes/app_router.gr.dart';
+
+part 'app_router.gr.dart';
 
 @LazySingleton()
 @AutoRouterConfig()
-class AppRouter extends $AppRouter {
+class AppRouter extends _$AppRouter {
   @override
   List<AutoRoute> get routes => [
         AutoRoute(page: SplashRoute.page, initial: true),
@@ -19,7 +20,7 @@ class AppRouter extends $AppRouter {
               page: HeroEmptyRouterRoute.page,
               initial: true,
               children: [
-                AutoRoute(page: HomeDashboardRoute.page, initial: true),
+                AutoRoute(page: HomeMainRoute.page, initial: true),
                 AutoRoute(page: MissionDetailRoute.page),
               ],
             ),

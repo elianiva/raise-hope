@@ -6,7 +6,6 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'package:raise_hope/common/extensions/extensions.dart';
 import 'package:raise_hope/injection.dart';
 import 'package:raise_hope/presentation/routes/app_router.dart';
-import 'package:raise_hope/presentation/routes/app_router.gr.dart';
 import 'package:raise_hope/presentation/theme/color_schemes.dart';
 import 'package:raise_hope/presentation/theme/theme.dart';
 import 'package:reactive_forms/reactive_forms.dart';

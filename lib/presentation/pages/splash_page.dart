@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:raise_hope/common/extensions/extensions.dart';
 import 'package:raise_hope/injection.dart';
 import 'package:raise_hope/presentation/routes/app_router.dart';
-import 'package:raise_hope/presentation/routes/app_router.gr.dart';
 
 @RoutePage()
 class SplashPage extends StatefulWidget {
@@ -33,9 +32,14 @@ class _SplashPageState extends State<SplashPage> {
         return;
       }
 
-      final token = await auth.currentUser!.getIdTokenResult();
-      final role = token.claims?['role'] as String?;
+      final token = await auth.currentUser?.getIdTokenResult();
+      if (token == null) {
+        auth.signOut().catchError((_) {});
+        router.replace(const OnboardingRoute());
+        return;
+      }
 
+      final role = token.claims?['role'] as String?;
       if (role == null) {
         auth.signOut().catchError((_) {});
         router.replace(const OnboardingRoute());

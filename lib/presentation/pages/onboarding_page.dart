@@ -9,7 +9,6 @@ import 'package:raise_hope/common/extensions/extensions.dart';
 import 'package:raise_hope/injection.dart';
 import 'package:raise_hope/presentation/hooks/loop_page_controller.dart';
 import 'package:raise_hope/presentation/routes/app_router.dart';
-import 'package:raise_hope/presentation/routes/app_router.gr.dart';
 
 class OnboardingData {
   final String title;
