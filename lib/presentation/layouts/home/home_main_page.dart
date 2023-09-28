@@ -10,6 +10,7 @@ import 'package:raise_hope/presentation/components/card/custom_card.dart';
 import 'package:raise_hope/presentation/components/card/karma_card.dart';
 import 'package:raise_hope/presentation/components/card/mission_card.dart';
 import 'package:raise_hope/presentation/routes/app_router.dart';
+import 'package:raise_hope/presentation/routes/app_router.gr.dart';
 
 @RoutePage()
 class HomeMainPage extends StatefulWidget {
@@ -26,17 +27,17 @@ class _HomeMainPageState extends State<HomeMainPage> {
       body: CustomScrollView(
         slivers: [
           _buildAppBar(),
-          // _buildKarmaProgress(),
-          // _buildMissionStats(),
-          // _buildSectionTitle(title: 'For You'),
-          // _buildFilter(),
-          // _buildVerticalSpacer(),
-          // _buildMissionList(),
-          // _buildSectionTitle(title: 'Popular Mission'),
-          // _buildFilter(),
-          // _buildVerticalSpacer(),
-          // _buildMissionList(),
-          // _buildVerticalSpacer(),
+          _buildKarmaProgress(),
+          _buildMissionStats(),
+          _buildSectionTitle(title: 'For You'),
+          _buildFilter(),
+          _buildVerticalSpacer(),
+          _buildMissionList(),
+          _buildSectionTitle(title: 'Popular Mission'),
+          _buildFilter(),
+          _buildVerticalSpacer(),
+          _buildMissionList(),
+          _buildVerticalSpacer(),
         ],
       ),
     );
@@ -79,7 +80,7 @@ class _HomeMainPageState extends State<HomeMainPage> {
             final isSelected = index == 0;
 
             return Chip(
-              label: Text(TypeOfHelp.values[index].name),
+              label: Text(TypeOfHelp.values[index].toString()),
               // material 2 style
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(999),

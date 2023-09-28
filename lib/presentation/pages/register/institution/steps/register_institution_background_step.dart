@@ -11,6 +11,7 @@ import 'package:raise_hope/common/extensions/extensions.dart';
 import 'package:raise_hope/injection.dart';
 import 'package:raise_hope/presentation/pages/register/institution/cubit/register_institution_cubit.dart';
 import 'package:raise_hope/presentation/routes/app_router.dart';
+import 'package:raise_hope/presentation/routes/app_router.gr.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 
 class RegisterInstitutionBackgroundStep extends StatefulWidget {

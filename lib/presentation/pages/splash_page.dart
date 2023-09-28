@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:raise_hope/common/extensions/extensions.dart';
 import 'package:raise_hope/injection.dart';
 import 'package:raise_hope/presentation/routes/app_router.dart';
+import 'package:raise_hope/presentation/routes/app_router.gr.dart';
 
 @RoutePage()
 class SplashPage extends StatefulWidget {

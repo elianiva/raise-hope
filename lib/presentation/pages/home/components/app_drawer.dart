@@ -8,6 +8,7 @@ import 'package:raise_hope/common/extensions/extensions.dart';
 import 'package:raise_hope/injection.dart';
 import 'package:raise_hope/presentation/components/app_bar/simple_app_bar.dart';
 import 'package:raise_hope/presentation/routes/app_router.dart';
+import 'package:raise_hope/presentation/routes/app_router.gr.dart';
 
 import 'drawer_list_item.dart';
 
@@ -113,15 +114,23 @@ class AppDrawer extends StatelessWidget {
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    DrawerListItem(
-                      label: 'Log Out',
-                      icon: CommunityMaterialIcons.logout,
-                      onTap: () async {
-                        locator<FirebaseAuth>().signOut();
-                        locator<AppRouter>().replace(const OnboardingRoute());
-                      },
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          const Text("Raise Hope - v1.0.0"),
+                          TextButton.icon(
+                            onPressed: () {
+                              locator<FirebaseAuth>().signOut();
+                              locator<AppRouter>().replace(const OnboardingRoute());
+                            },
+                            label: const Icon(CommunityMaterialIcons.logout),
+                            icon: const Text("Log Out"),
+                          ),
+                        ],
+                      ),
                     ),
-                    12.verticalSpace,
                   ],
                 ),
               ),

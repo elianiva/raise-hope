@@ -7,68 +7,96 @@
 // ignore_for_file: type=lint
 // coverage:ignore-file
 
-part of 'app_router.dart';
+// ignore_for_file: no_leading_underscores_for_library_prefixes
+import 'package:auto_route/auto_route.dart' as _i17;
+import 'package:flutter/material.dart' as _i18;
+import 'package:raise_hope/presentation/layouts/home/home_discussion_page.dart'
+    as _i4;
+import 'package:raise_hope/presentation/layouts/home/home_main_page.dart'
+    as _i5;
+import 'package:raise_hope/presentation/layouts/home/home_mission_page.dart'
+    as _i6;
+import 'package:raise_hope/presentation/pages/discussion/chat_list_page.dart'
+    as _i1;
+import 'package:raise_hope/presentation/pages/discussion/chat_page.dart' as _i2;
+import 'package:raise_hope/presentation/pages/hero_empty_router_page.dart'
+    as _i3;
+import 'package:raise_hope/presentation/pages/home/home_page.dart' as _i7;
+import 'package:raise_hope/presentation/pages/karma/main/karma_main_page.dart'
+    as _i8;
+import 'package:raise_hope/presentation/pages/login/login_page.dart' as _i9;
+import 'package:raise_hope/presentation/pages/mission/mission_detail_page.dart'
+    as _i10;
+import 'package:raise_hope/presentation/pages/onboarding_page.dart' as _i11;
+import 'package:raise_hope/presentation/pages/profile/profile_page.dart'
+    as _i12;
+import 'package:raise_hope/presentation/pages/register/institution/register_institution_page.dart'
+    as _i14;
+import 'package:raise_hope/presentation/pages/register/register_congratulation_page.dart'
+    as _i13;
+import 'package:raise_hope/presentation/pages/register/volunteer/register_volunteer_page.dart'
+    as _i15;
+import 'package:raise_hope/presentation/pages/splash_page.dart' as _i16;
 
-abstract class _$AppRouter extends RootStackRouter {
-  // ignore: unused_element
-  _$AppRouter({super.navigatorKey});
+abstract class $AppRouter extends _i17.RootStackRouter {
+  $AppRouter({super.navigatorKey});
 
   @override
-  final Map<String, PageFactory> pagesMap = {
+  final Map<String, _i17.PageFactory> pagesMap = {
     ChatListRoute.name: (routeData) {
-      return AutoRoutePage<dynamic>(
+      return _i17.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const ChatListPage(),
+        child: const _i1.ChatListPage(),
       );
     },
     ChatRoute.name: (routeData) {
-      return AutoRoutePage<dynamic>(
+      return _i17.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const ChatPage(),
+        child: const _i2.ChatPage(),
       );
     },
     HeroEmptyRouterRoute.name: (routeData) {
-      return AutoRoutePage<dynamic>(
+      return _i17.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const HeroEmptyRouterPage(),
+        child: const _i3.HeroEmptyRouterPage(),
       );
     },
     HomeDiscussionRoute.name: (routeData) {
-      return AutoRoutePage<dynamic>(
+      return _i17.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const HomeDiscussionPage(),
+        child: const _i4.HomeDiscussionPage(),
       );
     },
     HomeMainRoute.name: (routeData) {
-      return AutoRoutePage<dynamic>(
+      return _i17.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const HomeMainPage(),
+        child: const _i5.HomeMainPage(),
       );
     },
     HomeMissionRoute.name: (routeData) {
-      return AutoRoutePage<dynamic>(
+      return _i17.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const HomeMissionPage(),
+        child: const _i6.HomeMissionPage(),
       );
     },
     HomeRoute.name: (routeData) {
-      return AutoRoutePage<dynamic>(
+      return _i17.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const HomePage(),
+        child: const _i7.HomePage(),
       );
     },
     KarmaMainRoute.name: (routeData) {
-      return AutoRoutePage<dynamic>(
+      return _i17.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const KarmaMainPage(),
+        child: const _i8.KarmaMainPage(),
       );
     },
     LoginRoute.name: (routeData) {
       final args = routeData.argsAs<LoginRouteArgs>(
           orElse: () => const LoginRouteArgs());
-      return AutoRoutePage<dynamic>(
+      return _i17.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: LoginPage(
+        child: _i9.LoginPage(
           key: args.key,
           isInstitution: args.isInstitution,
         ),
@@ -77,32 +105,32 @@ abstract class _$AppRouter extends RootStackRouter {
     MissionDetailRoute.name: (routeData) {
       final args = routeData.argsAs<MissionDetailRouteArgs>(
           orElse: () => const MissionDetailRouteArgs());
-      return AutoRoutePage<dynamic>(
+      return _i17.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: MissionDetailPage(
+        child: _i10.MissionDetailPage(
           key: args.key,
           heroTag: args.heroTag,
         ),
       );
     },
     OnboardingRoute.name: (routeData) {
-      return AutoRoutePage<dynamic>(
+      return _i17.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const OnboardingPage(),
+        child: const _i11.OnboardingPage(),
       );
     },
     ProfileRoute.name: (routeData) {
-      return AutoRoutePage<dynamic>(
+      return _i17.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const ProfilePage(),
+        child: const _i12.ProfilePage(),
       );
     },
     RegisterCongratulationRoute.name: (routeData) {
       final args = routeData.argsAs<RegisterCongratulationRouteArgs>(
           orElse: () => const RegisterCongratulationRouteArgs());
-      return AutoRoutePage<dynamic>(
+      return _i17.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: RegisterCongratulationPage(
+        child: _i13.RegisterCongratulationPage(
           key: args.key,
           isInstitution: args.isInstitution,
         ),
@@ -111,9 +139,9 @@ abstract class _$AppRouter extends RootStackRouter {
     RegisterInstitutionRoute.name: (routeData) {
       final args = routeData.argsAs<RegisterInstitutionRouteArgs>(
           orElse: () => const RegisterInstitutionRouteArgs());
-      return AutoRoutePage<dynamic>(
+      return _i17.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: RegisterInstitutionPage(
+        child: _i14.RegisterInstitutionPage(
           key: args.key,
           isUsingCurrentUser: args.isUsingCurrentUser,
         ),
@@ -122,27 +150,27 @@ abstract class _$AppRouter extends RootStackRouter {
     RegisterVolunteerRoute.name: (routeData) {
       final args = routeData.argsAs<RegisterVolunteerRouteArgs>(
           orElse: () => const RegisterVolunteerRouteArgs());
-      return AutoRoutePage<dynamic>(
+      return _i17.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: RegisterVolunteerPage(
+        child: _i15.RegisterVolunteerPage(
           key: args.key,
           isUsingCurrentUser: args.isUsingCurrentUser,
         ),
       );
     },
     SplashRoute.name: (routeData) {
-      return AutoRoutePage<dynamic>(
+      return _i17.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const SplashPage(),
+        child: const _i16.SplashPage(),
       );
     },
   };
 }
 
 /// generated route for
-/// [ChatListPage]
-class ChatListRoute extends PageRouteInfo<void> {
-  const ChatListRoute({List<PageRouteInfo>? children})
+/// [_i1.ChatListPage]
+class ChatListRoute extends _i17.PageRouteInfo<void> {
+  const ChatListRoute({List<_i17.PageRouteInfo>? children})
       : super(
           ChatListRoute.name,
           initialChildren: children,
@@ -150,13 +178,13 @@ class ChatListRoute extends PageRouteInfo<void> {
 
   static const String name = 'ChatListRoute';
 
-  static const PageInfo<void> page = PageInfo<void>(name);
+  static const _i17.PageInfo<void> page = _i17.PageInfo<void>(name);
 }
 
 /// generated route for
-/// [ChatPage]
-class ChatRoute extends PageRouteInfo<void> {
-  const ChatRoute({List<PageRouteInfo>? children})
+/// [_i2.ChatPage]
+class ChatRoute extends _i17.PageRouteInfo<void> {
+  const ChatRoute({List<_i17.PageRouteInfo>? children})
       : super(
           ChatRoute.name,
           initialChildren: children,
@@ -164,13 +192,13 @@ class ChatRoute extends PageRouteInfo<void> {
 
   static const String name = 'ChatRoute';
 
-  static const PageInfo<void> page = PageInfo<void>(name);
+  static const _i17.PageInfo<void> page = _i17.PageInfo<void>(name);
 }
 
 /// generated route for
-/// [HeroEmptyRouterPage]
-class HeroEmptyRouterRoute extends PageRouteInfo<void> {
-  const HeroEmptyRouterRoute({List<PageRouteInfo>? children})
+/// [_i3.HeroEmptyRouterPage]
+class HeroEmptyRouterRoute extends _i17.PageRouteInfo<void> {
+  const HeroEmptyRouterRoute({List<_i17.PageRouteInfo>? children})
       : super(
           HeroEmptyRouterRoute.name,
           initialChildren: children,
@@ -178,13 +206,13 @@ class HeroEmptyRouterRoute extends PageRouteInfo<void> {
 
   static const String name = 'HeroEmptyRouterRoute';
 
-  static const PageInfo<void> page = PageInfo<void>(name);
+  static const _i17.PageInfo<void> page = _i17.PageInfo<void>(name);
 }
 
 /// generated route for
-/// [HomeDiscussionPage]
-class HomeDiscussionRoute extends PageRouteInfo<void> {
-  const HomeDiscussionRoute({List<PageRouteInfo>? children})
+/// [_i4.HomeDiscussionPage]
+class HomeDiscussionRoute extends _i17.PageRouteInfo<void> {
+  const HomeDiscussionRoute({List<_i17.PageRouteInfo>? children})
       : super(
           HomeDiscussionRoute.name,
           initialChildren: children,
@@ -192,13 +220,13 @@ class HomeDiscussionRoute extends PageRouteInfo<void> {
 
   static const String name = 'HomeDiscussionRoute';
 
-  static const PageInfo<void> page = PageInfo<void>(name);
+  static const _i17.PageInfo<void> page = _i17.PageInfo<void>(name);
 }
 
 /// generated route for
-/// [HomeMainPage]
-class HomeMainRoute extends PageRouteInfo<void> {
-  const HomeMainRoute({List<PageRouteInfo>? children})
+/// [_i5.HomeMainPage]
+class HomeMainRoute extends _i17.PageRouteInfo<void> {
+  const HomeMainRoute({List<_i17.PageRouteInfo>? children})
       : super(
           HomeMainRoute.name,
           initialChildren: children,
@@ -206,13 +234,13 @@ class HomeMainRoute extends PageRouteInfo<void> {
 
   static const String name = 'HomeMainRoute';
 
-  static const PageInfo<void> page = PageInfo<void>(name);
+  static const _i17.PageInfo<void> page = _i17.PageInfo<void>(name);
 }
 
 /// generated route for
-/// [HomeMissionPage]
-class HomeMissionRoute extends PageRouteInfo<void> {
-  const HomeMissionRoute({List<PageRouteInfo>? children})
+/// [_i6.HomeMissionPage]
+class HomeMissionRoute extends _i17.PageRouteInfo<void> {
+  const HomeMissionRoute({List<_i17.PageRouteInfo>? children})
       : super(
           HomeMissionRoute.name,
           initialChildren: children,
@@ -220,13 +248,13 @@ class HomeMissionRoute extends PageRouteInfo<void> {
 
   static const String name = 'HomeMissionRoute';
 
-  static const PageInfo<void> page = PageInfo<void>(name);
+  static const _i17.PageInfo<void> page = _i17.PageInfo<void>(name);
 }
 
 /// generated route for
-/// [HomePage]
-class HomeRoute extends PageRouteInfo<void> {
-  const HomeRoute({List<PageRouteInfo>? children})
+/// [_i7.HomePage]
+class HomeRoute extends _i17.PageRouteInfo<void> {
+  const HomeRoute({List<_i17.PageRouteInfo>? children})
       : super(
           HomeRoute.name,
           initialChildren: children,
@@ -234,13 +262,13 @@ class HomeRoute extends PageRouteInfo<void> {
 
   static const String name = 'HomeRoute';
 
-  static const PageInfo<void> page = PageInfo<void>(name);
+  static const _i17.PageInfo<void> page = _i17.PageInfo<void>(name);
 }
 
 /// generated route for
-/// [KarmaMainPage]
-class KarmaMainRoute extends PageRouteInfo<void> {
-  const KarmaMainRoute({List<PageRouteInfo>? children})
+/// [_i8.KarmaMainPage]
+class KarmaMainRoute extends _i17.PageRouteInfo<void> {
+  const KarmaMainRoute({List<_i17.PageRouteInfo>? children})
       : super(
           KarmaMainRoute.name,
           initialChildren: children,
@@ -248,16 +276,16 @@ class KarmaMainRoute extends PageRouteInfo<void> {
 
   static const String name = 'KarmaMainRoute';
 
-  static const PageInfo<void> page = PageInfo<void>(name);
+  static const _i17.PageInfo<void> page = _i17.PageInfo<void>(name);
 }
 
 /// generated route for
-/// [LoginPage]
-class LoginRoute extends PageRouteInfo<LoginRouteArgs> {
+/// [_i9.LoginPage]
+class LoginRoute extends _i17.PageRouteInfo<LoginRouteArgs> {
   LoginRoute({
-    Key? key,
+    _i18.Key? key,
     bool isInstitution = false,
-    List<PageRouteInfo>? children,
+    List<_i17.PageRouteInfo>? children,
   }) : super(
           LoginRoute.name,
           args: LoginRouteArgs(
@@ -269,7 +297,8 @@ class LoginRoute extends PageRouteInfo<LoginRouteArgs> {
 
   static const String name = 'LoginRoute';
 
-  static const PageInfo<LoginRouteArgs> page = PageInfo<LoginRouteArgs>(name);
+  static const _i17.PageInfo<LoginRouteArgs> page =
+      _i17.PageInfo<LoginRouteArgs>(name);
 }
 
 class LoginRouteArgs {
@@ -278,7 +307,7 @@ class LoginRouteArgs {
     this.isInstitution = false,
   });
 
-  final Key? key;
+  final _i18.Key? key;
 
   final bool isInstitution;
 
@@ -289,12 +318,12 @@ class LoginRouteArgs {
 }
 
 /// generated route for
-/// [MissionDetailPage]
-class MissionDetailRoute extends PageRouteInfo<MissionDetailRouteArgs> {
+/// [_i10.MissionDetailPage]
+class MissionDetailRoute extends _i17.PageRouteInfo<MissionDetailRouteArgs> {
   MissionDetailRoute({
-    Key? key,
+    _i18.Key? key,
     String? heroTag,
-    List<PageRouteInfo>? children,
+    List<_i17.PageRouteInfo>? children,
   }) : super(
           MissionDetailRoute.name,
           args: MissionDetailRouteArgs(
@@ -306,8 +335,8 @@ class MissionDetailRoute extends PageRouteInfo<MissionDetailRouteArgs> {
 
   static const String name = 'MissionDetailRoute';
 
-  static const PageInfo<MissionDetailRouteArgs> page =
-      PageInfo<MissionDetailRouteArgs>(name);
+  static const _i17.PageInfo<MissionDetailRouteArgs> page =
+      _i17.PageInfo<MissionDetailRouteArgs>(name);
 }
 
 class MissionDetailRouteArgs {
@@ -316,7 +345,7 @@ class MissionDetailRouteArgs {
     this.heroTag,
   });
 
-  final Key? key;
+  final _i18.Key? key;
 
   final String? heroTag;
 
@@ -327,9 +356,9 @@ class MissionDetailRouteArgs {
 }
 
 /// generated route for
-/// [OnboardingPage]
-class OnboardingRoute extends PageRouteInfo<void> {
-  const OnboardingRoute({List<PageRouteInfo>? children})
+/// [_i11.OnboardingPage]
+class OnboardingRoute extends _i17.PageRouteInfo<void> {
+  const OnboardingRoute({List<_i17.PageRouteInfo>? children})
       : super(
           OnboardingRoute.name,
           initialChildren: children,
@@ -337,13 +366,13 @@ class OnboardingRoute extends PageRouteInfo<void> {
 
   static const String name = 'OnboardingRoute';
 
-  static const PageInfo<void> page = PageInfo<void>(name);
+  static const _i17.PageInfo<void> page = _i17.PageInfo<void>(name);
 }
 
 /// generated route for
-/// [ProfilePage]
-class ProfileRoute extends PageRouteInfo<void> {
-  const ProfileRoute({List<PageRouteInfo>? children})
+/// [_i12.ProfilePage]
+class ProfileRoute extends _i17.PageRouteInfo<void> {
+  const ProfileRoute({List<_i17.PageRouteInfo>? children})
       : super(
           ProfileRoute.name,
           initialChildren: children,
@@ -351,17 +380,17 @@ class ProfileRoute extends PageRouteInfo<void> {
 
   static const String name = 'ProfileRoute';
 
-  static const PageInfo<void> page = PageInfo<void>(name);
+  static const _i17.PageInfo<void> page = _i17.PageInfo<void>(name);
 }
 
 /// generated route for
-/// [RegisterCongratulationPage]
+/// [_i13.RegisterCongratulationPage]
 class RegisterCongratulationRoute
-    extends PageRouteInfo<RegisterCongratulationRouteArgs> {
+    extends _i17.PageRouteInfo<RegisterCongratulationRouteArgs> {
   RegisterCongratulationRoute({
-    Key? key,
+    _i18.Key? key,
     bool isInstitution = false,
-    List<PageRouteInfo>? children,
+    List<_i17.PageRouteInfo>? children,
   }) : super(
           RegisterCongratulationRoute.name,
           args: RegisterCongratulationRouteArgs(
@@ -373,8 +402,8 @@ class RegisterCongratulationRoute
 
   static const String name = 'RegisterCongratulationRoute';
 
-  static const PageInfo<RegisterCongratulationRouteArgs> page =
-      PageInfo<RegisterCongratulationRouteArgs>(name);
+  static const _i17.PageInfo<RegisterCongratulationRouteArgs> page =
+      _i17.PageInfo<RegisterCongratulationRouteArgs>(name);
 }
 
 class RegisterCongratulationRouteArgs {
@@ -383,7 +412,7 @@ class RegisterCongratulationRouteArgs {
     this.isInstitution = false,
   });
 
-  final Key? key;
+  final _i18.Key? key;
 
   final bool isInstitution;
 
@@ -394,13 +423,13 @@ class RegisterCongratulationRouteArgs {
 }
 
 /// generated route for
-/// [RegisterInstitutionPage]
+/// [_i14.RegisterInstitutionPage]
 class RegisterInstitutionRoute
-    extends PageRouteInfo<RegisterInstitutionRouteArgs> {
+    extends _i17.PageRouteInfo<RegisterInstitutionRouteArgs> {
   RegisterInstitutionRoute({
-    Key? key,
+    _i18.Key? key,
     bool isUsingCurrentUser = false,
-    List<PageRouteInfo>? children,
+    List<_i17.PageRouteInfo>? children,
   }) : super(
           RegisterInstitutionRoute.name,
           args: RegisterInstitutionRouteArgs(
@@ -412,8 +441,8 @@ class RegisterInstitutionRoute
 
   static const String name = 'RegisterInstitutionRoute';
 
-  static const PageInfo<RegisterInstitutionRouteArgs> page =
-      PageInfo<RegisterInstitutionRouteArgs>(name);
+  static const _i17.PageInfo<RegisterInstitutionRouteArgs> page =
+      _i17.PageInfo<RegisterInstitutionRouteArgs>(name);
 }
 
 class RegisterInstitutionRouteArgs {
@@ -422,7 +451,7 @@ class RegisterInstitutionRouteArgs {
     this.isUsingCurrentUser = false,
   });
 
-  final Key? key;
+  final _i18.Key? key;
 
   final bool isUsingCurrentUser;
 
@@ -433,12 +462,13 @@ class RegisterInstitutionRouteArgs {
 }
 
 /// generated route for
-/// [RegisterVolunteerPage]
-class RegisterVolunteerRoute extends PageRouteInfo<RegisterVolunteerRouteArgs> {
+/// [_i15.RegisterVolunteerPage]
+class RegisterVolunteerRoute
+    extends _i17.PageRouteInfo<RegisterVolunteerRouteArgs> {
   RegisterVolunteerRoute({
-    Key? key,
+    _i18.Key? key,
     bool isUsingCurrentUser = false,
-    List<PageRouteInfo>? children,
+    List<_i17.PageRouteInfo>? children,
   }) : super(
           RegisterVolunteerRoute.name,
           args: RegisterVolunteerRouteArgs(
@@ -450,8 +480,8 @@ class RegisterVolunteerRoute extends PageRouteInfo<RegisterVolunteerRouteArgs> {
 
   static const String name = 'RegisterVolunteerRoute';
 
-  static const PageInfo<RegisterVolunteerRouteArgs> page =
-      PageInfo<RegisterVolunteerRouteArgs>(name);
+  static const _i17.PageInfo<RegisterVolunteerRouteArgs> page =
+      _i17.PageInfo<RegisterVolunteerRouteArgs>(name);
 }
 
 class RegisterVolunteerRouteArgs {
@@ -460,7 +490,7 @@ class RegisterVolunteerRouteArgs {
     this.isUsingCurrentUser = false,
   });
 
-  final Key? key;
+  final _i18.Key? key;
 
   final bool isUsingCurrentUser;
 
@@ -471,9 +501,9 @@ class RegisterVolunteerRouteArgs {
 }
 
 /// generated route for
-/// [SplashPage]
-class SplashRoute extends PageRouteInfo<void> {
-  const SplashRoute({List<PageRouteInfo>? children})
+/// [_i16.SplashPage]
+class SplashRoute extends _i17.PageRouteInfo<void> {
+  const SplashRoute({List<_i17.PageRouteInfo>? children})
       : super(
           SplashRoute.name,
           initialChildren: children,
@@ -481,5 +511,5 @@ class SplashRoute extends PageRouteInfo<void> {
 
   static const String name = 'SplashRoute';
 
-  static const PageInfo<void> page = PageInfo<void>(name);
+  static const _i17.PageInfo<void> page = _i17.PageInfo<void>(name);
 }
