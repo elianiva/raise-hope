@@ -9,6 +9,7 @@ import 'package:raise_hope/injection.dart';
 import 'package:raise_hope/presentation/components/card/custom_card.dart';
 import 'package:raise_hope/presentation/components/card/karma_card.dart';
 import 'package:raise_hope/presentation/components/card/mission_card.dart';
+import 'package:raise_hope/presentation/pages/mission/components/my_mission_card.dart';
 import 'package:raise_hope/presentation/routes/app_router.dart';
 import 'package:raise_hope/presentation/routes/app_router.gr.dart';
 
@@ -145,7 +146,7 @@ class _HomeMainPageState extends State<HomeMainPage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Expanded(
-                child: _buildMissionCard(
+                child: MyMissionCard(
                   value: 1,
                   title: 'Mission',
                   subtitle: 'On Going!',
@@ -154,7 +155,7 @@ class _HomeMainPageState extends State<HomeMainPage> {
               ),
               16.horizontalSpace,
               Expanded(
-                child: _buildMissionCard(
+                child: MyMissionCard(
                   value: 5,
                   title: 'Area',
                   subtitle: 'You\'ve helped!',
@@ -163,7 +164,7 @@ class _HomeMainPageState extends State<HomeMainPage> {
               ),
               16.horizontalSpace,
               Expanded(
-                child: _buildMissionCard(
+                child: MyMissionCard(
                   value: 7,
                   title: 'Mission Plan',
                   subtitle: 'Planned!',
