@@ -51,6 +51,7 @@ class _HomeMainPageState extends State<HomeMainPage> {
           padding: const EdgeInsets.symmetric(horizontal: 16),
           scrollDirection: Axis.horizontal,
           itemCount: 10,
+          clipBehavior: Clip.none,
           itemBuilder: (context, index) => SizedBox(
             width: 160,
             child: MissionCard(
@@ -135,7 +136,7 @@ class _HomeMainPageState extends State<HomeMainPage> {
     );
   }
 
-  _buildMissionStats() {
+  Widget _buildMissionStats() {
     return SliverPadding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
       sliver: SliverToBoxAdapter(

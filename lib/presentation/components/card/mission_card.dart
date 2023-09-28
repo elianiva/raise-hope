@@ -69,7 +69,7 @@ class MissionCard extends StatelessWidget {
                 ),
                 const Spacer(),
                 Text(
-                  'Disaseter Earthquake Volunteer Needed!',
+                  'Disaster Earthquake Volunteer Needed!',
                   style: context.textTheme.bodySmall!.apply(
                     fontWeightDelta: 2,
                     color: context.colorScheme.onSurface.withOpacity(0.8),
