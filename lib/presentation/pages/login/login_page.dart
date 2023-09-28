@@ -258,16 +258,25 @@ class _LoginPageState extends State<LoginPage> {
 
   Future<void> _registerOrLoginWithGoogle() async {
     setState(() => _isGoogleLoading = true);
+
     final auth = locator<FirebaseAuth>();
     final router = locator<AppRouter>();
     final googleSignIn = locator<GoogleSignIn>();
 
     // try login with google first
     try {
+      // remove previous google account if any
       await googleSignIn.signOut();
 
       final googleUser = await googleSignIn.signIn();
-      final googleAuth = await googleUser!.authentication;
+
+      // if user cancel login
+      if (googleUser == null) {
+        setState(() => _isGoogleLoading = false);
+        return;
+      }
+
+      final googleAuth = await googleUser.authentication;
       final idToken = googleAuth.idToken;
 
       final result = await auth.signInWithCredential(
@@ -286,15 +295,19 @@ class _LoginPageState extends State<LoginPage> {
         router.replace(const HomeRoute());
       }
     } on FirebaseAuthException catch (e) {
-      context.showSnackbar(
-        title: 'Whoops!',
-        message: e.message ?? 'Something went wrong.',
-      );
+      if (context.mounted) {
+        context.showSnackbar(
+          title: 'Whoops!',
+          message: e.message ?? 'Something went wrong.',
+        );
+      }
     } on Exception catch (e) {
-      context.showSnackbar(
-        title: 'Whoops!',
-        message: e.toString(),
-      );
+      if (context.mounted) {
+        context.showSnackbar(
+          title: 'Whoops!',
+          message: e.toString(),
+        );
+      }
     } finally {
       setState(() => _isGoogleLoading = false);
     }

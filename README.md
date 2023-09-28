@@ -19,6 +19,14 @@ The setup for this project is pretty straight forward. There are some prerequisi
 
     You can choose either [Visual Studio Code](https://code.visualstudio.com/) or [Android Studio](https://developer.android.com/studio) to develop this project. Although, Android Studio is prefered since it gives you better tooling to develop this app.
 
+## Firebase Setup
+
+Make sure you've created a project in the Firebase console and enabled authentication and functions. For the authentication to work, you need to provide the signature of your app. This can be generated using the `keytool` command.
+
+```bash
+keytool -list -v -alias androiddebugkey -keystore ~/.android/debug.keystore
+```
+
 ## Implementation
 
 The mobile app is the core of the app. This is what the user will use. The app is built using Flutter, which is an open source framework by Google for building beautiful, natively compiled, multi-platform applications from a single codebase.
