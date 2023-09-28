@@ -63,14 +63,12 @@ mixin _$RegisterVolunteerState {
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $RegisterVolunteerStateCopyWith<RegisterVolunteerState> get copyWith =>
-      throw _privateConstructorUsedError;
+  $RegisterVolunteerStateCopyWith<RegisterVolunteerState> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $RegisterVolunteerStateCopyWith<$Res> {
-  factory $RegisterVolunteerStateCopyWith(RegisterVolunteerState value,
-          $Res Function(RegisterVolunteerState) then) =
+  factory $RegisterVolunteerStateCopyWith(RegisterVolunteerState value, $Res Function(RegisterVolunteerState) then) =
       _$RegisterVolunteerStateCopyWithImpl<$Res, RegisterVolunteerState>;
   @useResult
   $Res call({RegisterVolunteerData data});
@@ -79,8 +77,7 @@ abstract class $RegisterVolunteerStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$RegisterVolunteerStateCopyWithImpl<$Res,
-        $Val extends RegisterVolunteerState>
+class _$RegisterVolunteerStateCopyWithImpl<$Res, $Val extends RegisterVolunteerState>
     implements $RegisterVolunteerStateCopyWith<$Res> {
   _$RegisterVolunteerStateCopyWithImpl(this._value, this._then);
 
@@ -112,10 +109,8 @@ class _$RegisterVolunteerStateCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_PersonalDataCopyWith<$Res>
-    implements $RegisterVolunteerStateCopyWith<$Res> {
-  factory _$$_PersonalDataCopyWith(
-          _$_PersonalData value, $Res Function(_$_PersonalData) then) =
+abstract class _$$_PersonalDataCopyWith<$Res> implements $RegisterVolunteerStateCopyWith<$Res> {
+  factory _$$_PersonalDataCopyWith(_$_PersonalData value, $Res Function(_$_PersonalData) then) =
       __$$_PersonalDataCopyWithImpl<$Res>;
   @override
   @useResult
@@ -126,12 +121,9 @@ abstract class _$$_PersonalDataCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_PersonalDataCopyWithImpl<$Res>
-    extends _$RegisterVolunteerStateCopyWithImpl<$Res, _$_PersonalData>
+class __$$_PersonalDataCopyWithImpl<$Res> extends _$RegisterVolunteerStateCopyWithImpl<$Res, _$_PersonalData>
     implements _$$_PersonalDataCopyWith<$Res> {
-  __$$_PersonalDataCopyWithImpl(
-      _$_PersonalData _value, $Res Function(_$_PersonalData) _then)
-      : super(_value, _then);
+  __$$_PersonalDataCopyWithImpl(_$_PersonalData _value, $Res Function(_$_PersonalData) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -247,22 +239,18 @@ class _$_PersonalData implements _PersonalData {
 }
 
 abstract class _PersonalData implements RegisterVolunteerState {
-  const factory _PersonalData(final RegisterVolunteerData data) =
-      _$_PersonalData;
+  const factory _PersonalData(final RegisterVolunteerData data) = _$_PersonalData;
 
   @override
   RegisterVolunteerData get data;
   @override
   @JsonKey(ignore: true)
-  _$$_PersonalDataCopyWith<_$_PersonalData> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$_PersonalDataCopyWith<_$_PersonalData> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_AvailabilityCopyWith<$Res>
-    implements $RegisterVolunteerStateCopyWith<$Res> {
-  factory _$$_AvailabilityCopyWith(
-          _$_Availability value, $Res Function(_$_Availability) then) =
+abstract class _$$_AvailabilityCopyWith<$Res> implements $RegisterVolunteerStateCopyWith<$Res> {
+  factory _$$_AvailabilityCopyWith(_$_Availability value, $Res Function(_$_Availability) then) =
       __$$_AvailabilityCopyWithImpl<$Res>;
   @override
   @useResult
@@ -273,12 +261,9 @@ abstract class _$$_AvailabilityCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_AvailabilityCopyWithImpl<$Res>
-    extends _$RegisterVolunteerStateCopyWithImpl<$Res, _$_Availability>
+class __$$_AvailabilityCopyWithImpl<$Res> extends _$RegisterVolunteerStateCopyWithImpl<$Res, _$_Availability>
     implements _$$_AvailabilityCopyWith<$Res> {
-  __$$_AvailabilityCopyWithImpl(
-      _$_Availability _value, $Res Function(_$_Availability) _then)
-      : super(_value, _then);
+  __$$_AvailabilityCopyWithImpl(_$_Availability _value, $Res Function(_$_Availability) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -394,23 +379,18 @@ class _$_Availability implements _Availability {
 }
 
 abstract class _Availability implements RegisterVolunteerState {
-  const factory _Availability(final RegisterVolunteerData data) =
-      _$_Availability;
+  const factory _Availability(final RegisterVolunteerData data) = _$_Availability;
 
   @override
   RegisterVolunteerData get data;
   @override
   @JsonKey(ignore: true)
-  _$$_AvailabilityCopyWith<_$_Availability> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$_AvailabilityCopyWith<_$_Availability> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_InterestCopyWith<$Res>
-    implements $RegisterVolunteerStateCopyWith<$Res> {
-  factory _$$_InterestCopyWith(
-          _$_Interest value, $Res Function(_$_Interest) then) =
-      __$$_InterestCopyWithImpl<$Res>;
+abstract class _$$_InterestCopyWith<$Res> implements $RegisterVolunteerStateCopyWith<$Res> {
+  factory _$$_InterestCopyWith(_$_Interest value, $Res Function(_$_Interest) then) = __$$_InterestCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({RegisterVolunteerData data});
@@ -420,12 +400,9 @@ abstract class _$$_InterestCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_InterestCopyWithImpl<$Res>
-    extends _$RegisterVolunteerStateCopyWithImpl<$Res, _$_Interest>
+class __$$_InterestCopyWithImpl<$Res> extends _$RegisterVolunteerStateCopyWithImpl<$Res, _$_Interest>
     implements _$$_InterestCopyWith<$Res> {
-  __$$_InterestCopyWithImpl(
-      _$_Interest _value, $Res Function(_$_Interest) _then)
-      : super(_value, _then);
+  __$$_InterestCopyWithImpl(_$_Interest _value, $Res Function(_$_Interest) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -468,8 +445,7 @@ class _$_Interest implements _Interest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_InterestCopyWith<_$_Interest> get copyWith =>
-      __$$_InterestCopyWithImpl<_$_Interest>(this, _$identity);
+  _$$_InterestCopyWith<_$_Interest> get copyWith => __$$_InterestCopyWithImpl<_$_Interest>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -547,8 +523,7 @@ abstract class _Interest implements RegisterVolunteerState {
   RegisterVolunteerData get data;
   @override
   @JsonKey(ignore: true)
-  _$$_InterestCopyWith<_$_Interest> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$_InterestCopyWith<_$_Interest> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -559,20 +534,17 @@ mixin _$RegisterVolunteerData {
   String? get address => throw _privateConstructorUsedError;
   String? get password => throw _privateConstructorUsedError;
   List<int>? get daysOfWeekAvailable => throw _privateConstructorUsedError;
-  List<NameOfTimeDay>? get preferedTime => throw _privateConstructorUsedError;
-  List<String>? get interest =>
-      throw _privateConstructorUsedError; // register with current user (from google, etc)
+  List<NameOfTimeDay>? get preferredTime => throw _privateConstructorUsedError;
+  List<String>? get interest => throw _privateConstructorUsedError; // register with current user (from google, etc)
   bool get isUsingCurrentUser => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $RegisterVolunteerDataCopyWith<RegisterVolunteerData> get copyWith =>
-      throw _privateConstructorUsedError;
+  $RegisterVolunteerDataCopyWith<RegisterVolunteerData> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $RegisterVolunteerDataCopyWith<$Res> {
-  factory $RegisterVolunteerDataCopyWith(RegisterVolunteerData value,
-          $Res Function(RegisterVolunteerData) then) =
+  factory $RegisterVolunteerDataCopyWith(RegisterVolunteerData value, $Res Function(RegisterVolunteerData) then) =
       _$RegisterVolunteerDataCopyWithImpl<$Res, RegisterVolunteerData>;
   @useResult
   $Res call(
@@ -582,14 +554,13 @@ abstract class $RegisterVolunteerDataCopyWith<$Res> {
       String? address,
       String? password,
       List<int>? daysOfWeekAvailable,
-      List<NameOfTimeDay>? preferedTime,
+      List<NameOfTimeDay>? preferredTime,
       List<String>? interest,
       bool isUsingCurrentUser});
 }
 
 /// @nodoc
-class _$RegisterVolunteerDataCopyWithImpl<$Res,
-        $Val extends RegisterVolunteerData>
+class _$RegisterVolunteerDataCopyWithImpl<$Res, $Val extends RegisterVolunteerData>
     implements $RegisterVolunteerDataCopyWith<$Res> {
   _$RegisterVolunteerDataCopyWithImpl(this._value, this._then);
 
@@ -607,7 +578,7 @@ class _$RegisterVolunteerDataCopyWithImpl<$Res,
     Object? address = freezed,
     Object? password = freezed,
     Object? daysOfWeekAvailable = freezed,
-    Object? preferedTime = freezed,
+    Object? preferredTime = freezed,
     Object? interest = freezed,
     Object? isUsingCurrentUser = null,
   }) {
@@ -636,9 +607,9 @@ class _$RegisterVolunteerDataCopyWithImpl<$Res,
           ? _value.daysOfWeekAvailable
           : daysOfWeekAvailable // ignore: cast_nullable_to_non_nullable
               as List<int>?,
-      preferedTime: freezed == preferedTime
-          ? _value.preferedTime
-          : preferedTime // ignore: cast_nullable_to_non_nullable
+      preferredTime: freezed == preferredTime
+          ? _value.preferredTime
+          : preferredTime // ignore: cast_nullable_to_non_nullable
               as List<NameOfTimeDay>?,
       interest: freezed == interest
           ? _value.interest
@@ -653,10 +624,9 @@ class _$RegisterVolunteerDataCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_RegisterVolunteerDataCopyWith<$Res>
-    implements $RegisterVolunteerDataCopyWith<$Res> {
-  factory _$$_RegisterVolunteerDataCopyWith(_$_RegisterVolunteerData value,
-          $Res Function(_$_RegisterVolunteerData) then) =
+abstract class _$$_RegisterVolunteerDataCopyWith<$Res> implements $RegisterVolunteerDataCopyWith<$Res> {
+  factory _$$_RegisterVolunteerDataCopyWith(
+          _$_RegisterVolunteerData value, $Res Function(_$_RegisterVolunteerData) then) =
       __$$_RegisterVolunteerDataCopyWithImpl<$Res>;
   @override
   @useResult
@@ -667,7 +637,7 @@ abstract class _$$_RegisterVolunteerDataCopyWith<$Res>
       String? address,
       String? password,
       List<int>? daysOfWeekAvailable,
-      List<NameOfTimeDay>? preferedTime,
+      List<NameOfTimeDay>? preferredTime,
       List<String>? interest,
       bool isUsingCurrentUser});
 }
@@ -676,8 +646,7 @@ abstract class _$$_RegisterVolunteerDataCopyWith<$Res>
 class __$$_RegisterVolunteerDataCopyWithImpl<$Res>
     extends _$RegisterVolunteerDataCopyWithImpl<$Res, _$_RegisterVolunteerData>
     implements _$$_RegisterVolunteerDataCopyWith<$Res> {
-  __$$_RegisterVolunteerDataCopyWithImpl(_$_RegisterVolunteerData _value,
-      $Res Function(_$_RegisterVolunteerData) _then)
+  __$$_RegisterVolunteerDataCopyWithImpl(_$_RegisterVolunteerData _value, $Res Function(_$_RegisterVolunteerData) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -689,7 +658,7 @@ class __$$_RegisterVolunteerDataCopyWithImpl<$Res>
     Object? address = freezed,
     Object? password = freezed,
     Object? daysOfWeekAvailable = freezed,
-    Object? preferedTime = freezed,
+    Object? preferredTime = freezed,
     Object? interest = freezed,
     Object? isUsingCurrentUser = null,
   }) {
@@ -718,9 +687,9 @@ class __$$_RegisterVolunteerDataCopyWithImpl<$Res>
           ? _value._daysOfWeekAvailable
           : daysOfWeekAvailable // ignore: cast_nullable_to_non_nullable
               as List<int>?,
-      preferedTime: freezed == preferedTime
-          ? _value._preferedTime
-          : preferedTime // ignore: cast_nullable_to_non_nullable
+      preferredTime: freezed == preferredTime
+          ? _value._preferredTime
+          : preferredTime // ignore: cast_nullable_to_non_nullable
               as List<NameOfTimeDay>?,
       interest: freezed == interest
           ? _value._interest
@@ -744,11 +713,11 @@ class _$_RegisterVolunteerData implements _RegisterVolunteerData {
       this.address,
       this.password,
       final List<int>? daysOfWeekAvailable,
-      final List<NameOfTimeDay>? preferedTime,
+      final List<NameOfTimeDay>? preferredTime,
       final List<String>? interest,
       this.isUsingCurrentUser = false})
       : _daysOfWeekAvailable = daysOfWeekAvailable,
-        _preferedTime = preferedTime,
+        _preferredTime = preferredTime,
         _interest = interest;
 
   @override
@@ -766,18 +735,17 @@ class _$_RegisterVolunteerData implements _RegisterVolunteerData {
   List<int>? get daysOfWeekAvailable {
     final value = _daysOfWeekAvailable;
     if (value == null) return null;
-    if (_daysOfWeekAvailable is EqualUnmodifiableListView)
-      return _daysOfWeekAvailable;
+    if (_daysOfWeekAvailable is EqualUnmodifiableListView) return _daysOfWeekAvailable;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
 
-  final List<NameOfTimeDay>? _preferedTime;
+  final List<NameOfTimeDay>? _preferredTime;
   @override
-  List<NameOfTimeDay>? get preferedTime {
-    final value = _preferedTime;
+  List<NameOfTimeDay>? get preferredTime {
+    final value = _preferredTime;
     if (value == null) return null;
-    if (_preferedTime is EqualUnmodifiableListView) return _preferedTime;
+    if (_preferredTime is EqualUnmodifiableListView) return _preferredTime;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -799,7 +767,7 @@ class _$_RegisterVolunteerData implements _RegisterVolunteerData {
 
   @override
   String toString() {
-    return 'RegisterVolunteerData(fullName: $fullName, email: $email, phoneNumber: $phoneNumber, address: $address, password: $password, daysOfWeekAvailable: $daysOfWeekAvailable, preferedTime: $preferedTime, interest: $interest, isUsingCurrentUser: $isUsingCurrentUser)';
+    return 'RegisterVolunteerData(fullName: $fullName, email: $email, phoneNumber: $phoneNumber, address: $address, password: $password, daysOfWeekAvailable: $daysOfWeekAvailable, preferredTime: $preferredTime, interest: $interest, isUsingCurrentUser: $isUsingCurrentUser)';
   }
 
   @override
@@ -807,18 +775,13 @@ class _$_RegisterVolunteerData implements _RegisterVolunteerData {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_RegisterVolunteerData &&
-            (identical(other.fullName, fullName) ||
-                other.fullName == fullName) &&
+            (identical(other.fullName, fullName) || other.fullName == fullName) &&
             (identical(other.email, email) || other.email == email) &&
-            (identical(other.phoneNumber, phoneNumber) ||
-                other.phoneNumber == phoneNumber) &&
+            (identical(other.phoneNumber, phoneNumber) || other.phoneNumber == phoneNumber) &&
             (identical(other.address, address) || other.address == address) &&
-            (identical(other.password, password) ||
-                other.password == password) &&
-            const DeepCollectionEquality()
-                .equals(other._daysOfWeekAvailable, _daysOfWeekAvailable) &&
-            const DeepCollectionEquality()
-                .equals(other._preferedTime, _preferedTime) &&
+            (identical(other.password, password) || other.password == password) &&
+            const DeepCollectionEquality().equals(other._daysOfWeekAvailable, _daysOfWeekAvailable) &&
+            const DeepCollectionEquality().equals(other._preferredTime, _preferredTime) &&
             const DeepCollectionEquality().equals(other._interest, _interest) &&
             (identical(other.isUsingCurrentUser, isUsingCurrentUser) ||
                 other.isUsingCurrentUser == isUsingCurrentUser));
@@ -833,7 +796,7 @@ class _$_RegisterVolunteerData implements _RegisterVolunteerData {
       address,
       password,
       const DeepCollectionEquality().hash(_daysOfWeekAvailable),
-      const DeepCollectionEquality().hash(_preferedTime),
+      const DeepCollectionEquality().hash(_preferredTime),
       const DeepCollectionEquality().hash(_interest),
       isUsingCurrentUser);
 
@@ -841,8 +804,7 @@ class _$_RegisterVolunteerData implements _RegisterVolunteerData {
   @override
   @pragma('vm:prefer-inline')
   _$$_RegisterVolunteerDataCopyWith<_$_RegisterVolunteerData> get copyWith =>
-      __$$_RegisterVolunteerDataCopyWithImpl<_$_RegisterVolunteerData>(
-          this, _$identity);
+      __$$_RegisterVolunteerDataCopyWithImpl<_$_RegisterVolunteerData>(this, _$identity);
 }
 
 abstract class _RegisterVolunteerData implements RegisterVolunteerData {
@@ -853,7 +815,7 @@ abstract class _RegisterVolunteerData implements RegisterVolunteerData {
       final String? address,
       final String? password,
       final List<int>? daysOfWeekAvailable,
-      final List<NameOfTimeDay>? preferedTime,
+      final List<NameOfTimeDay>? preferredTime,
       final List<String>? interest,
       final bool isUsingCurrentUser}) = _$_RegisterVolunteerData;
 
@@ -870,13 +832,12 @@ abstract class _RegisterVolunteerData implements RegisterVolunteerData {
   @override
   List<int>? get daysOfWeekAvailable;
   @override
-  List<NameOfTimeDay>? get preferedTime;
+  List<NameOfTimeDay>? get preferredTime;
   @override
   List<String>? get interest;
   @override // register with current user (from google, etc)
   bool get isUsingCurrentUser;
   @override
   @JsonKey(ignore: true)
-  _$$_RegisterVolunteerDataCopyWith<_$_RegisterVolunteerData> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$_RegisterVolunteerDataCopyWith<_$_RegisterVolunteerData> get copyWith => throw _privateConstructorUsedError;
 }

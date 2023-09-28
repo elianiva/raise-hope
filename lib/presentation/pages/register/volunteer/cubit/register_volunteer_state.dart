@@ -22,7 +22,7 @@ class RegisterVolunteerData with _$RegisterVolunteerData {
     String? address,
     String? password,
     List<int>? daysOfWeekAvailable,
-    List<NameOfTimeDay>? preferedTime,
+    List<NameOfTimeDay>? preferredTime,
     List<String>? interest,
 
     // register with current user (from google, etc)

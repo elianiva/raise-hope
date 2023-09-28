@@ -27,7 +27,7 @@ class AuthRepository {
         'address': data.address,
         'password': data.password,
         'availability': data.daysOfWeekAvailable!.toList(),
-        'preferedTime': data.preferedTime!.map((e) => e.name).toList(),
+        'preferredTime': data.preferredTime!.map((e) => e.name).toList(),
         'interests': data.interest!.toList(),
       };
 
@@ -103,7 +103,7 @@ class AuthRepository {
         'phone': data.phoneNumber,
         'address': data.address,
         'availability': data.daysOfWeekAvailable!.toList(),
-        'preferedTime': data.preferedTime!.map((e) => e.name).toList(),
+        'preferredTime': data.preferredTime!.map((e) => e.name).toList(),
         'interests': data.interest!.toList(),
       };
 

@@ -31,13 +31,13 @@ class _HomePageState extends State<HomePage> {
           key: _key,
           drawer: const AppDrawer(),
           body: child[controller.activeIndex],
-          bottomNavigationBar: BottomNavigationBar(
-            currentIndex: controller.activeIndex,
-            onTap: controller.setActiveIndex,
-            items: const [
-              BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
-              BottomNavigationBarItem(icon: Icon(Icons.book), label: "Mission"),
-              BottomNavigationBarItem(icon: Icon(Icons.people), label: "Discussion"),
+          bottomNavigationBar: NavigationBar(
+            selectedIndex: controller.activeIndex,
+            onDestinationSelected: controller.setActiveIndex,
+            destinations: const [
+              NavigationDestination(icon: Icon(Icons.home), label: "Home"),
+              NavigationDestination(icon: Icon(Icons.book), label: "Mission"),
+              NavigationDestination(icon: Icon(Icons.people), label: "Discussion"),
             ],
           ),
         );

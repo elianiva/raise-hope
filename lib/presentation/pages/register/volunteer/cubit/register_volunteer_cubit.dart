@@ -55,11 +55,11 @@ class RegisterVolunteerCubit extends Cubit<RegisterVolunteerState> {
 
   void updateAvailability({
     List<int>? daysOfWeekAvailable,
-    List<NameOfTimeDay>? preferedTime,
+    List<NameOfTimeDay>? preferredTime,
   }) {
     final newData = state.data.copyWith(
       daysOfWeekAvailable: daysOfWeekAvailable,
-      preferedTime: preferedTime,
+      preferredTime: preferredTime,
     );
 
     emit(state.copyWith(data: newData));

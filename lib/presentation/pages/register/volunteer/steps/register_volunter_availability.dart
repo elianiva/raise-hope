@@ -37,9 +37,9 @@ class _RegisterVolunteerAvailabilityState extends State<RegisterVolunteerAvailab
       _selectedDays.addAll(currentData.daysOfWeekAvailable!);
     }
 
-    if (currentData.preferedTime != null) {
+    if (currentData.preferredTime != null) {
       final timeIndexes =
-          currentData.preferedTime!.map((e) => NameOfTimeDay.values.indexWhere((element) => element == e)).toList();
+          currentData.preferredTime!.map((e) => NameOfTimeDay.values.indexWhere((element) => element == e)).toList();
 
       _selectedTime.addAll(timeIndexes.map((e) => NameOfTimeDay.values[e]));
     }
@@ -153,7 +153,7 @@ class _RegisterVolunteerAvailabilityState extends State<RegisterVolunteerAvailab
     return context.read<RegisterVolunteerCubit>()
       ..updateAvailability(
         daysOfWeekAvailable: _selectedDays,
-        preferedTime: _selectedTime,
+        preferredTime: _selectedTime,
       );
   }
 
