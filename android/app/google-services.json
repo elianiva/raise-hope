@@ -14,11 +14,11 @@
       },
       "oauth_client": [
         {
-          "client_id": "675704566308-7peg6l5jgtvabgrlpfrsksrkqv9rnjia.apps.googleusercontent.com",
+          "client_id": "675704566308-anu8f54ap3bjlgq04au1jno4u6648nln.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "org.raise_hope",
-            "certificate_hash": "ab435d8ab18513d2177cd9f7f70ed1b42eb94ae5"
+            "certificate_hash": "619903f6f8518e9131c7c2800e590289f9cd03f1"
           }
         },
         {

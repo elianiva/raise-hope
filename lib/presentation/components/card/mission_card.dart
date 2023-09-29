@@ -19,7 +19,7 @@ class MissionCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomCard(
-      onTap: onTap != null ? () => onTap!(heroTag) : null,
+      onTap: () => onTap?.call(heroTag),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

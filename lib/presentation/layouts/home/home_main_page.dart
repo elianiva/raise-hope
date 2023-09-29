@@ -224,7 +224,7 @@ class _HomeMainPageState extends State<HomeMainPage> {
           children: [
             Positioned.fill(
               child: Image(
-                image: AssetImage('assets/images/home_app_bar_bg.jpg'),
+                image: AssetImage('assets/images/home_app_bar_bg.png'),
                 fit: BoxFit.cover,
               ),
             ),

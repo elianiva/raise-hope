@@ -17,15 +17,24 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      return web;
+      throw UnsupportedError(
+        'DefaultFirebaseOptions have not been configured for web - '
+        'you can reconfigure this by running the FlutterFire CLI again.',
+      );
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
         return android;
       case TargetPlatform.iOS:
-        return ios;
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for ios - '
+          'you can reconfigure this by running the FlutterFire CLI again.',
+        );
       case TargetPlatform.macOS:
-        return macos;
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for macos - '
+          'you can reconfigure this by running the FlutterFire CLI again.',
+        );
       case TargetPlatform.windows:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for windows - '
@@ -43,39 +52,11 @@ class DefaultFirebaseOptions {
     }
   }
 
-  static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyAh36jwxbwABQVUzqZzZ3ko6Y8nmXzna8k',
-    appId: '1:675704566308:web:250155d54a91051f8fdeb1',
-    messagingSenderId: '675704566308',
-    projectId: 'raise-hope-new',
-    authDomain: 'raise-hope-new.firebaseapp.com',
-    storageBucket: 'raise-hope-new.appspot.com',
-    measurementId: 'G-SENT2JCE18',
-  );
-
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyAIyoclqow8b2XFI6wSclIMWeeZNl-qLLw',
     appId: '1:675704566308:android:1a2b278aa6d95c548fdeb1',
     messagingSenderId: '675704566308',
     projectId: 'raise-hope-new',
     storageBucket: 'raise-hope-new.appspot.com',
-  );
-
-  static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyBAbeUjYeDJvxlABdVwDXF_gm9j4SziU9A',
-    appId: '1:675704566308:ios:b42d8cc15a0e65cd8fdeb1',
-    messagingSenderId: '675704566308',
-    projectId: 'raise-hope-new',
-    storageBucket: 'raise-hope-new.appspot.com',
-    iosBundleId: 'org.examApp',
-  );
-
-  static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyBAbeUjYeDJvxlABdVwDXF_gm9j4SziU9A',
-    appId: '1:675704566308:ios:b42d8cc15a0e65cd8fdeb1',
-    messagingSenderId: '675704566308',
-    projectId: 'raise-hope-new',
-    storageBucket: 'raise-hope-new.appspot.com',
-    iosBundleId: 'org.examApp',
   );
 }
