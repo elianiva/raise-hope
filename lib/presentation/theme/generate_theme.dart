@@ -8,15 +8,15 @@ class GenerateTheme {
         hintText: hint,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(radius),
-          borderSide: BorderSide(color: Colors.transparent, width: 1),
+          borderSide: const BorderSide(color: Colors.transparent, width: 1),
         ),
         disabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(radius),
-          borderSide: BorderSide(color: Colors.transparent, width: 1),
+          borderSide: const BorderSide(color: Colors.transparent, width: 1),
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(radius),
-          borderSide: BorderSide(color: Colors.transparent, width: 1),
+          borderSide: const BorderSide(color: Colors.transparent, width: 1),
         ),
       );
 }

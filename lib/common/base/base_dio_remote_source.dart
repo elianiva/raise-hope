@@ -57,7 +57,7 @@ class BaseDioRemoteSource {
       } else {
         throw const ApiException.serverException(message: 'UnExpected Error Occurred!!!');
       }
-    } on DioError catch (e) {
+    } on DioException catch (e) {
       throw e.toApiException;
     } catch (e) {
       throw const ApiException.serverException(message: 'UnExpected Error Occurred!!!');

@@ -10,7 +10,7 @@ import 'package:raise_hope/presentation/pages/register/components/custom_stepper
 import 'package:raise_hope/presentation/pages/register/institution/cubit/register_institution_cubit.dart';
 import 'package:raise_hope/presentation/pages/register/institution/steps/register_institution_address_information_step.dart';
 import 'package:raise_hope/presentation/pages/register/institution/steps/register_institution_background_step.dart';
-import 'package:raise_hope/presentation/pages/register/institution/steps/register_institution_personal_data_step%20copy.dart';
+import 'package:raise_hope/presentation/pages/register/institution/steps/register_institution_personal_data_step.dart';
 import 'package:raise_hope/presentation/theme/color_schemes.dart';
 
 @RoutePage()

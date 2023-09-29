@@ -236,20 +236,26 @@ class _LoginPageState extends State<LoginPage> {
       router.replace(const HomeRoute());
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
-        context.showSnackbar(
-          title: 'User not found!',
-          message: 'No user found for that email.',
-        );
+        if (context.mounted) {
+          context.showSnackbar(
+            title: 'User not found!',
+            message: 'No user found for that email.',
+          );
+        }
       } else if (e.code == 'wrong-password') {
-        context.showSnackbar(
-          title: 'Wrong password!',
-          message: 'Wrong password provided for that user.',
-        );
+        if (context.mounted) {
+          context.showSnackbar(
+            title: 'Wrong password!',
+            message: 'Wrong password provided for that user.',
+          );
+        }
       } else {
-        context.showSnackbar(
-          title: 'Whoops!',
-          message: e.message ?? 'Something went wrong.',
-        );
+        if (context.mounted) {
+          context.showSnackbar(
+            title: 'Whoops!',
+            message: e.message ?? 'Something went wrong.',
+          );
+        }
       }
     } finally {
       setState(() => _isLoading = false);

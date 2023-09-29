@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:raise_hope/presentation/components/card/custom_card.dart';
 
 class MyMissionCard extends StatelessWidget {
-  int value;
-  String title;
-  String subtitle;
-  Color color;
+  final int value;
+  final String title;
+  final String subtitle;
+  final Color color;
 
-  MyMissionCard({
+  const MyMissionCard({
     super.key,
     required this.value,
     required this.title,

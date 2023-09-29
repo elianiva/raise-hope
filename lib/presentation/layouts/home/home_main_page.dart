@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:raise_hope/common/enums/type_of_help.dart';
 import 'package:raise_hope/common/extensions/extensions.dart';
 import 'package:raise_hope/injection.dart';
-import 'package:raise_hope/presentation/components/card/custom_card.dart';
 import 'package:raise_hope/presentation/components/card/karma_card.dart';
 import 'package:raise_hope/presentation/components/card/mission_card.dart';
 import 'package:raise_hope/presentation/pages/mission/components/my_mission_card.dart';
@@ -154,21 +153,21 @@ class _HomeMainPageState extends State<HomeMainPage> {
                 ),
               ),
               16.horizontalSpace,
-              Expanded(
+              const Expanded(
                 child: MyMissionCard(
                   value: 5,
                   title: 'Area',
                   subtitle: 'You\'ve helped!',
-                  color: const Color(0xFFF19700),
+                  color: Color(0xFFF19700),
                 ),
               ),
               16.horizontalSpace,
-              Expanded(
+              const Expanded(
                 child: MyMissionCard(
                   value: 7,
                   title: 'Mission Plan',
                   subtitle: 'Planned!',
-                  color: const Color(0xFF006E1C),
+                  color: Color(0xFF006E1C),
                 ),
               ),
             ],
@@ -247,56 +246,6 @@ class _HomeMainPageState extends State<HomeMainPage> {
                     ),
                   ),
                 ),
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-
-  Widget _buildMissionCard({
-    required int value,
-    required String title,
-    required String subtitle,
-    required Color color,
-  }) {
-    return CustomCard(
-      child: Padding(
-        padding: const EdgeInsets.all(14),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              value.toString(),
-              style: context.textTheme.labelLarge!.apply(
-                fontWeightDelta: 2,
-              ),
-            ),
-            4.verticalSpace,
-            Text(
-              title,
-              style: context.textTheme.labelSmall!.apply(
-                fontWeightDelta: 2,
-              ),
-            ),
-            4.verticalSpace,
-            Text(
-              subtitle,
-              style: context.textTheme.labelSmall!.apply(
-                fontWeightDelta: 2,
-                color: context.colorScheme.onSurface.withOpacity(0.6),
-              ),
-            ),
-            8.verticalSpace,
-            // make sure to use intrinsic height
-            const Spacer(),
-            Container(
-              width: double.infinity,
-              height: 4,
-              decoration: BoxDecoration(
-                color: color,
-                borderRadius: BorderRadius.circular(2),
               ),
             ),
           ],
