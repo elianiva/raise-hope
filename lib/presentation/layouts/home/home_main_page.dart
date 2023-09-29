@@ -1,20 +1,21 @@
-import 'dart:math';
-
 import 'package:adaptive_sizer/adaptive_sizer.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:raise_hope/common/enums/type_of_help.dart';
 import 'package:raise_hope/common/extensions/extensions.dart';
+import 'package:raise_hope/data/repositories/mission_repository.dart';
 import 'package:raise_hope/injection.dart';
 import 'package:raise_hope/presentation/components/card/karma_card.dart';
-import 'package:raise_hope/presentation/components/card/mission_card.dart';
+import 'package:raise_hope/presentation/pages/home/components/mission_list.dart';
+import 'package:raise_hope/presentation/pages/home/components/types_of_help_filter.dart';
 import 'package:raise_hope/presentation/pages/mission/components/my_mission_card.dart';
 import 'package:raise_hope/presentation/routes/app_router.dart';
 import 'package:raise_hope/presentation/routes/app_router.gr.dart';
 
 @RoutePage()
 class HomeMainPage extends StatefulWidget {
-  const HomeMainPage({super.key});
+  HomeMainPage({super.key});
+
+  final MissionRepository _missionRepository = locator<MissionRepository>();
 
   @override
   State<HomeMainPage> createState() => _HomeMainPageState();
@@ -45,60 +46,37 @@ class _HomeMainPageState extends State<HomeMainPage> {
 
   Widget _buildMissionList() {
     return SliverToBoxAdapter(
-      child: SizedBox(
-        height: 210,
-        child: ListView.separated(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
-          scrollDirection: Axis.horizontal,
-          itemCount: 10,
-          clipBehavior: Clip.none,
-          itemBuilder: (context, index) => SizedBox(
-            width: 160,
-            child: MissionCard(
-              heroTag: 'mission_${index}_${Random().nextInt(10000)}',
-              onTap: (tag) {
-                locator<AppRouter>().push(
-                  MissionDetailRoute(heroTag: tag),
-                );
-              },
-            ),
-          ),
-          separatorBuilder: (_, __) => 16.horizontalSpace,
-        ),
+      child: StreamBuilder(
+        stream: widget._missionRepository.getAllMissions().asStream(),
+        builder: (context, snapshot) {
+          if (!snapshot.hasData || snapshot.data == null || snapshot.data!.isLeft()) {
+            return const SizedBox();
+          }
+
+          final missions = snapshot.data!.getOrElse(() => []);
+          return MissionList(missions: missions);
+        },
       ),
     );
   }
 
   Widget _buildFilter() {
     return SliverToBoxAdapter(
-      child: SizedBox(
-        height: 32,
-        child: ListView.separated(
-          scrollDirection: Axis.horizontal,
-          padding: const EdgeInsets.symmetric(horizontal: 16),
-          itemCount: TypeOfHelp.values.length,
-          itemBuilder: (context, index) {
-            final isSelected = index == 0;
+      child: StreamBuilder(
+        stream: widget._missionRepository.getTypesOfHelp().asStream(),
+        builder: (context, snapshot) {
+          if (!snapshot.hasData || snapshot.data == null || snapshot.data!.isLeft()) {
+            return const SizedBox(height: 32);
+          }
 
-            return Chip(
-              label: Text(TypeOfHelp.values[index].toString()),
-              // material 2 style
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(999),
-              ),
-
-              side: BorderSide(
-                color: isSelected ? context.colorScheme.primary : context.colorScheme.onBackground.withOpacity(0.2),
-              ),
-              backgroundColor: isSelected ? context.colorScheme.primary : context.colorScheme.background,
-              labelStyle: context.textTheme.bodySmall!.copyWith(
-                color: isSelected ? context.colorScheme.onPrimary : context.colorScheme.primary,
-                fontWeight: FontWeight.w700,
-              ),
-            );
-          },
-          separatorBuilder: (_, __) => 10.horizontalSpace,
-        ),
+          final typesOfHelp = snapshot.data!.getOrElse(() => []);
+          return TypesOfHelpFilter(
+            items: typesOfHelp,
+            onChanged: (value) {
+              print(value);
+            },
+          );
+        },
       ),
     );
   }

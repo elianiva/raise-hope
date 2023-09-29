@@ -19,10 +19,10 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return AutoTabsRouter(
-      routes: const [
+      routes: [
         HomeMainRoute(),
-        HomeMissionRoute(),
-        HomeDiscussionRoute(),
+        const HomeMissionRoute(),
+        const HomeDiscussionRoute(),
       ],
       builder: (ctx, child) {
         final tabsRouter = AutoTabsRouter.of(ctx);

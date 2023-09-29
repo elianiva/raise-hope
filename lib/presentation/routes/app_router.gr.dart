@@ -68,9 +68,11 @@ abstract class $AppRouter extends _i17.RootStackRouter {
       );
     },
     HomeMainRoute.name: (routeData) {
+      final args = routeData.argsAs<HomeMainRouteArgs>(
+          orElse: () => const HomeMainRouteArgs());
       return _i17.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i5.HomeMainPage(),
+        child: _i5.HomeMainPage(key: args.key),
       );
     },
     HomeMissionRoute.name: (routeData) {
@@ -103,13 +105,13 @@ abstract class $AppRouter extends _i17.RootStackRouter {
       );
     },
     MissionDetailRoute.name: (routeData) {
-      final args = routeData.argsAs<MissionDetailRouteArgs>(
-          orElse: () => const MissionDetailRouteArgs());
+      final args = routeData.argsAs<MissionDetailRouteArgs>();
       return _i17.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: _i10.MissionDetailPage(
           key: args.key,
           heroTag: args.heroTag,
+          id: args.id,
         ),
       );
     },
@@ -225,16 +227,31 @@ class HomeDiscussionRoute extends _i17.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i5.HomeMainPage]
-class HomeMainRoute extends _i17.PageRouteInfo<void> {
-  const HomeMainRoute({List<_i17.PageRouteInfo>? children})
-      : super(
+class HomeMainRoute extends _i17.PageRouteInfo<HomeMainRouteArgs> {
+  HomeMainRoute({
+    _i18.Key? key,
+    List<_i17.PageRouteInfo>? children,
+  }) : super(
           HomeMainRoute.name,
+          args: HomeMainRouteArgs(key: key),
           initialChildren: children,
         );
 
   static const String name = 'HomeMainRoute';
 
-  static const _i17.PageInfo<void> page = _i17.PageInfo<void>(name);
+  static const _i17.PageInfo<HomeMainRouteArgs> page =
+      _i17.PageInfo<HomeMainRouteArgs>(name);
+}
+
+class HomeMainRouteArgs {
+  const HomeMainRouteArgs({this.key});
+
+  final _i18.Key? key;
+
+  @override
+  String toString() {
+    return 'HomeMainRouteArgs{key: $key}';
+  }
 }
 
 /// generated route for
@@ -323,12 +340,14 @@ class MissionDetailRoute extends _i17.PageRouteInfo<MissionDetailRouteArgs> {
   MissionDetailRoute({
     _i18.Key? key,
     String? heroTag,
+    required String id,
     List<_i17.PageRouteInfo>? children,
   }) : super(
           MissionDetailRoute.name,
           args: MissionDetailRouteArgs(
             key: key,
             heroTag: heroTag,
+            id: id,
           ),
           initialChildren: children,
         );
@@ -343,15 +362,18 @@ class MissionDetailRouteArgs {
   const MissionDetailRouteArgs({
     this.key,
     this.heroTag,
+    required this.id,
   });
 
   final _i18.Key? key;
 
   final String? heroTag;
 
+  final String id;
+
   @override
   String toString() {
-    return 'MissionDetailRouteArgs{key: $key, heroTag: $heroTag}';
+    return 'MissionDetailRouteArgs{key: $key, heroTag: $heroTag, id: $id}';
   }
 }
 

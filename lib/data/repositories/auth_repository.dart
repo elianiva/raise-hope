@@ -69,7 +69,7 @@ class AuthRepository {
         'postalCode': data.postalCode,
         'organizationType': kGetOrganizationTypeName(data.organizationType!),
         'organizationSize': data.organizationSize!.name,
-        'typeOfHelp': data.typeOfHelp!.map((e) => e.name).toList(),
+        'typeOfHelp': data.typeOfHelp,
       };
 
       final result = await callable.call(payload);
@@ -140,7 +140,7 @@ class AuthRepository {
         'postalCode': data.postalCode,
         'organizationType': kGetOrganizationTypeName(data.organizationType!),
         'organizationSize': data.organizationSize!.name,
-        'typeOfHelp': data.typeOfHelp!.map((e) => e.name).toList(),
+        'typeOfHelp': data.typeOfHelp,
       };
 
       final result = await callable.call(payload);

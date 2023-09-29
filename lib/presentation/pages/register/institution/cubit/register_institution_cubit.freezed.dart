@@ -568,7 +568,7 @@ mixin _$RegisterInstitutionData {
   String? get postalCode => throw _privateConstructorUsedError;
   OrganizationType? get organizationType => throw _privateConstructorUsedError;
   OrganizationSize? get organizationSize => throw _privateConstructorUsedError;
-  List<TypeOfHelp>? get typeOfHelp =>
+  List<String>? get typeOfHelp =>
       throw _privateConstructorUsedError; // register with current user (from google, etc)
   bool get isUsingCurrentUser => throw _privateConstructorUsedError;
 
@@ -596,7 +596,7 @@ abstract class $RegisterInstitutionDataCopyWith<$Res> {
       String? postalCode,
       OrganizationType? organizationType,
       OrganizationSize? organizationSize,
-      List<TypeOfHelp>? typeOfHelp,
+      List<String>? typeOfHelp,
       bool isUsingCurrentUser});
 
   $CountryCopyWith<$Res>? get country;
@@ -685,7 +685,7 @@ class _$RegisterInstitutionDataCopyWithImpl<$Res,
       typeOfHelp: freezed == typeOfHelp
           ? _value.typeOfHelp
           : typeOfHelp // ignore: cast_nullable_to_non_nullable
-              as List<TypeOfHelp>?,
+              as List<String>?,
       isUsingCurrentUser: null == isUsingCurrentUser
           ? _value.isUsingCurrentUser
           : isUsingCurrentUser // ignore: cast_nullable_to_non_nullable
@@ -752,7 +752,7 @@ abstract class _$$RegisterInstitutionDataImplCopyWith<$Res>
       String? postalCode,
       OrganizationType? organizationType,
       OrganizationSize? organizationSize,
-      List<TypeOfHelp>? typeOfHelp,
+      List<String>? typeOfHelp,
       bool isUsingCurrentUser});
 
   @override
@@ -843,7 +843,7 @@ class __$$RegisterInstitutionDataImplCopyWithImpl<$Res>
       typeOfHelp: freezed == typeOfHelp
           ? _value._typeOfHelp
           : typeOfHelp // ignore: cast_nullable_to_non_nullable
-              as List<TypeOfHelp>?,
+              as List<String>?,
       isUsingCurrentUser: null == isUsingCurrentUser
           ? _value.isUsingCurrentUser
           : isUsingCurrentUser // ignore: cast_nullable_to_non_nullable
@@ -868,7 +868,7 @@ class _$RegisterInstitutionDataImpl implements _RegisterInstitutionData {
       this.postalCode,
       this.organizationType,
       this.organizationSize,
-      final List<TypeOfHelp>? typeOfHelp,
+      final List<String>? typeOfHelp,
       this.isUsingCurrentUser = false})
       : _typeOfHelp = typeOfHelp;
 
@@ -896,9 +896,9 @@ class _$RegisterInstitutionDataImpl implements _RegisterInstitutionData {
   final OrganizationType? organizationType;
   @override
   final OrganizationSize? organizationSize;
-  final List<TypeOfHelp>? _typeOfHelp;
+  final List<String>? _typeOfHelp;
   @override
-  List<TypeOfHelp>? get typeOfHelp {
+  List<String>? get typeOfHelp {
     final value = _typeOfHelp;
     if (value == null) return null;
     if (_typeOfHelp is EqualUnmodifiableListView) return _typeOfHelp;
@@ -985,7 +985,7 @@ abstract class _RegisterInstitutionData implements RegisterInstitutionData {
       final String? postalCode,
       final OrganizationType? organizationType,
       final OrganizationSize? organizationSize,
-      final List<TypeOfHelp>? typeOfHelp,
+      final List<String>? typeOfHelp,
       final bool isUsingCurrentUser}) = _$RegisterInstitutionDataImpl;
 
   @override
@@ -1013,7 +1013,7 @@ abstract class _RegisterInstitutionData implements RegisterInstitutionData {
   @override
   OrganizationSize? get organizationSize;
   @override
-  List<TypeOfHelp>? get typeOfHelp;
+  List<String>? get typeOfHelp;
   @override // register with current user (from google, etc)
   bool get isUsingCurrentUser;
   @override

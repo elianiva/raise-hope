@@ -38,4 +38,8 @@ extension StringX on String {
       }
     }).join(' ');
   }
+
+  String get humaniseKebabCase {
+    return split('-').map((word) => word.titleCase).join(' ');
+  }
 }

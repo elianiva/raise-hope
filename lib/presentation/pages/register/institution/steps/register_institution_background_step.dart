@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:raise_hope/common/enums/organization_size.dart';
 import 'package:raise_hope/common/enums/organization_types.dart';
-import 'package:raise_hope/common/enums/type_of_help.dart';
 import 'package:raise_hope/common/extensions/extensions.dart';
 import 'package:raise_hope/injection.dart';
 import 'package:raise_hope/presentation/pages/register/institution/cubit/register_institution_cubit.dart';
@@ -15,7 +14,9 @@ import 'package:raise_hope/presentation/routes/app_router.gr.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 
 class RegisterInstitutionBackgroundStep extends StatefulWidget {
-  const RegisterInstitutionBackgroundStep({super.key});
+  const RegisterInstitutionBackgroundStep({super.key, required this.typesOfHelp});
+
+  final List<String> typesOfHelp;
 
   @override
   State<RegisterInstitutionBackgroundStep> createState() => _RegisterVolunterPersonalDataStepState();
@@ -30,7 +31,7 @@ class _RegisterVolunterPersonalDataStepState extends State<RegisterInstitutionBa
       Validators.required,
     ]),
     'typeOfHelp': FormGroup({
-      for (final typeOfHelp in TypeOfHelp.values) typeOfHelp.name: FormControl<bool>(value: false),
+      for (final typeOfHelp in widget.typesOfHelp) typeOfHelp: FormControl<bool>(value: false),
     }, validators: [
       // required at least one type of help
       const MustSelectAtLeastOneValidator(),
@@ -50,8 +51,8 @@ class _RegisterVolunterPersonalDataStepState extends State<RegisterInstitutionBa
     _form.control('organizationType').value = currentData.organizationType;
     _form.control('organizationSize').value = currentData.organizationSize;
 
-    for (final TypeOfHelp typeOfHelp in currentData.typeOfHelp ?? []) {
-      _form.control('typeOfHelp.${typeOfHelp.name}').value = true;
+    for (final String typeOfHelp in currentData.typeOfHelp ?? []) {
+      _form.control('typeOfHelp.$typeOfHelp').value = true;
     }
 
     _formValueChangesSubscription = _form.valueChanges.listen((value) => _save());
@@ -159,10 +160,10 @@ class _RegisterVolunterPersonalDataStepState extends State<RegisterInstitutionBa
               "Type of Help",
               style: context.textTheme.bodySmall,
             ),
-            ...TypeOfHelp.values.map((e) {
+            ...widget.typesOfHelp.map((e) {
               return ReactiveCheckboxListTile(
-                formControlName: 'typeOfHelp.${e.name}',
-                title: Text(e.name.titleCase),
+                formControlName: 'typeOfHelp.$e',
+                title: Text(e.titleCase),
               );
             }).toList(),
 
@@ -224,10 +225,10 @@ class _RegisterVolunterPersonalDataStepState extends State<RegisterInstitutionBa
   }
 
   RegisterInstitutionCubit _save() {
-    final List<TypeOfHelp> typeOfHelps = [];
+    final List<String> typeOfHelps = [];
 
-    for (final typeOfHelp in TypeOfHelp.values) {
-      if (_form.control('typeOfHelp.${typeOfHelp.name}').value) {
+    for (final typeOfHelp in widget.typesOfHelp) {
+      if (_form.control('typeOfHelp.$typeOfHelp').value) {
         typeOfHelps.add(typeOfHelp);
       }
     }

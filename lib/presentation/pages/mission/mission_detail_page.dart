@@ -10,12 +10,14 @@ import 'package:raise_hope/presentation/pages/mission/components/mission_detail_
 
 @RoutePage()
 class MissionDetailPage extends StatefulWidget {
-  final String? heroTag;
-
   const MissionDetailPage({
     super.key,
     this.heroTag,
+    required this.id,
   });
+
+  final String id;
+  final String? heroTag;
 
   @override
   State<MissionDetailPage> createState() => _MissionDetailPageState();

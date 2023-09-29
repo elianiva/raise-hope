@@ -4,7 +4,6 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:raise_hope/common/enums/organization_size.dart';
 import 'package:raise_hope/common/enums/organization_types.dart';
-import 'package:raise_hope/common/enums/type_of_help.dart';
 import 'package:raise_hope/common/errors/api_exception.dart';
 import 'package:raise_hope/data/models/countrystatecity/city.dart';
 import 'package:raise_hope/data/models/countrystatecity/country.dart';
@@ -79,7 +78,7 @@ class RegisterInstitutionCubit extends Cubit<RegisterInstitutionState> {
   void updateBackground({
     OrganizationType? organizationType,
     OrganizationSize? organizationSize,
-    List<TypeOfHelp>? typeOfHelp,
+    List<String>? typeOfHelp,
   }) {
     final newData = state.data.copyWith(
       organizationType: organizationType,

@@ -28,7 +28,7 @@ class RegisterInstitutionData with _$RegisterInstitutionData {
     String? postalCode,
     OrganizationType? organizationType,
     OrganizationSize? organizationSize,
-    List<TypeOfHelp>? typeOfHelp,
+    List<String>? typeOfHelp,
 
     // register with current user (from google, etc)
     @Default(false) bool isUsingCurrentUser,

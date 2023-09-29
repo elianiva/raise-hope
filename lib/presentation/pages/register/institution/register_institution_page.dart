@@ -5,6 +5,7 @@ import 'package:expandable_page_view/expandable_page_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:raise_hope/common/extensions/extensions.dart';
+import 'package:raise_hope/data/repositories/mission_repository.dart';
 import 'package:raise_hope/injection.dart';
 import 'package:raise_hope/presentation/pages/register/components/custom_stepper.dart';
 import 'package:raise_hope/presentation/pages/register/institution/cubit/register_institution_cubit.dart';
@@ -29,12 +30,8 @@ class RegisterInstitutionPage extends StatefulWidget {
 class _RegisterInstitutionPageState extends State<RegisterInstitutionPage> {
   final ScrollController _scrollController = ScrollController();
   final PageController _pageController = PageController();
-
-  final List<Widget> _steps = [
-    const RegisterInstitutionPersonalDataStep(),
-    const RegisterInstitutiondAddressInformationStep(),
-    const RegisterInstitutionBackgroundStep(),
-  ];
+  final MissionRepository _missionRepository = locator<MissionRepository>();
+  List<Widget> _steps = [];
 
   RegisterInstitutionState? _previousState;
 
@@ -49,6 +46,18 @@ class _RegisterInstitutionPageState extends State<RegisterInstitutionPage> {
     _pageController.dispose();
     _scrollController.dispose();
     super.dispose();
+  }
+
+  @override
+  void initState() async {
+    super.initState();
+
+    final typesOfHelp = await _missionRepository.getTypesOfHelp();
+    _steps = [
+      const RegisterInstitutionPersonalDataStep(),
+      const RegisterInstitutiondAddressInformationStep(),
+      RegisterInstitutionBackgroundStep(typesOfHelp: typesOfHelp.getOrElse(() => [])),
+    ];
   }
 
   @override

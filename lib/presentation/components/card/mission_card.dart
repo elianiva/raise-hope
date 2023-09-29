@@ -9,11 +9,17 @@ import 'custom_card.dart';
 class MissionCard extends StatelessWidget {
   final String? heroTag;
   final Function(String? heroTag)? onTap;
+  final String title;
+  final int karmaReward;
+  final String coverImage;
 
   const MissionCard({
     super.key,
     this.heroTag,
     this.onTap,
+    required this.title,
+    required this.karmaReward,
+    required this.coverImage,
   });
 
   @override
@@ -28,7 +34,7 @@ class MissionCard extends StatelessWidget {
               final image = ClipRRect(
                 borderRadius: BorderRadius.circular(10),
                 child: CachedNetworkImage(
-                  imageUrl: 'https://picsum.photos/seed/1/500/500',
+                  imageUrl: coverImage,
                   placeholder: (context, url) => const Center(
                     child: CircularProgressIndicator(),
                   ),
@@ -52,7 +58,6 @@ class MissionCard extends StatelessWidget {
                       (toHeroContext.widget as Hero).child,
                 );
               }
-
               return image;
             },
           ),
@@ -69,7 +74,7 @@ class MissionCard extends StatelessWidget {
                 ),
                 const Spacer(),
                 Text(
-                  'Disaster Earthquake Volunteer Needed!',
+                  title,
                   style: context.textTheme.bodySmall!.apply(
                     fontWeightDelta: 2,
                     color: context.colorScheme.onSurface.withOpacity(0.8),
@@ -87,7 +92,7 @@ class MissionCard extends StatelessWidget {
                     ),
                     5.horizontalSpace,
                     Text(
-                      '250+ Karma',
+                      '$karmaReward Karma',
                       style: context.textTheme.bodySmall!.copyWith(
                         color: context.colorScheme.onBackground.withOpacity(0.6),
                       ),

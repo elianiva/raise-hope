@@ -1,6 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="org.raise_hope">
     <application
+        android:name="${applicationName}"
         android:label="Raise Hope"
         android:icon="@mipmap/ic_launcher"
         android:usesCleartextTraffic="true">
