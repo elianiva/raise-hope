@@ -1,10 +1,9 @@
-import 'dart:math';
-
 import 'package:adaptive_sizer/adaptive_sizer.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:raise_hope/common/extensions/extensions.dart';
 import 'package:raise_hope/data/models/chat_info.dart';
+import 'package:relative_time/relative_time.dart';
 
 class ChatTile extends StatelessWidget {
   final ChatInfo chatInfo;
@@ -99,7 +98,7 @@ class ChatTile extends StatelessWidget {
                   children: [
                     8.verticalSpace,
                     Text(
-                      'Today',
+                      RelativeTime.locale(const Locale("en")).format(chatInfo.timestamp),
                       style: context.textTheme.labelSmall!.apply(
                         color: context.colorScheme.onSurface.withOpacity(0.6),
                       ),

@@ -8,7 +8,7 @@ import 'package:raise_hope/data/models/point.dart';
 
 @injectable
 class MissionRepository {
-  final List<String> _typesOfHelp = [
+  final List<String> typesOfHelp = [
     'fund-raising',
     'helping-hand',
     'donation',
@@ -16,7 +16,7 @@ class MissionRepository {
     'education',
     'building',
   ];
-  final List<Mission> _missions = [
+  final List<Mission> missions = [
     Mission(
       id: "mission-1",
       title: 'Help Orphanage to Build a New Building',
@@ -160,7 +160,7 @@ class MissionRepository {
       //   return left(ApiException.unAuthorized(result.data['error']));
       // }
 
-      return right(_missions);
+      return right(missions);
     } on Exception catch (e) {
       return left(ApiException.unAuthorized(e.toString()));
     }
@@ -175,7 +175,7 @@ class MissionRepository {
       //   return left(ApiException.unAuthorized(result.data['error']));
       // }
 
-      return right(_missions.where((mission) => mission.typeOfHelp == typeOfHelp).toList());
+      return right(missions.where((mission) => mission.typeOfHelp == typeOfHelp).toList());
     } on Exception catch (e) {
       return left(ApiException.unAuthorized(e.toString()));
     }
@@ -190,7 +190,7 @@ class MissionRepository {
       //   return left(ApiException.unAuthorized(result.data['error']));
       // }
 
-      return right(_typesOfHelp);
+      return right(typesOfHelp);
     } on Exception catch (e) {
       return left(ApiException.unAuthorized(e.toString()));
     }

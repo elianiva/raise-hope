@@ -2,11 +2,13 @@ import 'package:adaptive_sizer/adaptive_sizer.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:raise_hope/common/extensions/extensions.dart';
+import 'package:raise_hope/data/repositories/chat_repository.dart';
 import 'package:raise_hope/data/repositories/mission_repository.dart';
 import 'package:raise_hope/injection.dart';
 import 'package:raise_hope/presentation/components/card/karma_card.dart';
 import 'package:raise_hope/presentation/pages/home/components/mission_list.dart';
-import 'package:raise_hope/presentation/pages/home/components/types_of_help_filter.dart';
+import 'package:raise_hope/presentation/pages/home/components/mission_section.dart';
+import 'package:raise_hope/presentation/pages/home/components/filter_list.dart';
 import 'package:raise_hope/presentation/pages/mission/components/my_mission_card.dart';
 import 'package:raise_hope/presentation/routes/app_router.dart';
 import 'package:raise_hope/presentation/routes/app_router.gr.dart';
@@ -30,15 +32,20 @@ class _HomeMainPageState extends State<HomeMainPage> {
           _buildAppBar(),
           _buildKarmaProgress(),
           _buildMissionStats(),
-          _buildSectionTitle(title: 'For You'),
-          _buildFilter(),
-          _buildVerticalSpacer(),
-          _buildMissionList(),
-          _buildSectionTitle(title: 'Popular Mission'),
-          _buildFilter(),
-          _buildVerticalSpacer(),
-          _buildMissionList(),
-          _buildVerticalSpacer(),
+          SliverToBoxAdapter(
+            child: MissionSection(
+              title: 'For You',
+              filterItems: widget._missionRepository.typesOfHelp,
+              missions: widget._missionRepository.missions,
+            ),
+          ),
+          SliverToBoxAdapter(
+            child: MissionSection(
+              title: 'Popular Mission',
+              filterItems: widget._missionRepository.typesOfHelp,
+              missions: widget._missionRepository.missions,
+            ),
+          ),
         ],
       ),
     );
@@ -70,7 +77,7 @@ class _HomeMainPageState extends State<HomeMainPage> {
           }
 
           final typesOfHelp = snapshot.data!.getOrElse(() => []);
-          return TypesOfHelpFilter(
+          return FilterList(
             items: typesOfHelp,
             onChanged: (value) {
               print(value);

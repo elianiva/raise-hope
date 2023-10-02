@@ -6,27 +6,30 @@ import 'package:raise_hope/data/models/chat_info.dart';
 
 @injectable
 class ChatRepository {
-  final List<ChatInfo> _chats = [
-    const ChatInfo(
+  final List<ChatInfo> chats = [
+    ChatInfo(
       id: "mission-1",
       senderName: "Rumah Anak Yatim Piatu",
       senderImage: "https://picsum.photos/seed/1/48",
       lastChat: "Makasih banyak ya kak!",
       unreadCount: 3,
+      timestamp: DateTime(2023, 9, 15),
     ),
-    const ChatInfo(
+    ChatInfo(
       id: "mission-2",
       senderName: "Bantuan Gempa Lombok",
       senderImage: "https://picsum.photos/seed/2/48",
       lastChat: "Belum ada perkembangan kak",
       unreadCount: 0,
+      timestamp: DateTime(2023, 9, 14),
     ),
-    const ChatInfo(
+    ChatInfo(
       id: "mission-3",
       senderName: "Institut Pendidikan Anak Bangsa",
       senderImage: "https://picsum.photos/seed/3/48",
       lastChat: "Kalau begitu kita lanjutkan besok ya kak",
       unreadCount: 4,
+      timestamp: DateTime(2023, 10, 1),
     ),
   ];
   final FirebaseFunctions _functions;
@@ -43,7 +46,7 @@ class ChatRepository {
       //   return left(ApiException.unAuthorized(result.data['error']));
       // }
 
-      return right(_chats);
+      return right(chats);
     } on Exception catch (e) {
       return left(ApiException.unAuthorized(e.toString()));
     }

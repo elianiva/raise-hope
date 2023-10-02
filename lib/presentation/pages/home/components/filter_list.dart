@@ -2,17 +2,17 @@ import 'package:adaptive_sizer/adaptive_sizer.dart';
 import 'package:flutter/material.dart';
 import 'package:raise_hope/common/extensions/extensions.dart';
 
-class TypesOfHelpFilter extends StatefulWidget {
-  const TypesOfHelpFilter({super.key, required this.items, required this.onChanged});
+class FilterList extends StatefulWidget {
+  const FilterList({super.key, required this.items, required this.onChanged});
 
   final List<String> items;
   final Function(String) onChanged;
 
   @override
-  State<TypesOfHelpFilter> createState() => _TypesOfHelpFilterState();
+  State<FilterList> createState() => _FilterListState();
 }
 
-class _TypesOfHelpFilterState extends State<TypesOfHelpFilter> {
+class _FilterListState extends State<FilterList> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(

@@ -13,6 +13,7 @@ class ChatInfo with _$ChatInfo {
     required String senderImage,
     required int unreadCount,
     required String lastChat,
+    required DateTime timestamp,
   }) = _ChatInfo;
 
   bool get hasUnread => unreadCount > 0;

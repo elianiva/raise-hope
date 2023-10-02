@@ -25,6 +25,7 @@ mixin _$ChatInfo {
   String get senderImage => throw _privateConstructorUsedError;
   int get unreadCount => throw _privateConstructorUsedError;
   String get lastChat => throw _privateConstructorUsedError;
+  DateTime get timestamp => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -42,7 +43,8 @@ abstract class $ChatInfoCopyWith<$Res> {
       String senderName,
       String senderImage,
       int unreadCount,
-      String lastChat});
+      String lastChat,
+      DateTime timestamp});
 }
 
 /// @nodoc
@@ -63,6 +65,7 @@ class _$ChatInfoCopyWithImpl<$Res, $Val extends ChatInfo>
     Object? senderImage = null,
     Object? unreadCount = null,
     Object? lastChat = null,
+    Object? timestamp = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -85,6 +88,10 @@ class _$ChatInfoCopyWithImpl<$Res, $Val extends ChatInfo>
           ? _value.lastChat
           : lastChat // ignore: cast_nullable_to_non_nullable
               as String,
+      timestamp: null == timestamp
+          ? _value.timestamp
+          : timestamp // ignore: cast_nullable_to_non_nullable
+              as DateTime,
     ) as $Val);
   }
 }
@@ -102,7 +109,8 @@ abstract class _$$ChatInfoImplCopyWith<$Res>
       String senderName,
       String senderImage,
       int unreadCount,
-      String lastChat});
+      String lastChat,
+      DateTime timestamp});
 }
 
 /// @nodoc
@@ -121,6 +129,7 @@ class __$$ChatInfoImplCopyWithImpl<$Res>
     Object? senderImage = null,
     Object? unreadCount = null,
     Object? lastChat = null,
+    Object? timestamp = null,
   }) {
     return _then(_$ChatInfoImpl(
       id: null == id
@@ -143,6 +152,10 @@ class __$$ChatInfoImplCopyWithImpl<$Res>
           ? _value.lastChat
           : lastChat // ignore: cast_nullable_to_non_nullable
               as String,
+      timestamp: null == timestamp
+          ? _value.timestamp
+          : timestamp // ignore: cast_nullable_to_non_nullable
+              as DateTime,
     ));
   }
 }
@@ -155,7 +168,8 @@ class _$ChatInfoImpl extends _ChatInfo {
       required this.senderName,
       required this.senderImage,
       required this.unreadCount,
-      required this.lastChat})
+      required this.lastChat,
+      required this.timestamp})
       : super._();
 
   factory _$ChatInfoImpl.fromJson(Map<String, dynamic> json) =>
@@ -171,10 +185,12 @@ class _$ChatInfoImpl extends _ChatInfo {
   final int unreadCount;
   @override
   final String lastChat;
+  @override
+  final DateTime timestamp;
 
   @override
   String toString() {
-    return 'ChatInfo(id: $id, senderName: $senderName, senderImage: $senderImage, unreadCount: $unreadCount, lastChat: $lastChat)';
+    return 'ChatInfo(id: $id, senderName: $senderName, senderImage: $senderImage, unreadCount: $unreadCount, lastChat: $lastChat, timestamp: $timestamp)';
   }
 
   @override
@@ -190,13 +206,15 @@ class _$ChatInfoImpl extends _ChatInfo {
             (identical(other.unreadCount, unreadCount) ||
                 other.unreadCount == unreadCount) &&
             (identical(other.lastChat, lastChat) ||
-                other.lastChat == lastChat));
+                other.lastChat == lastChat) &&
+            (identical(other.timestamp, timestamp) ||
+                other.timestamp == timestamp));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, id, senderName, senderImage, unreadCount, lastChat);
+  int get hashCode => Object.hash(runtimeType, id, senderName, senderImage,
+      unreadCount, lastChat, timestamp);
 
   @JsonKey(ignore: true)
   @override
@@ -218,7 +236,8 @@ abstract class _ChatInfo extends ChatInfo {
       required final String senderName,
       required final String senderImage,
       required final int unreadCount,
-      required final String lastChat}) = _$ChatInfoImpl;
+      required final String lastChat,
+      required final DateTime timestamp}) = _$ChatInfoImpl;
   const _ChatInfo._() : super._();
 
   factory _ChatInfo.fromJson(Map<String, dynamic> json) =
@@ -234,6 +253,8 @@ abstract class _ChatInfo extends ChatInfo {
   int get unreadCount;
   @override
   String get lastChat;
+  @override
+  DateTime get timestamp;
   @override
   @JsonKey(ignore: true)
   _$$ChatInfoImplCopyWith<_$ChatInfoImpl> get copyWith =>

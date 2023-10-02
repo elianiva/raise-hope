@@ -13,6 +13,7 @@ _$ChatInfoImpl _$$ChatInfoImplFromJson(Map<String, dynamic> json) =>
       senderImage: json['senderImage'] as String,
       unreadCount: json['unreadCount'] as int,
       lastChat: json['lastChat'] as String,
+      timestamp: DateTime.parse(json['timestamp'] as String),
     );
 
 Map<String, dynamic> _$$ChatInfoImplToJson(_$ChatInfoImpl instance) =>
@@ -22,4 +23,5 @@ Map<String, dynamic> _$$ChatInfoImplToJson(_$ChatInfoImpl instance) =>
       'senderImage': instance.senderImage,
       'unreadCount': instance.unreadCount,
       'lastChat': instance.lastChat,
+      'timestamp': instance.timestamp.toIso8601String(),
     };
