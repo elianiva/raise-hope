@@ -24,14 +24,15 @@ import 'package:internet_connection_checker/internet_connection_checker.dart'
 
 import 'common/network/network_info.dart' as _i15;
 import 'common/utils/image_resize.dart' as _i12;
-import 'data/datasources/network/network_source.dart' as _i20;
+import 'data/datasources/network/network_source.dart' as _i21;
 import 'data/datasources/session/session_source.dart' as _i16;
 import 'data/repositories/auth_repository.dart' as _i17;
+import 'data/repositories/chat_repository.dart' as _i18;
 import 'data/repositories/mission_repository.dart' as _i14;
 import 'presentation/pages/register/institution/cubit/register_institution_cubit.dart'
-    as _i18;
-import 'presentation/pages/register/volunteer/cubit/register_volunteer_cubit.dart'
     as _i19;
+import 'presentation/pages/register/volunteer/cubit/register_volunteer_cubit.dart'
+    as _i20;
 import 'presentation/routes/app_router.dart' as _i3;
 
 // initializes the registration of main-scope dependencies inside of GetIt
@@ -69,15 +70,17 @@ _i1.GetIt $initGetIt(
         gh<_i5.FirebaseAuth>(),
         gh<_i8.FirebaseFunctions>(),
       ));
-  gh.factory<_i18.RegisterInstitutionCubit>(() => _i18.RegisterInstitutionCubit(
+  gh.factory<_i18.ChatRepository>(
+      () => _i18.ChatRepository(gh<_i8.FirebaseFunctions>()));
+  gh.factory<_i19.RegisterInstitutionCubit>(() => _i19.RegisterInstitutionCubit(
         gh<_i17.AuthRepository>(),
         gh<_i5.FirebaseAuth>(),
       ));
-  gh.factory<_i19.RegisterVolunteerCubit>(() => _i19.RegisterVolunteerCubit(
+  gh.factory<_i20.RegisterVolunteerCubit>(() => _i20.RegisterVolunteerCubit(
         gh<_i17.AuthRepository>(),
         gh<_i5.FirebaseAuth>(),
       ));
   return getIt;
 }
 
-class _$ApiService extends _i20.ApiService {}
+class _$ApiService extends _i21.ApiService {}

@@ -1,7 +1,12 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:dartz/dartz.dart' as dartz;
+import 'package:raise_hope/common/errors/api_exception.dart';
 import 'package:raise_hope/common/extensions/extensions.dart';
+import 'package:raise_hope/data/models/chat_info.dart';
+import 'package:raise_hope/data/repositories/chat_repository.dart';
 import 'package:raise_hope/injection.dart';
+import 'package:raise_hope/presentation/pages/discussion/components/chat_search_bar.dart';
 import 'package:raise_hope/presentation/routes/app_router.dart';
 import 'package:raise_hope/presentation/routes/app_router.gr.dart';
 
@@ -9,7 +14,9 @@ import 'components/chat_tile.dart';
 
 @RoutePage()
 class ChatListPage extends StatefulWidget {
-  const ChatListPage({super.key});
+  ChatListPage({super.key});
+
+  final ChatRepository _chatRepository = locator<ChatRepository>();
 
   @override
   State<ChatListPage> createState() => _ChatListPageState();
@@ -24,45 +31,46 @@ class _ChatListPageState extends State<ChatListPage> {
         titleTextStyle: context.textTheme.titleMedium!.apply(
           fontWeightDelta: 2,
         ),
+        scrolledUnderElevation: 0,
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-              child: _buildSearchBar(),
-            ),
-            ListView.builder(
-              padding: const EdgeInsets.symmetric(vertical: 16),
-              shrinkWrap: true,
-              physics: const NeverScrollableScrollPhysics(),
-              itemCount: 10,
-              itemBuilder: (context, index) => ChatTile(
-                hasUnread: index % 2 == 0,
-                onTap: () => locator<AppRouter>().push(const ChatRoute()),
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-
-  Widget _buildSearchBar() {
-    return SizedBox(
-      height: 44,
-      child: TextField(
-        style: const TextStyle(color: Colors.black45, fontSize: 14),
-        decoration: InputDecoration(
-          hintText: 'Search chat...',
-          prefixIcon: const Icon(Icons.search, color: Colors.black54),
-          filled: true,
-          fillColor: context.colorScheme.primary.withOpacity(0.15),
-          border: const OutlineInputBorder(
-            borderRadius: BorderRadius.all(Radius.circular(22)),
-            borderSide: BorderSide.none,
+      body: Column(
+        children: [
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+            child: ChatSearchBar(),
           ),
-        ),
+          Expanded(
+            child: StreamBuilder<dartz.Either<ApiException, List<ChatInfo>>>(
+                stream: widget._chatRepository.getAllMissions().asStream(),
+                builder: (context, snapshot) {
+                  if (!snapshot.hasData) {
+                    return const Center(
+                      child: CircularProgressIndicator(),
+                    );
+                  }
+
+                  if (snapshot.hasError) {
+                    return Center(
+                      child: Text(snapshot.error.toString()),
+                    );
+                  }
+
+                  final chats = snapshot.data!.getOrElse(() => []);
+                  return SingleChildScrollView(
+                    child: ListView.builder(
+                      padding: const EdgeInsets.symmetric(vertical: 16),
+                      shrinkWrap: true,
+                      physics: const BouncingScrollPhysics(),
+                      itemCount: chats.length,
+                      itemBuilder: (context, index) => ChatTile(
+                        chatInfo: chats[index],
+                        onTap: () => locator<AppRouter>().push(const ChatRoute()),
+                      ),
+                    ),
+                  );
+                }),
+          ),
+        ],
       ),
     );
   }

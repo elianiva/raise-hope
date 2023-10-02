@@ -44,9 +44,11 @@ abstract class $AppRouter extends _i17.RootStackRouter {
   @override
   final Map<String, _i17.PageFactory> pagesMap = {
     ChatListRoute.name: (routeData) {
+      final args = routeData.argsAs<ChatListRouteArgs>(
+          orElse: () => const ChatListRouteArgs());
       return _i17.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i1.ChatListPage(),
+        child: _i1.ChatListPage(key: args.key),
       );
     },
     ChatRoute.name: (routeData) {
@@ -171,16 +173,31 @@ abstract class $AppRouter extends _i17.RootStackRouter {
 
 /// generated route for
 /// [_i1.ChatListPage]
-class ChatListRoute extends _i17.PageRouteInfo<void> {
-  const ChatListRoute({List<_i17.PageRouteInfo>? children})
-      : super(
+class ChatListRoute extends _i17.PageRouteInfo<ChatListRouteArgs> {
+  ChatListRoute({
+    _i18.Key? key,
+    List<_i17.PageRouteInfo>? children,
+  }) : super(
           ChatListRoute.name,
+          args: ChatListRouteArgs(key: key),
           initialChildren: children,
         );
 
   static const String name = 'ChatListRoute';
 
-  static const _i17.PageInfo<void> page = _i17.PageInfo<void>(name);
+  static const _i17.PageInfo<ChatListRouteArgs> page =
+      _i17.PageInfo<ChatListRouteArgs>(name);
+}
+
+class ChatListRouteArgs {
+  const ChatListRouteArgs({this.key});
+
+  final _i18.Key? key;
+
+  @override
+  String toString() {
+    return 'ChatListRouteArgs{key: $key}';
+  }
 }
 
 /// generated route for

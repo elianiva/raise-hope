@@ -22,7 +22,7 @@ class _HomePageState extends State<HomePage> {
       routes: [
         HomeMainRoute(),
         const HomeMissionRoute(),
-        const HomeDiscussionRoute(),
+        ChatListRoute(),
       ],
       builder: (ctx, child) {
         final tabsRouter = AutoTabsRouter.of(ctx);

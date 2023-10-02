@@ -4,15 +4,16 @@ import 'package:adaptive_sizer/adaptive_sizer.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:raise_hope/common/extensions/extensions.dart';
+import 'package:raise_hope/data/models/chat_info.dart';
 
 class ChatTile extends StatelessWidget {
-  final bool hasUnread;
+  final ChatInfo chatInfo;
   final VoidCallback? onTap;
 
   const ChatTile({
     super.key,
     this.onTap,
-    this.hasUnread = false,
+    required this.chatInfo,
   });
 
   @override
@@ -35,13 +36,13 @@ class ChatTile extends StatelessWidget {
                     ClipRRect(
                       borderRadius: BorderRadius.circular(16),
                       child: CachedNetworkImage(
-                        imageUrl: 'https://picsum.photos/seed/${Random().nextInt(100)}/48',
+                        imageUrl: chatInfo.senderImage,
                         width: 48,
                         height: 48,
                         fit: BoxFit.cover,
                       ),
                     ),
-                    if (hasUnread)
+                    if (chatInfo.hasUnread)
                       Positioned(
                         top: -2,
                         right: -2,
@@ -70,7 +71,7 @@ class ChatTile extends StatelessWidget {
                         children: [
                           Expanded(
                             child: Text(
-                              'Hunger Community Solver',
+                              chatInfo.senderName,
                               style: context.textTheme.titleSmall!.apply(
                                 fontWeightDelta: 1,
                               ),
@@ -80,10 +81,14 @@ class ChatTile extends StatelessWidget {
                       ),
                       4.verticalSpace,
                       Text(
-                        'Thanks for your help!',
-                        style: context.textTheme.labelSmall!.apply(
-                          color: context.colorScheme.onSurface.withOpacity(0.6),
-                        ),
+                        chatInfo.lastChat,
+                        style: context.textTheme.labelSmall!
+                            .apply(
+                              color: context.colorScheme.onSurface.withOpacity(0.6),
+                            )
+                            .copyWith(
+                              fontWeight: FontWeight.w400,
+                            ),
                       ),
                     ],
                   ),
@@ -100,26 +105,27 @@ class ChatTile extends StatelessWidget {
                       ),
                     ),
                     const Spacer(),
-                    Container(
-                      width: 22,
-                      height: 22,
-                      decoration: BoxDecoration(
-                        color: context.colorScheme.primary.withOpacity(0.15),
-                        shape: BoxShape.circle,
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(4.0),
-                        child: FittedBox(
-                          child: Text(
-                            '1',
-                            style: context.textTheme.labelSmall!.apply(
-                              color: context.colorScheme.primary,
-                              fontWeightDelta: 2,
+                    if (chatInfo.hasUnread)
+                      Container(
+                        width: 22,
+                        height: 22,
+                        decoration: BoxDecoration(
+                          color: context.colorScheme.primary.withOpacity(0.15),
+                          shape: BoxShape.circle,
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(4.0),
+                          child: FittedBox(
+                            child: Text(
+                              chatInfo.unreadCount.toString(),
+                              style: context.textTheme.labelSmall!.apply(
+                                color: context.colorScheme.primary,
+                                fontWeightDelta: 2,
+                              ),
                             ),
                           ),
                         ),
                       ),
-                    ),
                   ],
                 )
               ],
