@@ -25,33 +25,36 @@ class KarmaProgressCard extends StatelessWidget {
             'assets/icon/charity.svg',
             width: 24,
             height: 24,
-          ).pad(17),
+          ).pad(16),
           Expanded(
             child: Padding(
               padding: const EdgeInsets.symmetric(vertical: 8),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    '$karmaToNextLevel karma more for rewards',
-                    style: context.textTheme.labelSmall!.apply(
-                      fontWeightDelta: 2,
+              child: Padding(
+                padding: const EdgeInsets.only(right: 16.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Karma Level $currentKarmaLevel',
+                      style: context.textTheme.labelMedium!.apply(
+                        fontWeightDelta: 3,
+                      ),
                     ),
-                  ),
-                  4.verticalSpace,
-                  const RoundedLinearProgressBar(
-                    value: 0.3,
-                    color: Color(0xFFFF8985),
-                    bgColor: Colors.transparent,
-                  ),
-                  4.verticalSpace,
-                  Text(
-                    'Karma Level $currentKarmaLevel',
-                    style: context.textTheme.labelSmall!.apply(
-                      fontWeightDelta: 2,
+                    4.verticalSpace,
+                    RoundedLinearProgressBar(
+                      value: 0.3,
+                      color: const Color(0xFFFF8985),
+                      bgColor: Colors.grey[200]!,
                     ),
-                  ),
-                ],
+                    4.verticalSpace,
+                    Text(
+                      '$karmaToNextLevel karma to next level',
+                      style: context.textTheme.labelSmall!.copyWith(
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
           ),

@@ -25,7 +25,7 @@ class CustomCard extends StatelessWidget {
         ],
       ),
       child: Material(
-        color: context.colorScheme.surface,
+        color: Colors.white,
         borderRadius: BorderRadius.circular(12),
         child: InkWell(
           onTap: onTap,
