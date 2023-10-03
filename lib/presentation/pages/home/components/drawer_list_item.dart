@@ -22,15 +22,12 @@ class DrawerListItem extends StatelessWidget {
       child: InkWell(
         onTap: onTap,
         child: Padding(
-          padding: const EdgeInsets.symmetric(
-            horizontal: 16,
-            vertical: 16,
-          ),
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Icon(icon),
-              8.horizontalSpace,
+              16.horizontalSpace,
               Expanded(
                 child: Text(
                   label,
@@ -40,6 +37,7 @@ class DrawerListItem extends StatelessWidget {
               8.horizontalSpace,
               const Icon(
                 CommunityMaterialIcons.chevron_right,
+                size: 20,
               ),
             ],
           ),

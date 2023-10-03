@@ -34,7 +34,7 @@ class _HomePageState extends State<HomePage> {
           bottomNavigationBar: NavigationBar(
             backgroundColor: Colors.white,
             indicatorColor: context.colorScheme.primary,
-            labelBehavior: NavigationDestinationLabelBehavior.alwaysHide,
+            labelBehavior: NavigationDestinationLabelBehavior.alwaysShow,
             selectedIndex: tabsRouter.activeIndex,
             onDestinationSelected: tabsRouter.setActiveIndex,
             destinations: const [
@@ -47,10 +47,10 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               NavigationDestination(
-                icon: Icon(Icons.my_library_books_outlined),
+                icon: Icon(Icons.integration_instructions_outlined),
                 label: "Mission",
                 selectedIcon: Icon(
-                  Icons.my_library_books,
+                  Icons.integration_instructions,
                   color: Colors.white,
                 ),
               ),

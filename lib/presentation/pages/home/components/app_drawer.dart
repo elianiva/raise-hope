@@ -97,12 +97,16 @@ class AppDrawer extends StatelessWidget {
                   24.verticalSpace,
                   DrawerListItem(
                     label: 'Account',
-                    icon: Icons.person_outline_rounded,
+                    icon: Icons.person_outline,
                     onTap: () => locator<AppRouter>().push(const ProfileRoute()),
                   ),
                   const DrawerListItem(
+                    label: 'Settings',
+                    icon: Icons.settings_outlined,
+                  ),
+                  const DrawerListItem(
                     label: 'Request Help',
-                    icon: Icons.notes_rounded,
+                    icon: Icons.phone_outlined,
                   ),
                 ],
               ),
@@ -115,7 +119,7 @@ class AppDrawer extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 8.0),
+                      padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [

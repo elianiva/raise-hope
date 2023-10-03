@@ -4,6 +4,7 @@ import 'package:adaptive_sizer/adaptive_sizer.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:raise_hope/common/extensions/extensions.dart';
+import 'package:raise_hope/presentation/pages/discussion/components/chat_input.dart';
 
 @RoutePage()
 class ChatPage extends StatefulWidget {
@@ -40,53 +41,7 @@ class _ChatPageState extends State<ChatPage> {
           Expanded(
             child: _chatList(),
           ),
-          _buildInput(),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildInput() {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-      decoration: BoxDecoration(
-        color: context.colorScheme.background,
-        border: Border(
-          top: BorderSide(
-            color: context.colorScheme.onBackground.withOpacity(0.12),
-          ),
-        ),
-      ),
-      child: Row(
-        children: [
-          Expanded(
-            child: TextField(
-              decoration: InputDecoration(
-                hintText: 'Type your message...',
-                filled: true,
-                fillColor: context.colorScheme.onBackground.withOpacity(0.15),
-                border: const OutlineInputBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(10)),
-                  borderSide: BorderSide.none,
-                ),
-              ),
-              style: TextStyle(
-                color: context.colorScheme.onBackground,
-                fontSize: 14,
-              ),
-              minLines: 1,
-              maxLines: 1,
-            ),
-          ),
-          16.horizontalSpace,
-          IconButton(
-            onPressed: () {},
-            // papper plane
-            icon: Icon(
-              Icons.send_rounded,
-              color: context.colorScheme.primary,
-            ),
-          ),
+          const ChatInput(),
         ],
       ),
     );
@@ -95,7 +50,7 @@ class _ChatPageState extends State<ChatPage> {
   Widget _chatList() {
     return DecoratedBox(
       decoration: BoxDecoration(
-        color: context.colorScheme.primary.withOpacity(0.15),
+        color: context.colorScheme.primary.withOpacity(0.1),
       ),
       child: ListView.builder(
         padding: const EdgeInsets.symmetric(vertical: 16),
@@ -190,7 +145,7 @@ class _ChatPageState extends State<ChatPage> {
       borderRadius: BorderRadius.circular(8),
       child: DecoratedBox(
         decoration: BoxDecoration(
-          color: context.colorScheme.onBackground.withOpacity(0.15),
+          color: context.colorScheme.onBackground.withOpacity(0.1),
         ),
         child: IntrinsicHeight(
           child: Row(

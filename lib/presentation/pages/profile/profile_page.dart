@@ -7,6 +7,8 @@ import 'package:raise_hope/common/extensions/extensions.dart';
 import 'package:raise_hope/injection.dart';
 import 'package:raise_hope/presentation/components/app_bar/simple_app_bar.dart';
 import 'package:raise_hope/presentation/components/card/karma_progress_card.dart';
+import 'package:raise_hope/presentation/routes/app_router.dart';
+import 'package:raise_hope/presentation/routes/app_router.gr.dart';
 
 @RoutePage()
 class ProfilePage extends StatelessWidget {
@@ -28,15 +30,27 @@ class ProfilePage extends StatelessWidget {
             builder: (context, snapshot) {
               if (snapshot.hasData) {
                 return Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     if (snapshot.data?.photoURL != null)
                       Hero(
                         tag: 'profile-picture',
-                        child: CircleAvatar(
-                          radius: 76 / 2,
-                          backgroundImage: CachedNetworkImageProvider(
-                            snapshot.data!.photoURL!,
+                        child: Container(
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            boxShadow: [
+                              BoxShadow(
+                                color: context.colorScheme.onSurface.withOpacity(0.05),
+                                blurRadius: 4,
+                                offset: const Offset(0, 2),
+                              ),
+                            ],
+                          ),
+                          child: CircleAvatar(
+                            radius: 76 / 2,
+                            backgroundImage: CachedNetworkImageProvider(
+                              snapshot.data!.photoURL!,
+                            ),
                           ),
                         ),
                       )
@@ -91,11 +105,14 @@ class ProfilePage extends StatelessWidget {
             },
           ),
         ),
-        const Padding(
-          padding: EdgeInsets.symmetric(horizontal: 16),
-          child: KarmaProgressCard(
-            currentKarmaLevel: 3,
-            karmaToNextLevel: 250,
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16),
+          child: GestureDetector(
+            child: const KarmaProgressCard(
+              currentKarmaLevel: 3,
+              karmaToNextLevel: 250,
+            ),
+            onTap: () => locator<AppRouter>().push(const KarmaMainRoute()),
           ),
         ),
       ],

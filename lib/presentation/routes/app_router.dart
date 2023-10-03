@@ -25,14 +25,12 @@ class AppRouter extends $AppRouter {
             ),
             AutoRoute(page: HomeMissionRoute.page),
             AutoRoute(page: HomeDiscussionRoute.page),
-            AutoRoute(page: ChatListRoute.page),
-            // AutoRoute(page: HomeMissionRoute.page),
-            // AutoRoute(
-            //   page: HeroEmptyRouterRoute.page,
-            //   children: [
-            //     AutoRoute(page: ChatListRoute.page, initial: true),
-            //   ],
-            // ),
+            AutoRoute(
+              page: HeroEmptyRouterRoute.page,
+              children: [
+                AutoRoute(page: ChatListRoute.page, initial: true),
+              ],
+            ),
           ],
         ),
         AutoRoute(page: LoginRoute.page),
