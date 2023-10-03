@@ -8,7 +8,7 @@ import 'package:raise_hope/data/models/chat_info.dart';
 class ChatRepository {
   final List<ChatInfo> chats = [
     ChatInfo(
-      id: "mission-1",
+      id: "chat-1",
       senderName: "Rumah Anak Yatim Piatu",
       senderImage: "https://picsum.photos/seed/1/48",
       lastChat: "Makasih banyak ya kak!",
@@ -16,7 +16,7 @@ class ChatRepository {
       timestamp: DateTime(2023, 9, 15),
     ),
     ChatInfo(
-      id: "mission-2",
+      id: "chat-2",
       senderName: "Bantuan Gempa Lombok",
       senderImage: "https://picsum.photos/seed/2/48",
       lastChat: "Belum ada perkembangan kak",
@@ -24,7 +24,7 @@ class ChatRepository {
       timestamp: DateTime(2023, 9, 14),
     ),
     ChatInfo(
-      id: "mission-3",
+      id: "chat-3",
       senderName: "Institut Pendidikan Anak Bangsa",
       senderImage: "https://picsum.photos/seed/3/48",
       lastChat: "Kalau begitu kita lanjutkan besok ya kak",

@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:cloud_functions/cloud_functions.dart';
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
@@ -9,6 +11,7 @@ import 'package:raise_hope/data/models/point.dart';
 @injectable
 class MissionRepository {
   final List<String> typesOfHelp = [
+    'all',
     'fund-raising',
     'helping-hand',
     'donation',
@@ -18,7 +21,7 @@ class MissionRepository {
   ];
   final List<Mission> missions = [
     Mission(
-      id: "mission-1",
+      id: "mission-${Random().nextInt(100)}",
       title: 'Help Orphanage to Build a New Building',
       description:
           'Help orphanage to build a new building so they can help more children. Currently they only have 1 building and it\'s not enough to help all the children.',
@@ -33,8 +36,8 @@ class MissionRepository {
       ],
       karmaReward: 250,
       location: const Point(latitude: -7.944093619642294, longitude: 112.61457347546616),
-      institution: const Institution(
-        id: "institution-1",
+      institution: Institution(
+        id: "institution-${Random().nextInt(100)}",
         name: 'Rumah Yatim Piatu',
         email: 'contact@rumahyatimpiatu.org',
         website: 'rumahyatimpiatu.org',
@@ -51,7 +54,7 @@ class MissionRepository {
       ),
     ),
     Mission(
-      id: "mission-2",
+      id: "institution-${Random().nextInt(100)}",
       title: 'Help Earthquake Victims During Reconstruction',
       description:
           'Help earthquake victims during reconstruction in Lombok, Indonesia. We need your help on the resource and also helping hand while their house is being reconstructed.',
@@ -66,8 +69,8 @@ class MissionRepository {
       ],
       karmaReward: 100,
       location: const Point(latitude: -7.944093619642294, longitude: 112.61457347546616),
-      institution: const Institution(
-        id: "institution-2",
+      institution: Institution(
+        id: "institution-${Random().nextInt(100)}",
         name: 'Bantu Indonesia',
         email: 'info@bantuindonesia.com',
         website: 'bantuindonesia.com',
@@ -84,7 +87,7 @@ class MissionRepository {
       ),
     ),
     Mission(
-      id: "mission-3",
+      id: "mission-${Random().nextInt(100)}",
       title: 'Donate Blood to Help People with Thalassemia',
       description: 'Donate blood to help people with thalassemia. We need your help to save their life. Thank you!',
       targetVolunteer: 12,
@@ -98,8 +101,8 @@ class MissionRepository {
       ],
       karmaReward: 80,
       location: const Point(latitude: -7.944093619642294, longitude: 112.61457347546616),
-      institution: const Institution(
-        id: "institution-3",
+      institution: Institution(
+        id: "institution-${Random().nextInt(100)}",
         name: 'Palang Merah Indonesia',
         email: 'contact@pmi.or.id',
         website: 'pmi.or.id',
@@ -116,7 +119,7 @@ class MissionRepository {
       ),
     ),
     Mission(
-      id: "mission-4",
+      id: "mission-${Random().nextInt(100)}",
       title: 'Teach Children to Read and Write',
       description: 'Teach children to read and write in remote areas where there is no school',
       targetVolunteer: 10,
@@ -128,8 +131,8 @@ class MissionRepository {
       ],
       karmaReward: 140,
       location: const Point(latitude: -7.944093619642294, longitude: 112.61457347546616),
-      institution: const Institution(
-        id: "institution-4",
+      institution: Institution(
+        id: "institution-${Random().nextInt(100)}",
         name: 'Yayasan Pendidikan Anak Indonesia',
         email: 'contact@ypai.or.id',
         website: 'ypai.or.id',

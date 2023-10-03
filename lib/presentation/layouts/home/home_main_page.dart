@@ -2,14 +2,12 @@ import 'package:adaptive_sizer/adaptive_sizer.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:raise_hope/common/extensions/extensions.dart';
-import 'package:raise_hope/data/repositories/chat_repository.dart';
 import 'package:raise_hope/data/repositories/mission_repository.dart';
 import 'package:raise_hope/injection.dart';
-import 'package:raise_hope/presentation/components/card/karma_card.dart';
-import 'package:raise_hope/presentation/pages/home/components/mission_list.dart';
+import 'package:raise_hope/presentation/components/card/karma_progress_card.dart';
 import 'package:raise_hope/presentation/pages/home/components/mission_section.dart';
 import 'package:raise_hope/presentation/pages/home/components/filter_list.dart';
-import 'package:raise_hope/presentation/pages/mission/components/my_mission_card.dart';
+import 'package:raise_hope/presentation/pages/home/components/mission_stats.dart';
 import 'package:raise_hope/presentation/routes/app_router.dart';
 import 'package:raise_hope/presentation/routes/app_router.gr.dart';
 
@@ -31,7 +29,7 @@ class _HomeMainPageState extends State<HomeMainPage> {
         slivers: [
           _buildAppBar(),
           _buildKarmaProgress(),
-          _buildMissionStats(),
+          const SliverToBoxAdapter(child: IntrinsicHeight(child: MissionStats())),
           SliverToBoxAdapter(
             child: MissionSection(
               title: 'For You',
@@ -46,23 +44,8 @@ class _HomeMainPageState extends State<HomeMainPage> {
               missions: widget._missionRepository.missions,
             ),
           ),
+          SliverToBoxAdapter(child: 32.verticalSpace)
         ],
-      ),
-    );
-  }
-
-  Widget _buildMissionList() {
-    return SliverToBoxAdapter(
-      child: StreamBuilder(
-        stream: widget._missionRepository.getAllMissions().asStream(),
-        builder: (context, snapshot) {
-          if (!snapshot.hasData || snapshot.data == null || snapshot.data!.isLeft()) {
-            return const SizedBox();
-          }
-
-          final missions = snapshot.data!.getOrElse(() => []);
-          return MissionList(missions: missions);
-        },
       ),
     );
   }
@@ -121,53 +104,15 @@ class _HomeMainPageState extends State<HomeMainPage> {
     );
   }
 
-  Widget _buildMissionStats() {
-    return SliverPadding(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
-      sliver: SliverToBoxAdapter(
-        child: IntrinsicHeight(
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Expanded(
-                child: MyMissionCard(
-                  value: 1,
-                  title: 'Mission',
-                  subtitle: 'On Going!',
-                  color: context.colorScheme.primary,
-                ),
-              ),
-              16.horizontalSpace,
-              const Expanded(
-                child: MyMissionCard(
-                  value: 5,
-                  title: 'Area',
-                  subtitle: 'You\'ve helped!',
-                  color: Color(0xFFF19700),
-                ),
-              ),
-              16.horizontalSpace,
-              const Expanded(
-                child: MyMissionCard(
-                  value: 7,
-                  title: 'Mission Plan',
-                  subtitle: 'Planned!',
-                  color: Color(0xFF006E1C),
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-
   Widget _buildKarmaProgress() {
     return SliverPadding(
       padding: const EdgeInsets.all(16),
       sliver: SliverToBoxAdapter(
         child: GestureDetector(
-          child: const KarmaCard(),
+          child: const KarmaProgressCard(
+            karmaToNextLevel: 245,
+            currentKarmaLevel: 3,
+          ),
           onTap: () => locator<AppRouter>().push(const KarmaMainRoute()),
         ),
       ),
@@ -236,12 +181,6 @@ class _HomeMainPageState extends State<HomeMainPage> {
           ],
         ),
       ),
-    );
-  }
-
-  Widget _buildVerticalSpacer([int height = 20]) {
-    return SliverToBoxAdapter(
-      child: height.verticalSpace,
     );
   }
 }

@@ -3,6 +3,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:raise_hope/injection.dart';
 import 'package:raise_hope/presentation/routes/app_router.dart';
 import 'package:raise_hope/presentation/theme/theme.dart';
@@ -28,24 +29,32 @@ class _AppPageState extends State<AppPage> {
           statusBarIconBrightness: Brightness.dark,
         ),
         child: MaterialApp.router(
-          title: 'Rise Hope',
+          title: 'Raise Hope',
           theme: AppStyles.lightTheme,
           darkTheme: AppStyles.darkTheme,
           themeMode: ThemeMode.light,
           routeInformationParser: _appRouter.defaultRouteParser(),
           routerDelegate: _appRouter.delegate(
             navigatorObservers: () => [
-              MyObserver(),
+              DebugObserver(),
               FirebaseAnalyticsObserver(analytics: locator<FirebaseAnalytics>()),
             ],
           ),
+          localizationsDelegates: const [
+            GlobalMaterialLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate,
+            GlobalCupertinoLocalizations.delegate,
+          ],
+          supportedLocales: const [
+            Locale('en'),
+          ],
         ),
       ),
     );
   }
 }
 
-class MyObserver extends AutoRouterObserver {
+class DebugObserver extends AutoRouterObserver {
   @override
   void didPush(Route route, Route? previousRoute) {
     debugPrint('New route pushed: ${route.settings.name}');

@@ -6,10 +6,15 @@ import 'package:raise_hope/presentation/components/progress_bar/rounded_progress
 
 import 'custom_card.dart';
 
-class KarmaCard extends StatelessWidget {
-  const KarmaCard({
+class KarmaProgressCard extends StatelessWidget {
+  const KarmaProgressCard({
     super.key,
+    required this.karmaToNextLevel,
+    required this.currentKarmaLevel,
   });
+
+  final int karmaToNextLevel;
+  final int currentKarmaLevel;
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +33,7 @@ class KarmaCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    '350 karma more for rewards',
+                    '$karmaToNextLevel karma more for rewards',
                     style: context.textTheme.labelSmall!.apply(
                       fontWeightDelta: 2,
                     ),
@@ -41,7 +46,7 @@ class KarmaCard extends StatelessWidget {
                   ),
                   4.verticalSpace,
                   Text(
-                    'Karma Level 3',
+                    'Karma Level $currentKarmaLevel',
                     style: context.textTheme.labelSmall!.apply(
                       fontWeightDelta: 2,
                     ),

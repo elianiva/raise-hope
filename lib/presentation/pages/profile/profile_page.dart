@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:raise_hope/common/extensions/extensions.dart';
 import 'package:raise_hope/injection.dart';
 import 'package:raise_hope/presentation/components/app_bar/simple_app_bar.dart';
-import 'package:raise_hope/presentation/components/card/karma_card.dart';
+import 'package:raise_hope/presentation/components/card/karma_progress_card.dart';
 
 @RoutePage()
 class ProfilePage extends StatelessWidget {
@@ -93,7 +93,10 @@ class ProfilePage extends StatelessWidget {
         ),
         const Padding(
           padding: EdgeInsets.symmetric(horizontal: 16),
-          child: KarmaCard(),
+          child: KarmaProgressCard(
+            currentKarmaLevel: 3,
+            karmaToNextLevel: 250,
+          ),
         ),
       ],
     ));
