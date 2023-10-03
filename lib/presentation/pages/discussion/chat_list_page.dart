@@ -39,7 +39,7 @@ class _ChatListPageState extends State<ChatListPage> {
           ),
           Expanded(
             child: StreamBuilder<dartz.Either<ApiException, List<ChatInfo>>>(
-                stream: widget._chatRepository.getAllMissions().asStream(),
+                stream: widget._chatRepository.getAllChats().asStream(),
                 builder: (context, snapshot) {
                   if (!snapshot.hasData) {
                     return const Center(
@@ -62,7 +62,11 @@ class _ChatListPageState extends State<ChatListPage> {
                       itemCount: chats.length,
                       itemBuilder: (context, index) => ChatTile(
                         chatInfo: chats[index],
-                        onTap: () => locator<AppRouter>().push(const ChatRoute()),
+                        onTap: () => locator<AppRouter>().push(
+                          ChatRoute(
+                            chatId: chats[index].id,
+                          ),
+                        ),
                       ),
                     ),
                   );

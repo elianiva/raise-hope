@@ -155,7 +155,6 @@ class MissionRepository {
 
   Future<Either<ApiException, List<Mission>>> getAllMissions() async {
     try {
-      // TODO(elianiva): enable this later when we've got the integration working
       // final callable = _functions.httpsCallable('getAllMissions');
       // final result = await callable.call();
 

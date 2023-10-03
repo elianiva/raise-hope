@@ -52,9 +52,13 @@ abstract class $AppRouter extends _i17.RootStackRouter {
       );
     },
     ChatRoute.name: (routeData) {
+      final args = routeData.argsAs<ChatRouteArgs>();
       return _i17.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i2.ChatPage(),
+        child: _i2.ChatPage(
+          key: args.key,
+          chatId: args.chatId,
+        ),
       );
     },
     HeroEmptyRouterRoute.name: (routeData) {
@@ -204,16 +208,40 @@ class ChatListRouteArgs {
 
 /// generated route for
 /// [_i2.ChatPage]
-class ChatRoute extends _i17.PageRouteInfo<void> {
-  const ChatRoute({List<_i17.PageRouteInfo>? children})
-      : super(
+class ChatRoute extends _i17.PageRouteInfo<ChatRouteArgs> {
+  ChatRoute({
+    _i18.Key? key,
+    required String chatId,
+    List<_i17.PageRouteInfo>? children,
+  }) : super(
           ChatRoute.name,
+          args: ChatRouteArgs(
+            key: key,
+            chatId: chatId,
+          ),
           initialChildren: children,
         );
 
   static const String name = 'ChatRoute';
 
-  static const _i17.PageInfo<void> page = _i17.PageInfo<void>(name);
+  static const _i17.PageInfo<ChatRouteArgs> page =
+      _i17.PageInfo<ChatRouteArgs>(name);
+}
+
+class ChatRouteArgs {
+  const ChatRouteArgs({
+    this.key,
+    required this.chatId,
+  });
+
+  final _i18.Key? key;
+
+  final String chatId;
+
+  @override
+  String toString() {
+    return 'ChatRouteArgs{key: $key, chatId: $chatId}';
+  }
 }
 
 /// generated route for

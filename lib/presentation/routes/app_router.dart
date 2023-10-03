@@ -15,14 +15,16 @@ class AppRouter extends $AppRouter {
         AutoRoute(
           page: HomeRoute.page,
           children: [
-            AutoRoute(
-              page: HeroEmptyRouterRoute.page,
-              initial: true,
-              children: [
-                AutoRoute(page: HomeMainRoute.page, initial: true),
-                AutoRoute(page: MissionDetailRoute.page),
-              ],
-            ),
+            AutoRoute(page: HomeMainRoute.page, initial: true),
+            AutoRoute(page: MissionDetailRoute.page),
+            // AutoRoute(
+            //   page: HeroEmptyRouterRoute.page,
+            //   initial: true,
+            //   children: [
+            //     AutoRoute(page: HomeMainRoute.page, initial: true),
+            //     AutoRoute(page: MissionDetailRoute.page),
+            //   ],
+            // ),
             AutoRoute(page: HomeMissionRoute.page),
             AutoRoute(page: HomeDiscussionRoute.page),
             AutoRoute(

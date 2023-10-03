@@ -1,14 +1,22 @@
-import 'dart:math';
-
 import 'package:adaptive_sizer/adaptive_sizer.dart';
 import 'package:auto_route/auto_route.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:raise_hope/common/extensions/extensions.dart';
+import 'package:raise_hope/data/repositories/chat_repository.dart';
+import 'package:raise_hope/injection.dart';
 import 'package:raise_hope/presentation/pages/discussion/components/chat_input.dart';
+import 'package:raise_hope/presentation/pages/discussion/components/message_item.dart';
 
 @RoutePage()
 class ChatPage extends StatefulWidget {
-  const ChatPage({super.key});
+  ChatPage({
+    super.key,
+    required this.chatId,
+  });
+
+  final String chatId;
+  final ChatRepository _chatRepository = locator<ChatRepository>();
 
   @override
   State<ChatPage> createState() => _ChatPageState();
@@ -17,9 +25,42 @@ class ChatPage extends StatefulWidget {
 class _ChatPageState extends State<ChatPage> {
   @override
   Widget build(BuildContext context) {
+    final conversation = widget._chatRepository.chatDetail.firstWhere((chat) => chat.id == widget.chatId);
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Raise Chat'),
+        title: Row(
+          children: [
+            ClipRRect(
+              borderRadius: BorderRadius.circular(8),
+              child: CachedNetworkImage(
+                imageUrl: conversation.senderImage,
+                width: 32,
+                height: 32,
+                fit: BoxFit.cover,
+              ),
+            ),
+            8.horizontalSpace,
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  conversation.senderName,
+                  style: const TextStyle(
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+                const Text(
+                  "Recently Online",
+                  style: TextStyle(
+                    fontSize: 12,
+                    fontWeight: FontWeight.w400,
+                    color: Colors.grey,
+                  ),
+                ),
+              ],
+            )
+          ],
+        ),
         titleTextStyle: context.textTheme.titleMedium!.apply(
           fontWeightDelta: 2,
         ),
@@ -39,155 +80,22 @@ class _ChatPageState extends State<ChatPage> {
       body: Column(
         children: [
           Expanded(
-            child: _chatList(),
+            child: DecoratedBox(
+              decoration: BoxDecoration(
+                color: context.colorScheme.primary.withOpacity(0.1),
+              ),
+              child: ListView.builder(
+                padding: const EdgeInsets.symmetric(vertical: 16),
+                itemCount: conversation.messages.length,
+                itemBuilder: (context, index) => MessageItem(
+                  message: conversation.messages[index],
+                  senderName: conversation.senderName,
+                ),
+              ),
+            ),
           ),
           const ChatInput(),
         ],
-      ),
-    );
-  }
-
-  Widget _chatList() {
-    return DecoratedBox(
-      decoration: BoxDecoration(
-        color: context.colorScheme.primary.withOpacity(0.1),
-      ),
-      child: ListView.builder(
-        padding: const EdgeInsets.symmetric(vertical: 16),
-        itemCount: 10,
-        itemBuilder: (context, index) => _chatItem(),
-      ),
-    );
-  }
-
-  Widget _chatItem() {
-    final isMe = Random().nextBool();
-    final isRead = Random().nextBool();
-    final isReplying = Random().nextBool();
-
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-      child: Row(
-        mainAxisAlignment: isMe ? MainAxisAlignment.end : MainAxisAlignment.start,
-        children: [
-          Container(
-            constraints: BoxConstraints(
-              maxWidth: context.width * 0.7,
-            ),
-            padding: const EdgeInsets.all(10),
-            decoration: BoxDecoration(
-              color: isMe ? context.colorScheme.primary : context.colorScheme.surface,
-              borderRadius: isMe
-                  ? BorderRadius.only(
-                      topLeft: 16.circular,
-                      topRight: 16.circular,
-                      bottomLeft: 16.circular,
-                    )
-                  : BorderRadius.only(
-                      topLeft: 16.circular,
-                      topRight: 16.circular,
-                      bottomRight: 16.circular,
-                    ),
-            ),
-            child: Column(
-              crossAxisAlignment: isMe ? CrossAxisAlignment.end : CrossAxisAlignment.start,
-              children: [
-                if (isReplying) ...[
-                  _chatReply(isMe),
-                  8.verticalSpace,
-                ],
-                Text(
-                  'Okay, As Soon As Possible!',
-                  style: TextStyle(
-                    color: isMe ? context.colorScheme.onPrimary : context.colorScheme.onBackground,
-                    fontSize: 14,
-                  ),
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Text(
-                      '12:30 PM',
-                      style: TextStyle(
-                        color: isMe ? context.colorScheme.onPrimary : context.colorScheme.onBackground.withOpacity(0.5),
-                        fontSize: 12,
-                      ),
-                    ),
-                    if (isRead) ...[
-                      4.horizontalSpace,
-                      Icon(
-                        Icons.circle,
-                        size: 2,
-                        color: isMe ? context.colorScheme.onPrimary : context.colorScheme.onBackground.withOpacity(0.5),
-                      ),
-                      4.horizontalSpace,
-                      Text(
-                        "Read",
-                        style: TextStyle(
-                          color:
-                              isMe ? context.colorScheme.onPrimary : context.colorScheme.onBackground.withOpacity(0.5),
-                          fontSize: 12,
-                        ),
-                      ),
-                    ],
-                  ],
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _chatReply(bool isMe) {
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(8),
-      child: DecoratedBox(
-        decoration: BoxDecoration(
-          color: context.colorScheme.onBackground.withOpacity(0.1),
-        ),
-        child: IntrinsicHeight(
-          child: Row(
-            children: [
-              Container(
-                width: 4,
-                height: double.infinity,
-                color: isMe ? context.colorScheme.onPrimary : context.colorScheme.primary,
-              ),
-              Expanded(
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'You',
-                        style: TextStyle(
-                          color: isMe ? context.colorScheme.onPrimary : context.colorScheme.primary,
-                          fontSize: 12,
-                        ),
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                      4.verticalSpace,
-                      Text(
-                        'Okay, As Soon As Possible!',
-                        style: TextStyle(
-                          color:
-                              isMe ? context.colorScheme.onPrimary.withOpacity(0.75) : context.colorScheme.onBackground,
-                          fontSize: 14,
-                        ),
-                        maxLines: 2,
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                    ],
-                  ),
-                ),
-              )
-            ],
-          ),
-        ),
       ),
     );
   }
