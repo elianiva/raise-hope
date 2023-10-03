@@ -11,9 +11,11 @@ class MissionSection extends StatefulWidget {
     this.onPressed,
     required this.filterItems,
     required this.missions,
+    this.useLargeTitle = false,
   });
 
   final String title;
+  final bool? useLargeTitle;
   final Function()? onPressed;
   final List<String> filterItems;
   final List<Mission> missions;
@@ -30,15 +32,17 @@ class _MissionSectionState extends State<MissionSection> {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
           child: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
                 widget.title,
                 style: Theme.of(context).textTheme.titleSmall!.copyWith(
                       fontWeight: FontWeight.bold,
                       color: Theme.of(context).colorScheme.onBackground.withOpacity(0.8),
+                      fontSize: widget.useLargeTitle! ? 18.sp : 16.sp,
                     ),
               ),
-              const Spacer(),
               TextButton(
                 onPressed: widget.onPressed,
                 child: Text(

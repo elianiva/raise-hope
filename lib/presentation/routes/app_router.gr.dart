@@ -78,9 +78,11 @@ abstract class $AppRouter extends _i17.RootStackRouter {
       );
     },
     HomeMissionRoute.name: (routeData) {
+      final args = routeData.argsAs<HomeMissionRouteArgs>(
+          orElse: () => const HomeMissionRouteArgs());
       return _i17.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i6.HomeMissionPage(),
+        child: _i6.HomeMissionPage(key: args.key),
       );
     },
     HomeRoute.name: (routeData) {
@@ -273,16 +275,31 @@ class HomeMainRouteArgs {
 
 /// generated route for
 /// [_i6.HomeMissionPage]
-class HomeMissionRoute extends _i17.PageRouteInfo<void> {
-  const HomeMissionRoute({List<_i17.PageRouteInfo>? children})
-      : super(
+class HomeMissionRoute extends _i17.PageRouteInfo<HomeMissionRouteArgs> {
+  HomeMissionRoute({
+    _i18.Key? key,
+    List<_i17.PageRouteInfo>? children,
+  }) : super(
           HomeMissionRoute.name,
+          args: HomeMissionRouteArgs(key: key),
           initialChildren: children,
         );
 
   static const String name = 'HomeMissionRoute';
 
-  static const _i17.PageInfo<void> page = _i17.PageInfo<void>(name);
+  static const _i17.PageInfo<HomeMissionRouteArgs> page =
+      _i17.PageInfo<HomeMissionRouteArgs>(name);
+}
+
+class HomeMissionRouteArgs {
+  const HomeMissionRouteArgs({this.key});
+
+  final _i18.Key? key;
+
+  @override
+  String toString() {
+    return 'HomeMissionRouteArgs{key: $key}';
+  }
 }
 
 /// generated route for

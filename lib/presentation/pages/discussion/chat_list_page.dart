@@ -28,9 +28,7 @@ class _ChatListPageState extends State<ChatListPage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Raise Chat'),
-        titleTextStyle: context.textTheme.titleMedium!.apply(
-          fontWeightDelta: 2,
-        ),
+        titleTextStyle: context.textTheme.titleLarge!,
         scrolledUnderElevation: 0,
       ),
       body: Column(

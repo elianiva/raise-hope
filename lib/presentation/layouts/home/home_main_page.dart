@@ -6,7 +6,6 @@ import 'package:raise_hope/data/repositories/mission_repository.dart';
 import 'package:raise_hope/injection.dart';
 import 'package:raise_hope/presentation/components/card/karma_progress_card.dart';
 import 'package:raise_hope/presentation/pages/home/components/mission_section.dart';
-import 'package:raise_hope/presentation/pages/home/components/filter_list.dart';
 import 'package:raise_hope/presentation/pages/home/components/mission_stats.dart';
 import 'package:raise_hope/presentation/routes/app_router.dart';
 import 'package:raise_hope/presentation/routes/app_router.gr.dart';
@@ -44,62 +43,8 @@ class _HomeMainPageState extends State<HomeMainPage> {
               missions: widget._missionRepository.missions,
             ),
           ),
-          SliverToBoxAdapter(child: 32.verticalSpace)
+          SliverToBoxAdapter(child: 32.verticalSpace),
         ],
-      ),
-    );
-  }
-
-  Widget _buildFilter() {
-    return SliverToBoxAdapter(
-      child: StreamBuilder(
-        stream: widget._missionRepository.getTypesOfHelp().asStream(),
-        builder: (context, snapshot) {
-          if (!snapshot.hasData || snapshot.data == null || snapshot.data!.isLeft()) {
-            return const SizedBox(height: 32);
-          }
-
-          final typesOfHelp = snapshot.data!.getOrElse(() => []);
-          return FilterList(
-            items: typesOfHelp,
-            onChanged: (value) {
-              print(value);
-            },
-          );
-        },
-      ),
-    );
-  }
-
-  Widget _buildSectionTitle({
-    required String title,
-    VoidCallback? onPressed,
-  }) {
-    return SliverPadding(
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-      sliver: SliverToBoxAdapter(
-        child: Row(
-          children: [
-            Text(
-              title,
-              style: context.textTheme.titleSmall!.copyWith(
-                fontWeight: FontWeight.bold,
-                color: context.colorScheme.onBackground.withOpacity(0.8),
-              ),
-            ),
-            const Spacer(),
-            TextButton(
-              onPressed: onPressed,
-              child: Text(
-                'See All',
-                style: context.textTheme.bodyMedium!.copyWith(
-                  color: context.colorScheme.primary,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
-          ],
-        ),
       ),
     );
   }

@@ -21,7 +21,7 @@ class _HomePageState extends State<HomePage> {
     return AutoTabsRouter(
       routes: [
         HomeMainRoute(),
-        const HomeMissionRoute(),
+        HomeMissionRoute(),
         ChatListRoute(),
       ],
       builder: (ctx, child) {
@@ -47,18 +47,18 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               NavigationDestination(
-                icon: Icon(Icons.book_outlined),
+                icon: Icon(Icons.my_library_books_outlined),
                 label: "Mission",
                 selectedIcon: Icon(
-                  Icons.book,
+                  Icons.my_library_books,
                   color: Colors.white,
                 ),
               ),
               NavigationDestination(
-                icon: Icon(Icons.people_outline),
+                icon: Icon(Icons.chat_bubble_outline),
                 label: "Discussion",
                 selectedIcon: Icon(
-                  Icons.people,
+                  Icons.chat_bubble,
                   color: Colors.white,
                 ),
               ),

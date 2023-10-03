@@ -43,7 +43,6 @@ class MissionCard extends StatelessWidget {
                   fit: BoxFit.cover,
                 ),
               );
-
               if (heroTag != null) {
                 return Hero(
                   tag: heroTag!,
