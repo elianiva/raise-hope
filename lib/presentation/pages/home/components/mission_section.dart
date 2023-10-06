@@ -25,6 +25,8 @@ class MissionSection extends StatefulWidget {
 }
 
 class _MissionSectionState extends State<MissionSection> {
+  String selectedFilter = 'all';
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -58,12 +60,18 @@ class _MissionSectionState extends State<MissionSection> {
         ),
         FilterList(
           items: widget.filterItems,
-          onChanged: (value) {
-            print(value);
+          onChanged: (filter) {
+            setState(() {
+              selectedFilter = filter;
+            });
           },
         ),
         20.verticalSpace,
-        MissionList(missions: widget.missions),
+        MissionList(
+          missions: widget.missions
+              .where((element) => selectedFilter == 'all' ? true : element.typeOfHelp == selectedFilter)
+              .toList(),
+        ),
       ],
     );
   }

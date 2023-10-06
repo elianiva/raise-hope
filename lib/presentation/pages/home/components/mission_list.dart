@@ -36,7 +36,7 @@ class _MissionListState extends State<MissionList> {
             coverImage: widget.missions[index].images.first,
             onTap: (tag) {
               locator<AppRouter>().push(
-                MissionDetailRoute(id: widget.missions[index].id, heroTag: tag),
+                MissionDetailRoute(id: "${widget.missions[index].id}-${Random().nextInt(100)}", heroTag: tag),
               );
             },
           ),
